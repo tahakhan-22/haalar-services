@@ -9,31 +9,31 @@ const PORTFOLIO_ITEMS = [
   {
     slug: "drone-jammer-handheld",
     title: "Drone Jammer (Handheld Tactical Rifle)",
-    category: "Drone Jammers",
+    category: "Defense & National Security",
     metric: "1,500m",
     metricLabel: "Directional Jamming Range",
-    client: "Forward Tactical Units",
+    client: "Rapid Deployment Infantry Units",
     summary:
-      "Complete tactical counter-UAS rifle with 6 spot frequencies, optical scope, 2x hot-swappable batteries, rapid charger, and 2-hour continuous battery life.",
-    tags: ["1500m Range", "6 Frequencies", "2x Batteries + Scope", "Directional Rifle"],
+      "Complete handheld counter-UAS directional rifle with 6 spot frequencies, precision optical scope, dual hot-swappable batteries, rapid charger, and 2-hour continuous battery life.",
+    tags: ["6 Spot Frequencies", "Directional Array", "Optical Scope", "Dual Li-Ion Packs", "IP65 Ruggedized"],
     bgClass: "from-red-500/10 to-neutral-900/40",
   },
   {
     slug: "drone-jammer-static",
-    title: "Drone Jammer (Static Base Station)",
-    category: "Drone Jammers",
+    title: "Drone Jammer Static Perimeter Base Station",
+    category: "Defense & National Security",
     metric: "3 km",
-    metricLabel: "Perimeter Jamming Range",
-    client: "Critical Strategic Facilities",
+    metricLabel: "Perimeter Exclusion Range",
+    client: "Critical Strategic Facilities Command",
     summary:
-      "Heavy-duty perimeter countermeasure base station with 4-5 frequency bands, AC main power input, and 30 Watts high-gain RF output power per band.",
-    tags: ["3 km Range", "4-5 Frequency Bands", "30W RF Output / Band", "AC Powered"],
+      "Heavy-duty perimeter countermeasure base station with 4-5 frequency bands, AC main power input, and 30 Watts high-gain RF output power per band for permanent facility denial.",
+    tags: ["3 km Range", "4-5 Frequency Bands", "30W RF Output / Band", "AC Powered", "IP67 Weatherproof"],
     bgClass: "from-orange-500/10 to-neutral-900/40",
   },
   {
     slug: "alpha-fire-pak-1",
     title: "Alpha Fire Handheld Jammer PAK-1",
-    category: "Countermeasures & DDS",
+    category: "Defense & National Security",
     metric: "90m",
     metricLabel: "Jamming Radius",
     client: "Defense & Strategic Units",
@@ -45,31 +45,31 @@ const PORTFOLIO_ITEMS = [
   {
     slug: "stos-dds-jammer",
     title: "STOS Direct Digital Synthesis (DDS) Jammer",
-    category: "Countermeasures & DDS",
+    category: "RF & Electronic Systems",
     metric: "70m",
-    metricLabel: "Radius Coverage",
-    client: "Strategic Installation Security",
+    metricLabel: "Spherical Protection Bubble",
+    client: "Border Defense & Communication Depots",
     summary:
-      "Advanced DDS multi-channel frequency sweeping countermeasure module with -25MHz sweep window, 2 spot frequencies, 12V battery, and dual antennas.",
-    tags: ["SWEEP -25MHz DDS", "2 Spot Frequencies", "Dual Antenna", "12V Battery"],
+      "Advanced Direct Digital Synthesis frequency sweeping countermeasure module with -25MHz sweep window, 2 spot frequencies, dual antennas, and 12V battery operation.",
+    tags: ["Direct Digital Synthesis", "Sweep -25MHz", "Dual Antenna Array", "12V Battery Power", "Zero Phase Drift"],
     bgClass: "from-blue-500/10 to-neutral-900/40",
   },
   {
     slug: "alpha-fire-vehicle-mount",
-    title: "Alpha Fire Vehicle Mount Station",
-    category: "Vehicle Mount Tactical",
+    title: "Alpha Fire Vehicle Mount VIP Convoy Shield",
+    category: "Tactical Mobility",
     metric: "200m+",
     metricLabel: "Convoy Protection Perimeter",
-    client: "VIP Escort & Tactical Convoy",
+    client: "VIP Escort & Convoy Security Directorate",
     summary:
-      "High-power tactical vehicle-mounted system for VIP convoy defense, featuring two spot frequencies and 12V vehicle alternator DC feed.",
-    tags: ["200m+ Protection", "2 Spot Frequencies", "12V Vehicle Feed", "Convoy Defense"],
+      "High-power vehicle-mounted tactical countermeasure station engineered for convoy perimeter defense with 12V vehicle alternator feed and mil-spec vibration dampening.",
+    tags: ["Vehicle Alternator 12V", "Wideband GaN PAs", "Mil-Spec Shock Mount", "Omni Antenna Mast", "Convoy Defense"],
     bgClass: "from-amber-500/10 to-neutral-900/40",
   },
   {
     slug: "green-arrow-ism",
     title: "Green Arrow (ISM Band) Module",
-    category: "Countermeasures & DDS",
+    category: "RF & Electronic Systems",
     metric: "2.4 GHz",
     metricLabel: "2400-2520 MHz ISM Band",
     client: "Perimeter Frequency Mitigation",
@@ -81,7 +81,7 @@ const PORTFOLIO_ITEMS = [
   {
     slug: "green-arrow-100-101",
     title: "Green Arrow 100 / 101 Jammer Modules",
-    category: "Countermeasures & DDS",
+    category: "RF & Electronic Systems",
     metric: "20-500 MHz",
     metricLabel: "3 Discrete Bands + GSM/LTE",
     summary:
@@ -92,7 +92,7 @@ const PORTFOLIO_ITEMS = [
   {
     slug: "digital-directional-finder",
     title: "Digital Directional Finder (DF)",
-    category: "Direction Finding & Testing",
+    category: "Aerospace & Avionics",
     metric: "5 km",
     metricLabel: "DF Radius Coverage",
     client: "Signal Intelligence & Tracking",
@@ -104,7 +104,7 @@ const PORTFOLIO_ITEMS = [
   {
     slug: "jammer-testing-device",
     title: "Jammer Testing & Validation Device",
-    category: "Direction Finding & Testing",
+    category: "Industrial OEM",
     metric: "20-500 MHz",
     metricLabel: "Programmable Diagnostic Set",
     summary:
@@ -114,7 +114,14 @@ const PORTFOLIO_ITEMS = [
   },
 ];
 
-const CATEGORIES = ["All", "Drone Jammers", "Countermeasures & DDS", "Vehicle Mount Tactical", "Direction Finding & Testing"];
+const CATEGORIES = [
+  "All",
+  "Defense & National Security",
+  "RF & Electronic Systems",
+  "Aerospace & Avionics",
+  "Industrial OEM",
+  "Tactical Mobility",
+];
 
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -130,7 +137,7 @@ export default function PortfolioPage() {
         badge="Tactical Products & Hardware"
         title="Deployed Products & Electronic"
         highlightText="Systems."
-        description="Explore the complete operational lineup of countermeasure systems, drone jammers, Direct Digital Synthesis (DDS) units, and direction finding equipment indigenously engineered by Haalar Services."
+        description="Explore 40+ advanced electronic systems and mission-critical hardware engineered and deployed by Haalar Services across defense, aerospace, telecommunications, and industrial sectors."
         breadcrumbs={[{ label: "Products & Portfolio" }]}
       />
 
@@ -183,7 +190,7 @@ export default function PortfolioPage() {
                   {item.title}
                 </h3>
                 <span className="text-xs text-neutral-500 font-medium block mt-0.5">
-                  Deployment: {item.client}
+                  Client: {item.client}
                 </span>
 
                 <p className="text-neutral-600 text-xs sm:text-sm mt-3 leading-relaxed">
@@ -202,13 +209,19 @@ export default function PortfolioPage() {
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-neutral-200/60">
+              <div className="mt-6 pt-4 border-t border-neutral-200/60 flex items-center justify-between">
                 <Link
                   href={`/portfolio/${item.slug}`}
                   className="inline-flex items-center gap-1 text-xs font-bold text-neutral-900 hover:text-[#f54545] transition-colors"
                 >
-                  <span>View Technical Specifications</span>
+                  <span>View Specifications</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
+                <Link
+                  href="/contact-us"
+                  className="text-xs font-bold text-[#f54545] hover:text-[#a50e19] transition-colors"
+                >
+                  Request Technical Architecture Brief
                 </Link>
               </div>
             </div>
