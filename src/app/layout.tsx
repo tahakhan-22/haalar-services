@@ -6,6 +6,7 @@ import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingChatWidget from "@/components/layout/FloatingChatWidget";
+import JsonLd from "@/components/common/JsonLd";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -48,6 +49,7 @@ export default function RootLayout({
       className={`${manrope.variable} ${anton.variable} ${jetbrainsMono.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col font-sans bg-white text-neutral-900 selection:bg-[#f54545] selection:text-white">
+        <JsonLd />
         <SmoothScrollProvider>
           <AnnouncementBar />
           <Navbar />
