@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CheckCircle2, Calendar, Mail, ArrowRight, ArrowUpRight } from "lucide-react";
+import { CheckCircle2, ArrowUpRight } from "lucide-react";
 
 export default function ThankYouPage() {
   return (
@@ -11,13 +11,13 @@ export default function ThankYouPage() {
 
         <div>
           <span className="text-[#f54545] font-mono text-xs uppercase tracking-widest font-bold">
-            Meeting Confirmed
+            Consultation Confirmed
           </span>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-neutral-900 tracking-tight mt-2">
-            You&apos;re On the Calendar.
+            You&apos;re On the Engineering Calendar.
           </h1>
           <p className="text-neutral-600 text-base sm:text-lg mt-4 max-w-lg mx-auto leading-relaxed">
-            We have sent a calendar invitation with Google Meet details directly to your email inbox.
+            We have registered your session. A confirmation and meeting invitation have been dispatched to your email address.
           </p>
         </div>
 
@@ -26,15 +26,15 @@ export default function ThankYouPage() {
           <ul className="text-xs text-neutral-600 space-y-2">
             <li className="flex items-center gap-2">
               <span className="size-1.5 rounded-full bg-[#f54545]" />
-              <span>A Senior Solutions Architect will review your company domain and project context.</span>
+              <span>A Senior Hardware / RF Solutions Engineer will review your organization context and requirements.</span>
             </li>
             <li className="flex items-center gap-2">
               <span className="size-1.5 rounded-full bg-[#f54545]" />
-              <span>We will prepare comparable case study architecture diagrams from our 51 shipped products.</span>
+              <span>We will prepare comparable module architecture diagrams from our 40+ deployed electronic systems.</span>
             </li>
             <li className="flex items-center gap-2">
               <span className="size-1.5 rounded-full bg-[#f54545]" />
-              <span>Our meeting will focus 100% on code, data pipelines, and production feasibility.</span>
+              <span>Our meeting will focus 100% on circuit feasibility, IPC-A-610 standards, and prototype timelines.</span>
             </li>
           </ul>
         </div>
@@ -44,7 +44,7 @@ export default function ThankYouPage() {
             href="/portfolio"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-neutral-900 text-white text-xs font-bold hover:bg-neutral-800 transition-colors"
           >
-            <span>Explore Case Studies in the Meantime</span>
+            <span>Explore Deployed Products</span>
             <ArrowUpRight className="w-4 h-4" />
           </Link>
           <Link

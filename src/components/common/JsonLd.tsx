@@ -4,49 +4,50 @@ export default function JsonLd() {
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://kodexolabs.com/#website",
-        "url": "https://kodexolabs.com/",
-        "name": "Kodexo Labs",
+        "@id": "https://haalarservices.com/#website",
+        "url": "https://haalarservices.com/",
+        "name": "Haalar Services",
         "description":
-          "Kodexo Labs builds web apps, mobile apps, and intelligent AI systems for mid-market companies. Top-rated on Clutch, founded 2021, headquartered in Austin TX.",
+          "Haalar Services specializes in trusted next-generation hardware and software solutions, PCB reverse engineering, OEM/ODM manufacturing, and indigenous RF/microwave systems.",
         "publisher": {
-          "@id": "https://kodexolabs.com/#organization",
+          "@id": "https://haalarservices.com/#organization",
         },
       },
       {
         "@type": "Organization",
-        "@id": "https://kodexolabs.com/#organization",
-        "name": "Kodexo Labs",
-        "url": "https://kodexolabs.com/",
-        "logo": "https://kodexolabs.com/img/logo-light.webp",
-        "sameAs": ["https://clutch.co/profile/kodexo-labs", "https://twitter.com/kodexolabs"],
+        "@id": "https://haalarservices.com/#organization",
+        "name": "Haalar Services",
+        "slogan": "Disrupt · Defend · Dominate",
+        "url": "https://haalarservices.com/",
+        "telephone": "+92-51-4490922",
+        "email": "info@haalarservices.com",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Austin",
-          "addressRegion": "TX",
-          "addressCountry": "US",
+          "streetAddress": "Plot No 261 Humak Industrial Estate, Kahuta Road",
+          "addressLocality": "Islamabad",
+          "addressCountry": "PK",
         },
       },
       {
         "@type": "FAQPage",
-        "@id": "https://kodexolabs.com/#faq",
+        "@id": "https://haalarservices.com/#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What company is leading AI development?",
+            "name": "What core capabilities distinguish Haalar Services?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text":
-                "Kodexo Labs ranks among the top AI development companies, top-rated on Clutch and recognized as a Clutch Elite AI Firm with 51 AI-powered products shipped.",
+                "Haalar Services is an advanced engineering and manufacturing firm specializing in next-generation hardware, PCB reverse engineering, and indigenous RF/microwave systems under our motto 'Disrupt · Defend · Dominate'.",
             },
           },
           {
             "@type": "Question",
-            "name": "Can you host AI models on private cloud infrastructure for HIPAA compliance?",
+            "name": "How does your PCB reverse engineering process work?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text":
-                "Yes. Kodexo Labs regularly deploys open-weight and proprietary models directly within client-controlled AWS VPCs, Azure, or on-premise hardware with zero telemetry back to third parties.",
+                "Our process includes precision de-layering of multi-layer PCBs, high-resolution optical scanning, netlist extraction, and schematic regeneration in Altium Designer with modern component decoding.",
             },
           },
         ],

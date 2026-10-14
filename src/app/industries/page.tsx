@@ -1,77 +1,97 @@
 import Link from "next/link";
-import { ArrowUpRight, Activity, Scale, Truck, Car, ShoppingBag, GraduationCap, Building2, ShieldCheck, ArrowRight } from "lucide-react";
+import { ArrowUpRight, Shield, Plane, Radio, Factory, Truck, Landmark, ShieldCheck, ArrowRight } from "lucide-react";
 import PageHeader from "@/components/common/PageHeader";
 
 const INDUSTRIES_DATA = [
   {
-    slug: "healthcare",
-    title: "Healthcare & MedTech",
-    icon: Activity,
-    badge: "HIPAA Compliant",
-    desc: "Autonomous clinical chart extraction, EHR integration, diagnostic assistant models, and medical billing reconciliation with zero-retention privacy.",
-    useCases: ["Clinical Trial Matching", "Automated Patient Chart Summarization", "EHR/EMR Bi-Directional Sync", "Radiology / Pathology Computer Vision"],
-    clientProof: "SmartMedHx (42 Clinics) · Top Health AI",
-    color: "from-teal-500/10 to-emerald-500/10",
+    slug: "defense",
+    title: "Defense & National Security",
+    icon: Shield,
+    badge: "Military Standard",
+    desc: "Indigenous tactical electronic countermeasures, Counter-UAS drone mitigation, Direct Digital Synthesis (DDS) sweepers, and secure mission-critical hardware.",
+    useCases: [
+      "Counter-UAS Drone Neutralization",
+      "VIP Convoy RCIED Countermeasures",
+      "Tactical Directional Jamming",
+      "Air-Gapped Sovereign Hardware R&D",
+    ],
+    clientProof: "Alpha Fire PAK-1 · STOS DDS Jammer Stations",
+    color: "from-red-500/10 to-neutral-900/40",
   },
   {
-    slug: "legal",
-    title: "Legal & LegalTech",
-    icon: Scale,
-    badge: "SOC 2 Type II",
-    desc: "Sub-second contract analysis, automated discovery, cross-examination timeline reconstruction, and regulatory compliance audit agents.",
-    useCases: ["1,000+ Page Deposition Extraction", "Clause Anomaly & Risk Detection", "Contract Lifecyle Automation", "Automated Citation Verification"],
-    clientProof: "Medico-Legal AI · Top Corporate Law Pods",
-    color: "from-blue-500/10 to-indigo-500/10",
+    slug: "aerospace",
+    title: "Aerospace & Avionics",
+    icon: Plane,
+    badge: "IPC Class 3",
+    desc: "High-reliability ruggedized electronics, telemetry interfaces, and printed circuit board assemblies engineered to withstand extreme vibration and thermal cycling.",
+    useCases: [
+      "High-G Vibration Resilient Assemblies",
+      "Avionics Power Conditioning & Filtering",
+      "Telemetry Transceiver Modules",
+      "Mil-Spec Thermal Conformal Protection",
+    ],
+    clientProof: "IPC-A-610 Class 3 High-Reliability Assemblies",
+    color: "from-blue-500/10 to-neutral-900/40",
   },
   {
-    slug: "logistics",
-    title: "Logistics & Warehousing",
+    slug: "telecom",
+    title: "Telecommunications & RF Systems",
+    icon: Radio,
+    badge: "High-Power RF",
+    desc: "Wideband GaN power amplifiers, Direct Digital Synthesis frequency sweepers, custom cavity filters, and high-efficiency antenna array systems.",
+    useCases: [
+      "Wideband GaN RF Power Amplifiers",
+      "VCO & Direct Digital Synthesis Generators",
+      "Antenna Array Impedance Matching",
+      "GHz Spectrum Harmonic Filtering",
+    ],
+    clientProof: "Green Arrow ISM & Wideband RF Modules",
+    color: "from-amber-500/10 to-neutral-900/40",
+  },
+  {
+    slug: "industrial",
+    title: "Industrial & OEM Electronics",
+    icon: Factory,
+    badge: "Continuous Uptime",
+    desc: "Turnkey controller manufacturing, component-level diagnostic repair, and drop-in reverse engineering for obsolete industrial electronic systems.",
+    useCases: [
+      "Form-Fit-Function PLC Replacements",
+      "Component-Level Failure Analysis",
+      "High-Voltage Power Regulation Modules",
+      "Micro-Soldering & BGA Refurbishment",
+    ],
+    clientProof: "Modernized High-Value Industrial Systems",
+    color: "from-emerald-500/10 to-neutral-900/40",
+  },
+  {
+    slug: "fleet",
+    title: "Fleet, Transport & Logistics",
     icon: Truck,
-    badge: "High Throughput",
-    desc: "Real-time route planning, automated 3PL order routing, warehouse slotting optimization, and predictive freight maintenance.",
-    useCases: ["Multi-Tenant Inventory Sync", "Predictive Demand & Load Balancing", "Driver Dispatch Agent Orchestration", "Bill of Lading Automated Parsing"],
-    clientProof: "Extensiv 3PL Suite (3.2x Acceleration)",
-    color: "from-purple-500/10 to-pink-500/10",
+    badge: "Vehicle Tactical",
+    desc: "Rugged vehicle-mounted electronic countermeasure stations, tactical antenna masts, and heavy-duty 24V/28V vehicle alternator power conditioning.",
+    useCases: [
+      "24V/28V Alternator Power Conditioning",
+      "Roof Mast Shock-Absorbing Mounts",
+      "In-Cabin Telemetry & Remote Control",
+      "Harsh Desert Heat Dissipation",
+    ],
+    clientProof: "Alpha Fire Vehicle Mount Protection Stations",
+    color: "from-purple-500/10 to-neutral-900/40",
   },
   {
-    slug: "automotive",
-    title: "Automotive & Fleet Management",
-    icon: Car,
-    badge: "Edge & Hybrid AI",
-    desc: "Heavy-duty truck error code diagnostics, fleet telematics telemetry, predictive repair scheduling, and automated parts ordering.",
-    useCases: ["Diagnostic Trouble Code (DTC) RAG Search", "Automated Repair Estimation", "Real-Time Sensor Telemetry", "Heavy Vehicle Schematics OCR"],
-    clientProof: "Diesel Laptops (Inc. 5000)",
-    color: "from-amber-500/10 to-orange-500/10",
-  },
-  {
-    slug: "edtech",
-    title: "EdTech & Learning Platforms",
-    icon: GraduationCap,
-    badge: "Multimodal AI",
-    desc: "Personalized adaptive tutoring engines, automated homework grading, voice-interactive language tutors, and curriculum synthesis.",
-    useCases: ["Adaptive Student Learning Paths", "Real-Time Voice Speech Assessment", "Automated STEM Problem Solvers", "Curriculum Generator for Teachers"],
-    clientProof: "Teacher AI ($5M+ First-Year Revenue)",
-    color: "from-red-500/10 to-rose-500/10",
-  },
-  {
-    slug: "ecommerce",
-    title: "E-Commerce & Retail",
-    icon: ShoppingBag,
-    badge: "Conversion Engine",
-    desc: "Automated catalog enrichment, dynamic price elasticity modeling, visual similarity search, and automated dropship supplier routing.",
-    useCases: ["Autonomous Product Catalog Tagging", "Dynamic Competitor Price Scraping", "Predictive Returns Modeling", "Visual Similarity Search"],
-    clientProof: "Sell The Trend · Zendrop",
-    color: "from-emerald-500/10 to-cyan-500/10",
-  },
-  {
-    slug: "real-estate",
-    title: "Real Estate & PropTech",
-    icon: Building2,
-    badge: "Data Sovereignty",
-    desc: "Automated lease abstraction, property valuation AI models, tenant sentiment analysis, and intelligent underwriting workflows.",
-    useCases: ["Lease Agreement Key-Value Extraction", "Automated Valuation Models (AVM)", "Tenant Maintenance Dispatch Agents", "Market Trend Forecasting"],
-    clientProof: "Commercial PropTech Platforms",
-    color: "from-slate-500/10 to-neutral-500/10",
+    slug: "infrastructure",
+    title: "Critical Infrastructure Protection",
+    icon: Landmark,
+    badge: "Perimeter Defense",
+    desc: "Facility-wide electromagnetic perimeter defense, active and reactive frequency suppression, and sovereign air-gapped facility protection.",
+    useCases: [
+      "Perimeter Frequency Mitigation",
+      "Active / Reactive Frequency Jamming",
+      "Air-Gapped Facility Hardening",
+      "24/7 Continuous Countermeasure Operation",
+    ],
+    clientProof: "Strategic Perimeter Stations (90m - 200m Coverage)",
+    color: "from-rose-500/10 to-neutral-900/40",
   },
 ];
 
@@ -79,21 +99,21 @@ export default function IndustriesPage() {
   return (
     <div className="bg-white">
       <PageHeader
-        badge="Target Verticals"
-        title="Eight Industry Verticals. One Production"
+        badge="Strategic Sectors"
+        title="Six Mission-Critical Verticals. One Engineering"
         highlightText="Partner."
-        description="We tailor AI models and software engineering to the exact regulatory constraints, data formats, and workflow mechanics of your specific industry."
+        description="We tailor electronic assemblies, RF countermeasure systems, and PCB reverse engineering to the exact operational constraints, vibration tolerances, and military standards of your industry."
         breadcrumbs={[{ label: "Industries" }]}
       />
 
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {INDUSTRIES_DATA.map((ind) => {
             const Icon = ind.icon;
             return (
               <div
                 key={ind.slug}
-                className={`rounded-3xl p-8 sm:p-10 border border-neutral-200 bg-gradient-to-br ${ind.color} hover-card-elevate flex flex-col justify-between`}
+                className={`rounded-3xl p-8 border border-neutral-200 bg-gradient-to-br ${ind.color} hover-card-elevate flex flex-col justify-between`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
@@ -115,12 +135,12 @@ export default function IndustriesPage() {
 
                   <div className="mt-6 pt-6 border-t border-neutral-200/60">
                     <span className="text-xs font-mono uppercase tracking-wider text-neutral-500 font-bold block mb-3">
-                      High-Impact Workflows
+                      Core Mission Focus
                     </span>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <ul className="space-y-2">
                       {ind.useCases.map((uc, i) => (
                         <li key={i} className="text-xs font-semibold text-neutral-700 flex items-center gap-1.5">
-                          <span className="size-1 rounded-full bg-[#f54545]" />
+                          <span className="size-1.5 rounded-full bg-[#f54545] shrink-0" />
                           <span>{uc}</span>
                         </li>
                       ))}
@@ -138,7 +158,7 @@ export default function IndustriesPage() {
                     href={`/industries/${ind.slug}`}
                     className="inline-flex items-center gap-1.5 text-sm font-bold text-[#f54545] hover:text-[#a50e19] transition-colors"
                   >
-                    <span>Explore {ind.title} Case Studies</span>
+                    <span>Explore Specifications</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -148,26 +168,26 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* Compliance Callout */}
+      {/* Military & Industrial Standards Callout */}
       <section className="py-16 bg-neutral-950 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-2">
-            <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-wider">
+            <div className="flex items-center gap-2 text-[#f54545] font-bold text-xs uppercase tracking-wider">
               <ShieldCheck className="w-4 h-4" />
-              <span>Zero Compliance Compromise</span>
+              <span>IPC-A-610 Class 3 & Military Reliability Standards</span>
             </div>
             <h3 className="text-2xl font-bold text-white">
-              Operating in a Heavily Regulated Industry?
+              Operating in High-Stakes or Harsh Field Environments?
             </h3>
             <p className="text-neutral-400 text-sm max-w-2xl leading-relaxed">
-              We execute Business Associate Agreements (BAA), deploy private VPC clusters with zero telemetry, and deliver full audit logs ready for your compliance officer.
+              We engineer under strict physical non-disclosure agreements, apply mil-spec conformal coatings, and deliver 100% bench-tested hardware with Certificates of Conformance.
             </p>
           </div>
           <Link
             href="/contact-us"
             className="px-8 py-4 rounded-full bg-[#f54545] text-white text-sm font-bold hover:bg-[#e03535] transition-all btn-glow-breath shrink-0 flex items-center gap-2"
           >
-            <span>Request Compliance Packet</span>
+            <span>Request Technical Capability Brief</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

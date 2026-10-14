@@ -2,74 +2,74 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Cpu, Layers, Shield, Smartphone, Bot, Cloud, Check } from "lucide-react";
+import { ArrowUpRight, Cpu, Layers, Shield, Radio, Wrench, Check, Microchip } from "lucide-react";
 
-const SOFTWARE_SERVICES = [
+const MANUFACTURING_SERVICES = [
   {
-    title: "Custom Software Development",
-    desc: "Web, SaaS, MVP, and platform engineering for mid-market teams that need software to actually think. Next.js 15, cloud-native backend, UI/UX design, and API integration from day one.",
-    features: ["Next.js 15 & React 19 Architecture", "Scalable Multi-Tenant Databases", "Enterprise Role-Based Access Control", "Microservices & Serverless Backends"],
+    title: "Original Design Manufacturing (ODM)",
+    desc: "All you have to bring is an operational concept. Our team manages product specification, schematic engineering, PCB layout, firmware, and pilot fabrication.",
+    features: ["End-to-End Product Ideation", "Multi-Layer PCB Layout in Altium", "Custom Aluminum & Rugged Casing", "Turnkey Functional Prototyping"],
     icon: Layers,
-    href: "/services/custom-software",
+    href: "/services/odm-manufacturing",
   },
   {
-    title: "Mobile App Development",
-    desc: "Ship apps your customers actually open. Native iOS and Android, React Native and Flutter cross-platform, and AI-powered mobile apps with on-device inference and cloud agent integration.",
-    features: ["React Native & Flutter Cross-Platform", "On-Device CoreML / TFLite Models", "Offline-First Sync Protocols", "App Store Compliance & CI/CD"],
-    icon: Smartphone,
-    href: "/services/mobile-app",
-  },
-  {
-    title: "Intelligent Automation",
-    desc: "Automate the workflow, not just the task. Business process automation, workflow automation, system integration, and legacy modernization that reduce back-office headcount pressure.",
-    features: ["Intelligent Document Parsing (OCR/LLM)", "Autonomous Back-Office Reconciliations", "Legacy Mainframe Integration", "Continuous Anomaly Monitoring"],
+    title: "Original Equipment Manufacturing (OEM)",
+    desc: "State-of-the-art precision hardware manufacturing and component assembly built strictly according to military and IPC-A-610 Class 3 standards.",
+    features: ["Precision SMD & Through-Hole Assembly", "IPC-A-610 Class 3 Soldering Quality", "Automated Optical & Functional Testing", "Mil-Spec Mechanical Integration"],
     icon: Cpu,
-    href: "/services/intelligent-automation",
+    href: "/services/oem-production",
   },
   {
-    title: "Staff Augmentation",
-    desc: "Scale your team with elite senior AI and full-stack software engineers in less than 72 hours. Pre-vetted, time-zone aligned, and ready to contribute to sprint backlogs immediately.",
-    features: ["Senior Full-Stack & ML Pods", "Onboarding in under 72 Hours", "Guaranteed Timezone Alignment", "Zero Recruitment Overheads"],
-    icon: Layers,
-    href: "/services/staff-augmentation",
+    title: "Research & Development (R&D)",
+    desc: "Continuous innovation in advanced electronic modules, frequency synthesizers, RF countermeasures, and sovereign hardware infrastructure.",
+    features: ["Indigenous Technological Innovation", "Thermal & Stress Finite Element Analysis", "Rapid Iterative Prototyping", "Electromagnetic Interference (EMI) Shielding"],
+    icon: Microchip,
+    href: "/services/research-development",
+  },
+  {
+    title: "Legacy Systems Modernization & Repair",
+    desc: "Diagnostics, retrofitting, and form-fit-function upgrades for obsolete defense, aerospace, and industrial electronic equipment.",
+    features: ["Obsolete Equipment Life Extension", "Substrate & Trace Micro-Soldering", "Pin-Compatible Modern Chip Adaptation", "Full Performance Recertification"],
+    icon: Wrench,
+    href: "/services/legacy-modernization",
   },
 ];
 
-const AI_SERVICES = [
+const ELECTRONICS_SERVICES = [
   {
-    title: "Agentic AI & Multi-Agent Systems",
-    desc: "Autonomous reasoning agents built on LangGraph that coordinate complex multi-step workflows, execute API actions, and leverage human-in-the-loop validation.",
-    features: ["LangGraph Multi-Agent Workflows", "Dynamic External Tool Calling", "Human-in-the-Loop Safeguards", "Sub-Second State Serialization"],
-    icon: Bot,
-    href: "/services/agentic-ai-development",
-  },
-  {
-    title: "AI Security, Governance & Compliance",
-    desc: "HIPAA, SOC 2 Type II, and GDPR-compliant custom AI systems with strict data sovereignty, self-hosted deployment options, and audited prompt-injection defense.",
-    features: ["Zero-Data-Retention Endpoints", "HIPAA BAA & SOC 2 Audits", "Adversarial Red-Teaming Guardrails", "Role-Based Data Redaction"],
-    icon: Shield,
-    href: "/services/ai-security-compliance",
-  },
-  {
-    title: "Cloud and AI Infrastructure",
-    desc: "Production AI that survives real traffic. Cloud architecture, self-hosted LLM clusters, edge AI, and MLOps with observability instrumentation from the first commit.",
-    features: ["Self-Hosted vLLM & TensorRT Clusters", "Kubernetes & Multi-GPU Orchestration", "Real-Time Observability & Tracing", "Cost-Optimized Token Caching"],
-    icon: Cloud,
-    href: "/services/cloud-ai-infrastructure",
-  },
-  {
-    title: "Applied AI Solutions",
-    desc: "Tailored fine-tuning, retrieval-augmented generation (RAG), and computer vision models engineered to solve domain-specific enterprise problems.",
-    features: ["Domain Model Fine-Tuning", "Hybrid Vector + Keyword RAG", "Custom Vision Diagnostic Models", "Latency & Cost Benchmark Matrices"],
+    title: "Reverse Engineering of PCBs",
+    desc: "Multi-layer de-layering, optical micro-sectioning, netlist extraction, and full schematic reconstruction when original design documentation is lost.",
+    features: ["Single, Double & Multi-Layer PCBs", "Full Netlist & Schematic Extraction", "Component Decoding & BOM Generation", "Gerber Regeneration for Fabrication"],
     icon: Cpu,
-    href: "/services/applied-ai",
+    href: "/services/pcb-reverse-engineering",
+  },
+  {
+    title: "RF & Microwave Engineering",
+    desc: "Custom high-power RF amplifiers, Direct Digital Synthesis (DDS) modules, antenna matching networks, and jamming countermeasure systems.",
+    features: ["High-Power RF Amplifier Design", "Direct Digital Synthesis (DDS) Sweepers", "Radar & Telemetry Transceivers", "Harmonic & Spectrum Certification"],
+    icon: Radio,
+    href: "/services/rf-microwave-systems",
+  },
+  {
+    title: "Embedded Software & Firmware",
+    desc: "Deterministic, low-latency firmware written in C, C++, and Rust for bare-metal microcontrollers, digital signal processors (DSP), and real-time operating systems.",
+    features: ["Bare-Metal & RTOS Firmware", "Hardware Abstraction Layers (HAL)", "DSP Signal Filtering Algorithms", "Secure Encrypted Bootloaders"],
+    icon: Layers,
+    href: "/services/embedded-firmware",
+  },
+  {
+    title: "Component Decoding & Obsolescence",
+    desc: "Decapsulation, pinout reverse engineering, and modern drop-in replacement sourcing for unmarked, scrubbed, or discontinued semiconductors.",
+    features: ["Unmarked & Proprietary IC Decoding", "Micro-X-Ray Substrate Imaging", "Functional Verification Test Jigs", "Guaranteed Supply Chain Continuity"],
+    icon: Shield,
+    href: "/services/component-decoding",
   },
 ];
 
 export default function ServicesShowcase() {
-  const [activeTab, setActiveTab] = useState<"software" | "ai">("ai");
+  const [activeTab, setActiveTab] = useState<"mfg" | "electronics">("mfg");
 
-  const services = activeTab === "software" ? SOFTWARE_SERVICES : AI_SERVICES;
+  const services = activeTab === "mfg" ? MANUFACTURING_SERVICES : ELECTRONICS_SERVICES;
 
   return (
     <section id="services" className="py-24 bg-neutral-50/60 border-t border-neutral-200/60">
@@ -81,32 +81,32 @@ export default function ServicesShowcase() {
               Engineering Disciplines
             </span>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-neutral-950 mt-3 tracking-tight">
-              Ten AI Software Development Services. <br />
-              <span className="text-neutral-500 font-bold">One Production-Grade Partner.</span>
+              Eight Core Engineering Practices. <br />
+              <span className="text-neutral-500 font-bold">One Sovereign Solutions Partner.</span>
             </h2>
           </div>
 
           {/* Segmented Switcher */}
           <div className="bg-neutral-200/80 p-1.5 rounded-full inline-flex self-start md:self-auto">
             <button
-              onClick={() => setActiveTab("ai")}
+              onClick={() => setActiveTab("mfg")}
               className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                activeTab === "ai"
+                activeTab === "mfg"
                   ? "bg-neutral-950 text-white shadow-md"
                   : "text-neutral-700 hover:text-neutral-900"
               }`}
             >
-              AI Systems & Agents
+              Turnkey ODM & OEM Manufacturing
             </button>
             <button
-              onClick={() => setActiveTab("software")}
+              onClick={() => setActiveTab("electronics")}
               className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                activeTab === "software"
+                activeTab === "electronics"
                   ? "bg-neutral-950 text-white shadow-md"
                   : "text-neutral-700 hover:text-neutral-900"
               }`}
             >
-              Build & Modernize Software
+              PCB Reverse Engineering & RF
             </button>
           </div>
         </div>
@@ -135,7 +135,7 @@ export default function ServicesShowcase() {
 
                   <div className="mt-6 pt-6 border-t border-neutral-100">
                     <span className="text-xs font-mono uppercase tracking-wider text-neutral-400 font-bold block mb-3">
-                      Core Capabilities
+                      Technical Capabilities
                     </span>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                       {item.features.map((f, i) => (
@@ -153,7 +153,7 @@ export default function ServicesShowcase() {
                     href={item.href}
                     className="inline-flex items-center gap-1.5 text-sm font-bold text-[#f54545] hover:text-[#a50e19] transition-colors"
                   >
-                    <span>View Service Specifications</span>
+                    <span>View Technical Specifications</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </Link>
                 </div>

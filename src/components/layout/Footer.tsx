@@ -39,25 +39,25 @@ export default function Footer() {
           <div className="col-span-2">
             <div className="flex items-center">
               <span className="font-heading tracking-tight text-3xl font-extrabold text-white">
-                KODEXO
+                HAALAR
               </span>
               <span className="font-sans text-3xl font-bold text-[#f54545] ml-1">
-                LABS
+                SERVICES
               </span>
               <span className="h-2.5 w-2.5 rounded-full bg-[#f54545] ml-1.5" />
             </div>
             <p className="text-sm text-neutral-400 mt-4 max-w-sm leading-relaxed">
-              AI-native development partner since 2021. Designing, building, and deploying audited web, mobile, and agentic AI systems for mid-market leaders.
+              Disrupt · Defend · Dominate. Specialized in reliable and trusted next-generation hardware, PCB reverse engineering, and indigenous RF/microwave systems.
             </p>
 
             <div className="mt-6 flex items-center gap-3 text-xs text-neutral-400">
               <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0" />
-              <span>HIPAA, SOC 2 Type II & GDPR Compliant Development</span>
+              <span>IPC-A-610 Class 3 & Military Standards Manufacturing</span>
             </div>
 
             <div className="mt-6 flex items-center gap-2 text-xs font-semibold text-neutral-300 bg-neutral-900 border border-neutral-800 rounded-full py-1.5 px-4 w-max">
-              <span className="text-amber-400">★★★★★</span>
-              <span>4.9 / 5 on Clutch (14 Verified Reviews)</span>
+              <span className="text-[#f54545]">✦</span>
+              <span>ODM · OEM · Lifecycle Engineering Support</span>
             </div>
           </div>
 
@@ -99,35 +99,29 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Global Hubs */}
+          {/* Column 4: Contact & Facilities */}
           <div>
             <h3 className="text-xs uppercase tracking-wider font-mono text-neutral-400 font-bold mb-4">
-              Global Presence
+              Headquarters & Labs
             </h3>
-            <ul className="space-y-2 text-xs text-neutral-400">
-              <li className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#f54545] shrink-0" />
-                <span>Austin, TX (HQ)</span>
+            <ul className="space-y-2.5 text-xs text-neutral-400">
+              <li className="flex items-start gap-2">
+                <MapPin className="w-3.5 h-3.5 text-[#f54545] shrink-0 mt-0.5" />
+                <span>Plot No. 261, Humak Industrial Estate, Kahuta Road, Islamabad</span>
               </li>
               <li className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-neutral-500 shrink-0" />
-                <span>New York, NY</span>
+                <Mail className="w-3.5 h-3.5 text-neutral-500 shrink-0" />
+                <a href="mailto:info@haalarservices.com" className="hover:text-white transition-colors">
+                  info@haalarservices.com
+                </a>
               </li>
               <li className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-neutral-500 shrink-0" />
-                <span>San Francisco, CA</span>
+                <span className="text-[#f54545] font-bold">Mob:</span>
+                <span>0333-0947546</span>
               </li>
               <li className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-neutral-500 shrink-0" />
-                <span>Chicago, IL</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-neutral-500 shrink-0" />
-                <span>London, United Kingdom</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-neutral-500 shrink-0" />
-                <span>Karachi, Pakistan</span>
+                <span className="text-neutral-500 font-bold">PTCL:</span>
+                <span>+92 51 4490922</span>
               </li>
             </ul>
           </div>
@@ -135,7 +129,7 @@ export default function Footer() {
 
         {/* Bottom Bar: Copyright & Policies */}
         <div className="pt-8 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-500 gap-4">
-          <p>© 2026 Kodexo Labs. All rights reserved.</p>
+          <p>© 2026 Haalar Services. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link href="/privacy-policy" className="hover:text-neutral-300">
               Privacy Policy

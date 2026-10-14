@@ -7,7 +7,7 @@ export default function CookiesPolicyPage() {
         badge="Consent & Tracking"
         title="Cookie & Local Storage"
         highlightText="Policy."
-        description="Transparent overview of how cookies and browser storage are utilized on Kodexo Labs web properties."
+        description="Transparent overview of how cookies and browser storage are utilized on Haalar Services web properties."
         breadcrumbs={[{ label: "Cookie Policy" }]}
       />
 
@@ -24,26 +24,26 @@ export default function CookiesPolicyPage() {
           <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200">
             <h3 className="font-bold text-neutral-900 text-base">Strictly Necessary Cookies</h3>
             <p className="text-xs text-neutral-600 mt-1">
-              Essential for basic site navigation, routing security, and load balancing across our CloudFront content delivery network.
+              Essential for basic site navigation, routing security, and load balancing across our high-performance infrastructure.
             </p>
           </div>
           <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200">
             <h3 className="font-bold text-neutral-900 text-base">Performance & Analytics</h3>
             <p className="text-xs text-neutral-600 mt-1">
-              Anonymous aggregation of page performance, Core Web Vitals (LCP/FID), and user navigation funnels to optimize site speed.
+              Anonymous aggregation of page performance, Core Web Vitals, and navigation flow to optimize web speed and technical resource access.
             </p>
           </div>
           <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200">
             <h3 className="font-bold text-neutral-900 text-base">Functional Cookies</h3>
             <p className="text-xs text-neutral-600 mt-1">
-              Preserves your preferences such as theme preferences or meeting scheduler selections across page reloads.
+              Preserves your preferences such as theme selections or engineering consultation request inputs across page visits.
             </p>
           </div>
         </div>
 
         <h2 className="text-2xl font-bold text-neutral-900">3. Managing Your Preferences</h2>
         <p>
-          You can adjust or disable cookie permissions at any time via your browser settings or by utilizing our on-site cookie consent banner. Please note that disabling essential cookies may impact certain interactive scheduling features.
+          You can adjust or disable cookie permissions at any time via your browser settings. Please note that disabling essential cookies may impact certain interactive scheduling features.
         </p>
       </section>
     </div>

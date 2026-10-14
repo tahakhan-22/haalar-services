@@ -8,37 +8,32 @@ export default function HeroSection() {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-red-500/10 blur-[130px] rounded-full pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Clutch Verified Rating Pill */}
+        {/* Disrupt Defend Dominate Pill */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-neutral-200/80 shadow-xs mb-8 hover:border-neutral-300 transition-colors">
-          <div className="flex items-center text-amber-500 text-xs">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-            ))}
-          </div>
+          <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-red-50 text-[#f54545] border border-red-200">
+            Disrupt · Defend · Dominate
+          </span>
           <span className="text-xs font-semibold text-neutral-800">
-            4.9 / 5 on Clutch
+            ODM · OEM · Lifecycle Engineering Support
           </span>
           <span className="text-neutral-300">·</span>
           <span className="text-xs text-neutral-500 font-medium">
-            14 verified reviews
-          </span>
-          <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
-            Clutch Elite AI Firm
+            IPC Military Standards
           </span>
         </div>
 
         {/* Main H1 Headline */}
         <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-neutral-950 tracking-tight max-w-5xl mx-auto leading-[1.1] sm:leading-[1.08]">
-          Your AI-Native <br className="hidden sm:inline" />
+          Your Idea, <br className="hidden sm:inline" />
           <span className="text-[#f54545] underline decoration-red-200 underline-offset-8">
-            Development Partner
+            Our Expertise.
           </span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto mt-6 leading-relaxed font-normal">
-          Web, mobile, and intelligent systems, built for mid-market companies that need software to{" "}
-          <strong className="text-neutral-900 font-semibold">actually think</strong>. 51 AI systems shipped into production.
+          Specialized in providing reliable and trusted{" "}
+          <strong className="text-neutral-900 font-semibold">next-generation hardware and software solutions</strong>, PCB reverse engineering, and indigenous RF/microwave systems for defense and industry.
         </p>
 
         {/* Action CTAs */}
@@ -48,7 +43,7 @@ export default function HeroSection() {
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#f54545] text-white text-base font-bold shadow-lg hover:bg-[#e03535] transition-all duration-200 btn-glow-breath"
           >
             <Sparkles className="w-5 h-5" />
-            <span>Talk to Our AI Team</span>
+            <span>Consult with Engineering Team</span>
             <ArrowRight className="w-4 h-4 ml-1" />
           </Link>
 
@@ -56,7 +51,7 @@ export default function HeroSection() {
             href="#case-studies"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-neutral-800 border border-neutral-300 font-semibold text-base hover:bg-neutral-50 hover:border-neutral-400 transition-all duration-200 shadow-xs"
           >
-            <span>See Our Work</span>
+            <span>Explore Hardware Products</span>
           </Link>
         </div>
 
@@ -65,25 +60,25 @@ export default function HeroSection() {
           <div className="flex items-center gap-2.5">
             <CheckCircle2 className="w-5 h-5 text-[#f54545] shrink-0" />
             <span className="text-xs sm:text-sm font-semibold text-neutral-800">
-              51 Shipped to Production
+              IPC-A-610 Class 3
             </span>
           </div>
           <div className="flex items-center gap-2.5">
             <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0" />
             <span className="text-xs sm:text-sm font-semibold text-neutral-800">
-              HIPAA & SOC 2 Audited
+              PCB Reverse Engineering
             </span>
           </div>
           <div className="flex items-center gap-2.5">
             <CheckCircle2 className="w-5 h-5 text-[#f54545] shrink-0" />
             <span className="text-xs sm:text-sm font-semibold text-neutral-800">
-              Inc. 5000 Client Base
+              RF & Microwave Systems
             </span>
           </div>
           <div className="flex items-center gap-2.5">
             <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0" />
             <span className="text-xs sm:text-sm font-semibold text-neutral-800">
-              Self-Hosted / Private VPC
+              Islamabad Industrial HQ
             </span>
           </div>
         </div>

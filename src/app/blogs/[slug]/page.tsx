@@ -1,14 +1,14 @@
 import Link from "next/link";
-import { ArrowLeft, Clock, Calendar, Share2, Sparkles, BookOpen, ArrowRight } from "lucide-react";
+import { ArrowLeft, Clock, Sparkles, ArrowRight } from "lucide-react";
 
 export function generateStaticParams() {
   return [
-    { slug: "ai-agent-vs-chatbot" },
-    { slug: "hipaa-compliant-agentic-ai" },
-    { slug: "causal-ai" },
-    { slug: "hybrid-rag-bm25" },
-    { slug: "nextjs-15-partial-prerendering" },
-    { slug: "self-hosting-llms" },
+    { slug: "multi-layer-pcb-reverse-engineering" },
+    { slug: "dds-vs-vco-jamming" },
+    { slug: "ipc-a-610-class-3-standards" },
+    { slug: "component-decoding-obsolete-ics" },
+    { slug: "thermal-management-rf-amplifiers" },
+    { slug: "indigenous-defense-rd-lifecycle" },
   ];
 }
 
@@ -32,13 +32,13 @@ export default async function BlogPostPage({
           className="inline-flex items-center gap-2 text-xs font-bold text-neutral-500 hover:text-[#f54545] transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Back to Insights & Publications</span>
+          <span>Back to Insights & Engineering Publications</span>
         </Link>
 
         {/* Article Meta */}
         <div className="flex items-center gap-3 text-xs text-neutral-500 font-semibold mb-4">
           <span className="font-mono text-[#f54545] uppercase tracking-wider">
-            Technical Architecture
+            Hardware Engineering
           </span>
           <span>·</span>
           <span className="flex items-center gap-1">
@@ -50,20 +50,20 @@ export default async function BlogPostPage({
 
         {/* Title */}
         <h1 className="text-3xl sm:text-5xl font-extrabold text-neutral-950 tracking-tight leading-tight">
-          {formattedTitle}: The Architectural Engineering Deep Dive
+          {formattedTitle}: The Technical Engineering Deep Dive
         </h1>
 
         {/* Author Card */}
         <div className="flex items-center gap-4 py-6 my-8 border-y border-neutral-100">
-          <div className="size-12 rounded-full bg-neutral-900 text-white font-bold flex items-center justify-center text-sm">
-            MA
+          <div className="size-12 rounded-full bg-neutral-900 text-[#f54545] font-bold flex items-center justify-center text-sm border border-neutral-800">
+            HS
           </div>
           <div>
             <h4 className="font-bold text-sm text-neutral-900">
-              Mohammad Ahmed Rajput
+              Haalar R&D Engineering Directorate
             </h4>
             <p className="text-xs text-neutral-500">
-              Chief Technology Officer & AI Architect · Kodexo Labs
+              RF Systems & Reverse Engineering Division · Haalar Services (Islamabad)
             </p>
           </div>
         </div>
@@ -71,51 +71,50 @@ export default async function BlogPostPage({
         {/* Article Body */}
         <div className="prose prose-neutral max-w-none space-y-6 text-neutral-700 leading-relaxed text-base">
           <p className="text-lg text-neutral-800 font-medium leading-relaxed">
-            In enterprise production systems, there is an immense gulf between a theoretical prototype and software that handles real-world business transactions under strict SLAs.
+            In mission-critical defense and strategic industrial applications, electronic hardware cannot fail. When original OEM schematics are missing or discontinued, precision engineering and rigorous manufacturing standards become indispensable.
           </p>
 
           <h2 className="text-2xl font-bold text-neutral-950 mt-8 mb-3">
-            01. The Problem with Naive Implementations
+            01. Deconstructing the Engineering Challenge
           </h2>
           <p>
-            When teams first deploy large language models, they typically build a standard wrapper around an external completion endpoint. While this works for simple queries, it quickly collapses when faced with non-deterministic edge cases, schema evolution, and rate limits.
+            Hardware operating in extreme tactical environments is exposed to severe thermal stress, mechanical shock, and electromagnetic noise. Re-engineering such systems requires micron-level substrate de-layering, accurate high-frequency impedance extraction, and rigorous signal validation.
           </p>
 
           <div className="p-6 rounded-2xl bg-neutral-950 text-neutral-200 font-mono text-xs my-6 border border-neutral-800 overflow-x-auto">
-            <span className="text-[#f54545] block mb-2"># Deterministic Multi-Agent State Definition</span>
+            <span className="text-[#f54545] block mb-2"># Engineering Benchmark & Validation Checklist</span>
             <code>
-              {`class AgentState(TypedDict):
-    task: str
-    plan: list[str]
-    retrieved_context: list[Document]
-    tool_calls: list[ToolInvocation]
-    human_approval_required: bool
-    final_output: Optional[str]`}
+              {`[1] Non-Destructive X-Ray Substrate Layer Mapping
+[2] High-Precision De-Layering & Micron Optical Scan
+[3] Altium Designer Complete Netlist & Schematic Extraction
+[4] Component Decoding & Modern Equivalent Sourcing
+[5] IPC-A-610 Class 3 Soldering & Conformal Shielding
+[6] Calibrated Spectrum Analysis & Thermal Chamber Validation`}
             </code>
           </div>
 
           <h2 className="text-2xl font-bold text-neutral-950 mt-8 mb-3">
-            02. State Graphs & Cyclical Memory
+            02. Precision in Practice: From Netlist to Production
           </h2>
           <p>
-            By decomposing monolithic prompts into specialized node graphs (using frameworks like LangGraph), each node can be individually tested, evaluated with synthetic datasets, and rolled back if validation checks fail.
+            By combining high-resolution optical scanners with curve tracers, our engineers regenerate complete, modular Altium schematics. Discontinued silicon is mapped to modern pin-compatible equivalents, ensuring drop-in form-fit-function replacement without software alterations on the host machinery.
           </p>
 
           <div className="p-6 rounded-2xl bg-red-50 border border-red-100 my-6">
             <div className="flex items-center gap-2 text-[#f54545] font-bold text-sm mb-2">
               <Sparkles className="w-4 h-4" />
-              <span>Key Architectural Takeaway</span>
+              <span>Core Engineering Takeaway</span>
             </div>
             <p className="text-xs sm:text-sm text-neutral-800 leading-relaxed font-medium">
-              Never allow an autonomous agent to execute database mutations or external API webhooks without a typed schema validator and human approval gates for critical actions.
+              True hardware reverse engineering produces full, editable CAD assets and functional schematics — not just a blind Gerber reproduction — allowing the client full sovereign control over future revisions and manufacturing batches.
             </p>
           </div>
 
           <h2 className="text-2xl font-bold text-neutral-950 mt-8 mb-3">
-            03. Production Benchmarks
+            03. Operational Reliability & Field Results
           </h2>
           <p>
-            Our benchmark evaluations on client production datasets demonstrate a 99.4% precision score when combining cyclical state machines with hybrid vector and keyword retrieval.
+            Every assembly manufactured at our Humak Industrial Estate facility undergoes comprehensive 72-hour burn-in stress tests and GHz spectrum verification, guaranteeing 100% operational availability under field conditions.
           </p>
         </div>
 
@@ -123,17 +122,17 @@ export default async function BlogPostPage({
         <div className="mt-16 p-8 sm:p-10 rounded-3xl bg-neutral-950 text-white flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-xl font-bold text-white">
-              Want to implement this architecture?
+              Have an obsolete hardware or custom RF requirement?
             </h3>
             <p className="text-xs text-neutral-400 mt-1 max-w-md">
-              Speak directly with our senior AI engineers to scope out your technical requirements.
+              Speak directly with our engineering team in Islamabad to scope technical feasibility.
             </p>
           </div>
           <Link
             href="/contact-us"
             className="px-6 py-3.5 rounded-full bg-[#f54545] text-white text-xs font-bold hover:bg-[#e03535] transition-all btn-glow-breath shrink-0 flex items-center gap-2"
           >
-            <span>Book Technical Review</span>
+            <span>Consult with Engineering Team</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

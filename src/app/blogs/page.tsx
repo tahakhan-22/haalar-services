@@ -4,58 +4,64 @@ import PageHeader from "@/components/common/PageHeader";
 
 const ARTICLES = [
   {
-    title: "AI Agent vs Chatbot: The Architectural Differences",
-    category: "Agentic AI",
-    readTime: "6 min read",
+    slug: "multi-layer-pcb-reverse-engineering",
+    title: "Multi-Layer PCB Reverse Engineering: Micro-Sectioning & Netlist Extraction",
+    category: "Hardware Forensics",
+    readTime: "7 min read",
     date: "June 2026",
     summary:
-      "Why traditional prompt-response chatbots fail in enterprise environments, and how cyclical state machines with tool execution pipelines deliver reliable autonomous outcomes.",
-    tags: ["LangGraph", "Multi-Agent Systems", "Python"],
+      "A deep architectural dive into non-destructive X-ray mapping, substrate de-layering, micron-level optical scanning, and regenerating 100% accurate Altium schematics from obsolete hardware.",
+    tags: ["PCB Reverse Engineering", "Altium", "Micro-Sectioning"],
   },
   {
-    title: "Building HIPAA-Compliant Multi-Agent Systems for Patient Care",
-    category: "Healthcare AI",
+    slug: "dds-vs-vco-jamming",
+    title: "Direct Digital Synthesis (DDS) vs VCO in Tactical Countermeasures",
+    category: "RF & Countermeasures",
     readTime: "8 min read",
     date: "May 2026",
     summary:
-      "A deep architectural dive into zero-data-retention LLM endpoints, automated PII/PHI redaction proxies, and auditable BAA-governed models in clinical workflows.",
-    tags: ["HIPAA", "Healthcare", "Security"],
+      "Comparing analog voltage-controlled oscillators against FPGA-driven Direct Digital Synthesis frequency sweepers in mission-critical perimeter protection.",
+    tags: ["DDS", "RF Systems", "FPGA"],
   },
   {
-    title: "Causal AI: Moving Beyond Statistical Correlation in Production",
-    category: "Machine Learning",
-    readTime: "7 min read",
+    slug: "ipc-a-610-class-3-standards",
+    title: "IPC-A-610 Class 3 Standards for Defense & Aerospace Electronics",
+    category: "Manufacturing Standards",
+    readTime: "6 min read",
     date: "April 2026",
     summary:
-      "How structural causal models (SCMs) allow machine learning systems to answer counterfactual questions and eliminate spurious bias in high-stakes domains.",
-    tags: ["Causal Inference", "PyTorch", "Research"],
+      "Why Class 3 soldering, barrel fill criteria, and conformal coating are mandatory for electronics operating under extreme vibration and desert thermal stress.",
+    tags: ["IPC Class 3", "Quality Assurance", "Soldering"],
   },
   {
-    title: "Sub-Second Hybrid RAG: Combining Vector Distance with BM25 Keywords",
-    category: "Information Retrieval",
-    readTime: "5 min read",
+    slug: "component-decoding-obsolete-ics",
+    title: "Component Decoding & Silicon Decapsulation for Obsolete ICs",
+    category: "IC Identification",
+    readTime: "6 min read",
     date: "March 2026",
     summary:
-      "Dense vector embeddings struggle with exact part numbers, medical IDs, and legal citations. Learn how reciprocal rank fusion (RRF) delivers 99.4% precision.",
-    tags: ["RAG", "pgvector", "BM25"],
+      "Techniques for identifying sanded part numbers and proprietary ASICs using V-I curve signature analysis and chemical die decapsulation.",
+    tags: ["IC Forensics", "Die Decapsulation", "Curve Tracing"],
   },
   {
-    title: "Next.js 15 & Partial Prerendering (PPR) for AI Applications",
-    category: "Web Engineering",
-    readTime: "6 min read",
+    slug: "thermal-management-rf-amplifiers",
+    title: "Thermal Management in High-Power GaN RF Power Amplifiers",
+    category: "RF Engineering",
+    readTime: "7 min read",
     date: "February 2026",
     summary:
-      "Achieving instant initial server loads with streaming React Server Components while lazily streaming token completions via WebSockets.",
-    tags: ["Next.js 15", "React 19", "Turbopack"],
+      "Optimizing thermal conduction pathways, heat pipe integration, and finned aluminum heatsink design for 50W+ continuous RF transmission in 55°C ambient.",
+    tags: ["RF Power Amplifiers", "Thermal Design", "GaN Transistors"],
   },
   {
-    title: "Self-Hosting LLMs with vLLM & TensorRT-LLM on AWS EKS",
-    category: "DevOps & Infrastructure",
+    slug: "indigenous-defense-rd-lifecycle",
+    title: "Indigenous Defense Hardware R&D: Overcoming Foreign OEM Obsolescence",
+    category: "Sovereign Engineering",
     readTime: "9 min read",
     date: "January 2026",
     summary:
-      "How to slash inference costs by 65% and maintain 100% data privacy by deploying Llama 3 on private multi-GPU Kubernetes clusters.",
-    tags: ["vLLM", "AWS EKS", "MLOps"],
+      "How local turnkey Original Design Manufacturing (ODM) provides strategic self-reliance and guarantees form-fit-function replacement for legacy systems.",
+    tags: ["Sovereign R&D", "ODM", "Lifecycle Support"],
   },
 ];
 
@@ -63,18 +69,18 @@ export default function BlogsPage() {
   return (
     <div className="bg-white">
       <PageHeader
-        badge="Technical Publications"
-        title="Engineering Insights & AI Research"
+        badge="Engineering Publications"
+        title="Technical Papers & Hardware Research"
         highlightText="Articles."
-        description="Deep architectural breakdowns, benchmarks, and production case studies written by the senior engineers building Kodexo Labs systems."
+        description="Deep engineering breakdowns, reverse-engineering methodology, and RF countermeasure benchmarks authored by Haalar Services' Islamabad R&D team."
         breadcrumbs={[{ label: "Insights" }]}
       />
 
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {ARTICLES.map((art, idx) => (
+          {ARTICLES.map((art) => (
             <article
-              key={idx}
+              key={art.slug}
               className="bg-white rounded-3xl p-8 border border-neutral-200 hover-card-elevate flex flex-col justify-between"
             >
               <div>
@@ -110,9 +116,13 @@ export default function BlogsPage() {
 
               <div className="mt-8 pt-4 border-t border-neutral-100 flex items-center justify-between">
                 <span className="text-xs text-neutral-400">{art.date}</span>
-                <span className="inline-flex items-center gap-1 text-xs font-bold text-[#f54545] hover:underline">
-                  Read Article <ArrowUpRight className="w-3.5 h-3.5" />
-                </span>
+                <Link
+                  href={`/blogs/${art.slug}`}
+                  className="inline-flex items-center gap-1 text-xs font-bold text-[#f54545] hover:underline"
+                >
+                  <span>Read Article</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </article>
           ))}

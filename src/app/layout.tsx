@@ -26,15 +26,16 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Software Development Company | Kodexo Labs",
+  title: "Haalar Services | Disrupt · Defend · Dominate — Hardware, RF & Software",
   description:
-    "Businesses trust Kodexo Labs to build web, mobile, and AI systems that deliver measurable outcomes. 51 shipped. Inc. 5000 clients. Top-rated on Clutch.",
+    "Haalar Services specializes in trusted next-generation hardware, PCB reverse engineering, OEM/ODM manufacturing, and indigenous RF/microwave systems.",
   keywords: [
-    "ai software development company",
-    "agentic ai development",
-    "custom software development",
-    "mobile app development",
-    "hipaa ai development",
+    "Haalar Services",
+    "PCB reverse engineering",
+    "RF and microwave systems",
+    "OEM manufacturing Islamabad",
+    "ODM electronic design",
+    "defense electronic countermeasures",
   ],
 };
 

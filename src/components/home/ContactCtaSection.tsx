@@ -8,9 +8,9 @@ export default function ContactCtaSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     company: "",
-    service: "Agentic AI & Multi-Agent Systems",
-    timeline: "Within 30 Days",
+    service: "Original Design Manufacturing (ODM)",
     message: "",
   });
 
@@ -33,29 +33,29 @@ export default function ContactCtaSection() {
                 Direct Engineering Access
               </span>
               <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-                Get a Compliance + Architecture Review.
+                Turn Ideas into Hardware Reality.
               </h2>
               <p className="text-neutral-400 text-sm sm:text-base leading-relaxed">
-                Skip the generic sales pitches. Speak directly with a Senior AI Solutions Architect who has shipped production models to enterprise and Inc. 5000 clients.
+                Connect directly with the hardware, RF, and reverse engineering architects at our Humak Industrial Estate facility in Islamabad.
               </p>
 
               <div className="space-y-4 pt-4 border-t border-neutral-800">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-emerald-400 shrink-0" />
-                  <span className="text-xs sm:text-sm text-neutral-300 font-semibold">
-                    14-day interactive MVP delivery timeline
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
                   <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0" />
                   <span className="text-xs sm:text-sm text-neutral-300 font-semibold">
-                    HIPAA, SOC 2, and GDPR-compliant architecture
+                    IPC-A-610 Class 3 certified assembly &amp; soldering
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Zap className="w-5 h-5 text-emerald-400 shrink-0" />
                   <span className="text-xs sm:text-sm text-neutral-300 font-semibold">
-                    Guaranteed NDA protection prior to technical review
+                    Turnkey ODM from schematic design to CNC casing
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Clock className="w-5 h-5 text-emerald-400 shrink-0" />
+                  <span className="text-xs sm:text-sm text-neutral-300 font-semibold">
+                    Strict mutual Non-Disclosure Agreement (NDA) guaranteed
                   </span>
                 </div>
               </div>
@@ -67,10 +67,10 @@ export default function ContactCtaSection() {
                 <div className="py-16 text-center space-y-4">
                   <CheckCircle2 className="w-16 h-16 text-emerald-400 mx-auto" />
                   <h3 className="text-2xl font-bold text-white">
-                    Request Received Successfully!
+                    Inquiry Received Successfully!
                   </h3>
                   <p className="text-neutral-400 text-sm max-w-md mx-auto leading-relaxed">
-                    Thank you, <strong>{formData.name}</strong>. A Senior AI Architect from Kodexo Labs will review your brief and send calendar availability within 2 business hours.
+                    Thank you, <strong>{formData.name}</strong>. An engineering project manager from Haalar Services will review your technical specifications and contact you at <strong>{formData.email}</strong> promptly.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
@@ -93,13 +93,13 @@ export default function ContactCtaSection() {
                         onChange={(e) =>
                           setFormData({ ...formData, name: e.target.value })
                         }
-                        placeholder="Sarah Jenkins"
+                        placeholder="Engr. Tariq Mehmood"
                         className="w-full text-sm p-3 rounded-xl bg-neutral-950 border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:border-[#f54545]"
                       />
                     </div>
                     <div>
                       <label className="block text-xs font-semibold text-neutral-300 mb-1.5">
-                        Work Email *
+                        Work / Official Email *
                       </label>
                       <input
                         type="email"
@@ -108,7 +108,7 @@ export default function ContactCtaSection() {
                         onChange={(e) =>
                           setFormData({ ...formData, email: e.target.value })
                         }
-                        placeholder="sarah@company.com"
+                        placeholder="tariq@organization.com"
                         className="w-full text-sm p-3 rounded-xl bg-neutral-950 border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:border-[#f54545]"
                       />
                     </div>
@@ -117,7 +117,7 @@ export default function ContactCtaSection() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-semibold text-neutral-300 mb-1.5">
-                        Company Name
+                        Organization / Department
                       </label>
                       <input
                         type="text"
@@ -125,13 +125,13 @@ export default function ContactCtaSection() {
                         onChange={(e) =>
                           setFormData({ ...formData, company: e.target.value })
                         }
-                        placeholder="Acme Health Inc."
+                        placeholder="Defense / Strategic / Industrial"
                         className="w-full text-sm p-3 rounded-xl bg-neutral-950 border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:border-[#f54545]"
                       />
                     </div>
                     <div>
                       <label className="block text-xs font-semibold text-neutral-300 mb-1.5">
-                        Primary Practice Area
+                        Engineering Discipline
                       </label>
                       <select
                         value={formData.service}
@@ -140,20 +140,20 @@ export default function ContactCtaSection() {
                         }
                         className="w-full text-sm p-3 rounded-xl bg-neutral-950 border border-neutral-800 text-white focus:outline-none focus:border-[#f54545]"
                       >
-                        <option>Agentic AI & Multi-Agent Systems</option>
-                        <option>Custom Software Development</option>
-                        <option>Mobile App Development</option>
-                        <option>AI Security & Compliance Review</option>
-                        <option>Intelligent Automation</option>
-                        <option>Cloud & AI Infrastructure</option>
-                        <option>Staff Augmentation (72h pods)</option>
+                        <option>Original Design Manufacturing (ODM)</option>
+                        <option>Original Equipment Manufacturing (OEM)</option>
+                        <option>Reverse Engineering of PCBs</option>
+                        <option>RF & Microwave Equipment Development</option>
+                        <option>Embedded Firmware & RTOS</option>
+                        <option>Legacy Equipment Diagnostic & Modernization</option>
+                        <option>Component Decoding & Schematics</option>
                       </select>
                     </div>
                   </div>
 
                   <div>
                     <label className="block text-xs font-semibold text-neutral-300 mb-1.5">
-                      Project Goals & Context
+                      Technical Scope / Requirements
                     </label>
                     <textarea
                       rows={4}
@@ -161,7 +161,7 @@ export default function ContactCtaSection() {
                       onChange={(e) =>
                         setFormData({ ...formData, message: e.target.value })
                       }
-                      placeholder="Tell us what you want to build or what legacy system you need to modernize..."
+                      placeholder="Specify PCB layer count, frequency bands, RF power output, or target deliverables..."
                       className="w-full text-sm p-3 rounded-xl bg-neutral-950 border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:border-[#f54545] resize-none"
                     />
                   </div>
@@ -171,7 +171,7 @@ export default function ContactCtaSection() {
                     className="w-full py-4 rounded-xl bg-[#f54545] text-white text-sm font-bold hover:bg-[#e03535] transition-all flex items-center justify-center gap-2 btn-glow-breath cursor-pointer"
                   >
                     <Send className="w-4 h-4" />
-                    <span>Submit Architecture Review Request</span>
+                    <span>Submit Technical Consultation Request</span>
                   </button>
                 </form>
               )}

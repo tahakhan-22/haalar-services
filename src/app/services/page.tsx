@@ -1,119 +1,119 @@
 import Link from "next/link";
-import { ArrowUpRight, Cpu, Layers, Shield, Smartphone, Bot, Cloud, Check, Sparkles, Server } from "lucide-react";
+import { ArrowUpRight, Cpu, Layers, Radio, Shield, Wrench, Search, Zap, Check, Settings, Terminal } from "lucide-react";
 import PageHeader from "@/components/common/PageHeader";
 
 const ALL_SERVICES = [
   {
-    slug: "agentic-ai-development",
-    title: "Agentic AI & Multi-Agent Systems",
-    icon: Bot,
-    category: "AI Native",
-    desc: "Autonomous reasoning agents built on LangGraph that coordinate complex multi-step workflows, execute API actions, and leverage human-in-the-loop validation.",
+    slug: "odm-manufacturing",
+    title: "Original Design Manufacturing (ODM)",
+    icon: Zap,
+    category: "Turnkey Product",
+    desc: "Complete concept-to-deployment engineering. You bring the operational requirement or idea; our engineering team formulates technical specifications, multi-layer schematics, firmware, CNC casing, and pilot production.",
     capabilities: [
-      "LangGraph multi-agent coordination pipelines",
-      "Dynamic external tool calling & web browsing",
-      "Human-in-the-loop authorization safeguards",
-      "Sub-second state serialization and rollback",
+      "Product Specification Document (PSD) & System Architecture",
+      "High-density multi-layer PCB design & routing (Altium)",
+      "Hard real-time embedded firmware development (C/C++)",
+      "Mil-grade CNC aluminum enclosures & environmental testing",
     ],
-    deliverable: "Production multi-agent pod with custom tools & eval suite",
+    deliverable: "Turnkey functional hardware prototype and pilot batch",
   },
   {
-    slug: "custom-software",
-    title: "Custom Software Development",
-    icon: Layers,
-    category: "Web & SaaS",
-    desc: "Web, SaaS, MVP, and platform engineering for mid-market teams that need software to actually think. Next.js 15, cloud-native backend, UI/UX design, and API integration from day one.",
-    capabilities: [
-      "Next.js 15 & React 19 App Router architecture",
-      "Scalable multi-tenant PostgreSQL/Supabase databases",
-      "Enterprise Role-Based Access Control (RBAC)",
-      "Microservices & event-driven background queues",
-    ],
-    deliverable: "Full-stack SaaS platform deployed with automated CI/CD",
-  },
-  {
-    slug: "mobile-app",
-    title: "Mobile App Development",
-    icon: Smartphone,
-    category: "Mobile",
-    desc: "Ship apps your customers actually open. Native iOS and Android, React Native and Flutter cross-platform, and AI-powered mobile apps with on-device inference.",
-    capabilities: [
-      "React Native & Flutter cross-platform codebases",
-      "On-device CoreML & TensorFlow Lite inference",
-      "Offline-first local cache & background sync",
-      "Automated App Store & Google Play deployment pipelines",
-    ],
-    deliverable: "Production mobile app in iOS App Store & Google Play",
-  },
-  {
-    slug: "ai-security-compliance",
-    title: "AI Security, Governance & Compliance",
-    icon: Shield,
-    category: "Enterprise Trust",
-    desc: "HIPAA, SOC 2 Type II, and GDPR-compliant custom AI systems with strict data sovereignty, self-hosted deployment options, and audited prompt-injection defense.",
-    capabilities: [
-      "Zero-data-retention LLM endpoints & HIPAA BAA",
-      "Adversarial red-teaming & prompt-injection firewalls",
-      "Automated PII/PHI redaction proxy layers",
-      "Continuous compliance audit log streaming",
-    ],
-    deliverable: "Compliance-certified AI architecture ready for audit",
-  },
-  {
-    slug: "cloud-ai-infrastructure",
-    title: "Cloud and AI Infrastructure",
-    icon: Cloud,
-    category: "DevOps & MLOps",
-    desc: "Production AI that survives real traffic. Cloud architecture, self-hosted LLM clusters, edge AI, and MLOps with observability instrumentation from the first commit.",
-    capabilities: [
-      "Self-hosted vLLM, TensorRT-LLM, & Ollama clusters",
-      "Kubernetes (EKS/GKE) GPU auto-scaling pods",
-      "Langfuse & OpenTelemetry tracing instrumentation",
-      "Cost-optimized semantic prompt & response caching",
-    ],
-    deliverable: "High-throughput GPU cluster with 99.9% uptime SLA",
-  },
-  {
-    slug: "applied-ai",
-    title: "Applied AI Solutions",
+    slug: "oem-production",
+    title: "Original Equipment Manufacturing (OEM)",
     icon: Cpu,
-    category: "Specialized AI",
-    desc: "Tailored fine-tuning, retrieval-augmented generation (RAG), and computer vision models engineered to solve domain-specific enterprise problems.",
+    category: "Precision Assembly",
+    desc: "High-precision electronic module production and assembly built to strict IPC-A-610 Class 3 specifications for mission-critical defense, aerospace, and harsh industrial environments.",
     capabilities: [
-      "LoRA & full fine-tuning on proprietary corpora",
-      "Hybrid vector + BM25 keyword RAG pipelines",
-      "Custom computer vision object detection & OCR",
-      "Accuracy benchmark matrix & drift monitoring",
+      "SMD & through-hole high-reliability assembly",
+      "IPC-A-610 Class 3 certified soldering & inspection",
+      "Automated optical & in-circuit functional testing",
+      "Environmental conformal coating for moisture/dust resistance",
     ],
-    deliverable: "Fine-tuned model checkpoint with accuracy eval report",
+    deliverable: "Batch-manufactured electronic assemblies with Certificates of Conformance",
   },
   {
-    slug: "intelligent-automation",
-    title: "Intelligent Automation",
-    icon: Server,
-    category: "Operations",
-    desc: "Automate the workflow, not just the task. Business process automation, workflow automation, system integration, and legacy modernization that reduce operational pressure.",
+    slug: "pcb-reverse-engineering",
+    title: "Reverse Engineering of PCBs",
+    icon: Search,
+    category: "Hardware Forensics",
+    desc: "Drop-in form-fit-function replacement boards when original vendor schematics are lost or obsolete. We de-layer multi-layer PCBs, extract complete netlists, decode components, and regenerate Altium schematics.",
     capabilities: [
-      "Intelligent document parsing (IDP) for invoices & charts",
-      "Multi-system ERP & CRM bidirectional synchronization",
-      "Automated exception handling & human approval gates",
-      "Headcount savings & operational throughput analytics",
+      "Multi-layer PCB micro-sectioning and X-ray de-layering",
+      "100% accurate schematic & netlist extraction",
+      "Pin-compatible modern component substitution",
+      "Functional benchtop validation against original signals",
     ],
-    deliverable: "End-to-end automated pipeline saving 100+ weekly hours",
+    deliverable: "Production-ready Gerber files, BOM, and modern prototype board",
   },
   {
-    slug: "staff-augmentation",
-    title: "Staff Augmentation & Dedicated Pods",
+    slug: "rf-microwave-systems",
+    title: "RF & Microwave Engineering",
+    icon: Radio,
+    category: "RF & Electronic Systems",
+    desc: "Design and production of high-performance RF modules, wideband power amplifiers, Direct Digital Synthesis (DDS) sweepers, and electronic countermeasures across HF, VHF, UHF, and ISM bands.",
+    capabilities: [
+      "Custom high-efficiency RF power amplifiers (PA)",
+      "Direct Digital Synthesis (DDS) & VCO/PLL frequency sweepers",
+      "Directional antenna arrays & impedance matching networks",
+      "GHz spectrum analysis and harmonic suppression filtering",
+    ],
+    deliverable: "Tuned RF module with calibrated spectrum analyzer certification",
+  },
+  {
+    slug: "embedded-firmware",
+    title: "Embedded Software & Firmware",
+    icon: Terminal,
+    category: "Low-Level Systems",
+    desc: "Hard real-time embedded software engineered with deterministic execution. Bare-metal microcontrollers, DSP signal processing, FreeRTOS, and hardware-software control loops with zero latency jitter.",
+    capabilities: [
+      "Bare-metal C/C++ firmware & FreeRTOS kernels",
+      "Hardware Abstraction Layers (HAL) for custom silicon",
+      "Digital Signal Processing (DSP) modulation algorithms",
+      "Encrypted bootloader & field-upgradable firmware architecture",
+    ],
+    deliverable: "Tested firmware binary, source code repository, and API docs",
+  },
+  {
+    slug: "research-development",
+    title: "Research & Development (R&D)",
+    icon: Settings,
+    category: "Indigenous Defense R&D",
+    desc: "Sovereign research and engineering for strategic electronic systems. From theoretical propagation modeling and thermal dissipation simulation to indigenous hardware prototyping.",
+    capabilities: [
+      "MATLAB & Simulink signal processing simulation",
+      "Thermal dynamics & RF heat sink CFD modeling",
+      "Rapid hardware bench prototyping in Islamabad lab",
+      "Air-gapped development and strict NDA confidentiality",
+    ],
+    deliverable: "Complete technical feasibility report & validated bench prototype",
+  },
+  {
+    slug: "legacy-modernization",
+    title: "Legacy System Modernization & Repair",
+    icon: Wrench,
+    category: "Lifecycle Support",
+    desc: "Component-level failure analysis, micro-soldering, and redesign for mission-critical industrial controllers and strategic electronic systems declared obsolete by foreign OEMs.",
+    capabilities: [
+      "Component-level fault isolation & signal tracing",
+      "BGA rework, micro-soldering, and trace reconstruction",
+      "Modern form-fit-function sub-assembly upgrades",
+      "Extended service life assurance with warranty SLAs",
+    ],
+    deliverable: "Certified repaired or modernized unit with test report",
+  },
+  {
+    slug: "component-decoding",
+    title: "Component Decoding & Schematics",
     icon: Layers,
-    category: "Engineering Talent",
-    desc: "Scale your team with elite senior AI and full-stack software engineers in less than 72 hours. Pre-vetted, time-zone aligned, and ready to contribute to sprint backlogs immediately.",
+    category: "IC Identification",
+    desc: "Identification and obsolescence resolution for unmarked, sanded, or proprietary integrated circuits. We trace pinouts, reconstruct internal logic, and locate pin-compatible replacements.",
     capabilities: [
-      "Top 1% vetted senior full-stack & AI engineers",
-      "Rapid deployment into your Slack & Jira in < 72h",
-      "Guaranteed North American & European timezone overlap",
-      "Flexible monthly contracts with zero lock-in",
+      "Silicon decapsulation & die microscopy analysis",
+      "Unmarked IC pinout & voltage signature tracing",
+      "Obsolescence management & modern alternative sourcing",
+      "Complete CAD library symbols and footprint generation",
     ],
-    deliverable: "Dedicated technical pods embedded in your sprint cycle",
+    deliverable: "Component identification report with schematic symbol & footprint",
   },
 ];
 
@@ -122,10 +122,10 @@ export default function ServicesPage() {
     <div className="bg-white">
       {/* Page Header */}
       <PageHeader
-        badge="Practice Areas"
-        title="Full-Stack AI & Custom Software"
+        badge="Engineering Disciplines"
+        title="Hardware, RF & Electronics"
         highlightText="Services."
-        description="From autonomous multi-agent pipelines to scalable cloud-native SaaS platforms, explore the 10 engineering disciplines trusted by mid-market enterprises."
+        description="From turnkey Original Design Manufacturing (ODM) to multi-layer PCB reverse engineering and RF electronic countermeasures, explore Haalar Services' core technical capabilities."
         breadcrumbs={[{ label: "Services" }]}
       />
 
@@ -197,35 +197,35 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-[#f54545] font-mono text-xs uppercase tracking-widest font-bold">
-              Collaboration Framework
+              Engineering Framework
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-3">
-              Three Ways to Engage Kodexo Labs
+              Three Ways to Engage Haalar Services
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-neutral-900 p-8 rounded-3xl border border-neutral-800">
-              <span className="text-xs font-mono uppercase text-[#f54545] font-bold">01 · Dedicated Pod</span>
-              <h3 className="text-xl font-bold text-white mt-2">Staff Augmentation</h3>
+              <span className="text-xs font-mono uppercase text-[#f54545] font-bold">01 · Turnkey ODM</span>
+              <h3 className="text-xl font-bold text-white mt-2">Concept to Production</h3>
               <p className="text-sm text-neutral-400 mt-2">
-                Embedded senior engineers and technical leads ready to integrate into your sprints in under 72 hours.
+                Bring your operational requirements or rough concept. We deliver complete electronic schematics, multi-layer PCBs, firmware, CNC casing, and pilot batches.
               </p>
             </div>
 
             <div className="bg-neutral-900 p-8 rounded-3xl border border-[#f54545]/40 relative">
-              <span className="text-xs font-mono uppercase text-[#f54545] font-bold">02 · Full Lifecycle</span>
-              <h3 className="text-xl font-bold text-white mt-2">Turnkey Product Build</h3>
+              <span className="text-xs font-mono uppercase text-[#f54545] font-bold">02 · PCB Reverse Engineering</span>
+              <h3 className="text-xl font-bold text-white mt-2">Form-Fit-Function Drop-In</h3>
               <p className="text-sm text-neutral-400 mt-2">
-                End-to-end architecture, UI/UX design, engineering, testing, and production deployment with guaranteed milestones.
+                Drop-in replacements for obsolete or damaged boards. De-layering, netlist generation, unmarked component decoding, and modern fabrication.
               </p>
             </div>
 
             <div className="bg-neutral-900 p-8 rounded-3xl border border-neutral-800">
-              <span className="text-xs font-mono uppercase text-[#f54545] font-bold">03 · Strategic Advisory</span>
-              <h3 className="text-xl font-bold text-white mt-2">Architecture & Audit</h3>
+              <span className="text-xs font-mono uppercase text-[#f54545] font-bold">03 · OEM & Quality Assembly</span>
+              <h3 className="text-xl font-bold text-white mt-2">IPC-A-610 Class 3</h3>
               <p className="text-sm text-neutral-400 mt-2">
-                2-week deep dive into your AI security, prompt injection defenses, HIPAA compliance, and vector infrastructure.
+                High-precision batch manufacturing, micro-soldering, conformal coating, and 100% benchtop RF spectrum validation in our Islamabad facility.
               </p>
             </div>
           </div>

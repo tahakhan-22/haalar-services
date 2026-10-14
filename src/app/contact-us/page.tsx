@@ -9,10 +9,10 @@ export default function ContactUsPage() {
   const [form, setForm] = useState({
     name: "",
     email: "",
+    phone: "",
     company: "",
-    budget: "$25,000 - $50,000",
-    service: "Agentic AI & Multi-Agent Systems",
-    timeline: "Immediately",
+    service: "Original Design Manufacturing (ODM)",
+    timeline: "Immediate / Urgent",
     message: "",
   });
 
@@ -25,10 +25,10 @@ export default function ContactUsPage() {
   return (
     <div className="bg-white">
       <PageHeader
-        badge="Direct Discovery"
-        title="Let's Architect Your Next Production"
-        highlightText="AI System."
-        description="Speak directly with a Senior AI Solutions Architect. We respond in under 2 hours during business days."
+        badge="Direct Engineering Contact"
+        title="Consult with the Haalar Services"
+        highlightText="Engineering Team."
+        description="Headquartered in Humak Industrial Estate, Islamabad. Contact our technical team for ODM, OEM, reverse engineering, and RF solutions."
         breadcrumbs={[{ label: "Contact Us" }]}
       />
 
@@ -41,10 +41,10 @@ export default function ContactUsPage() {
                 Direct Channels
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 mt-2">
-                We Prioritize Engineering Over Sales
+                Engineering-First Collaboration
               </h2>
               <p className="text-neutral-600 text-sm mt-3 leading-relaxed">
-                When you reach out, you won&apos;t be routed to an aggressive SDR. You will speak with a technical solutions architect who understands your codebase, constraints, and latency targets.
+                Speak directly with senior hardware, RF, and reverse engineering specialists who understand schematic extraction, component decoding, and IPC Class 3 manufacturing.
               </p>
             </div>
 
@@ -54,9 +54,9 @@ export default function ContactUsPage() {
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs text-neutral-500 font-bold uppercase tracking-wider">Email Inquiry</span>
-                  <a href="mailto:hello@kodexolabs.com" className="text-sm font-bold text-neutral-900 block hover:text-[#f54545] transition-colors">
-                    hello@kodexolabs.com
+                  <span className="text-xs text-neutral-500 font-bold uppercase tracking-wider">Email Communication</span>
+                  <a href="mailto:info@haalarservices.com" className="text-sm font-bold text-neutral-900 block hover:text-[#f54545] transition-colors">
+                    info@haalarservices.com
                   </a>
                 </div>
               </div>
@@ -66,33 +66,36 @@ export default function ContactUsPage() {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs text-neutral-500 font-bold uppercase tracking-wider">Direct Telephone</span>
+                  <span className="text-xs text-neutral-500 font-bold uppercase tracking-wider">Direct Contact &amp; WhatsApp</span>
                   <span className="text-sm font-bold text-neutral-900 block">
-                    +1 (512) 890-3490 (Austin, TX)
+                    0333-0947546 / +92 333 0947546
+                  </span>
+                  <span className="text-xs text-neutral-500 block mt-0.5">
+                    PTCL / Fax: +92 51 4490922
                   </span>
                 </div>
               </div>
 
               <div className="flex items-start gap-4 p-5 rounded-2xl bg-neutral-50 border border-neutral-200/80">
                 <div className="size-10 rounded-xl bg-red-100 text-[#f54545] flex items-center justify-center shrink-0">
-                  <Calendar className="w-5 h-5" />
+                  <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs text-neutral-500 font-bold uppercase tracking-wider">Instant Scheduling</span>
+                  <span className="text-xs text-neutral-500 font-bold uppercase tracking-wider">Manufacturing HQ &amp; Lab</span>
                   <span className="text-sm font-bold text-neutral-900 block">
-                    Book an intro 30-min call on Google Meet
+                    Plot No. 261, Humak Industrial Estate, Kahuta Road, Islamabad
                   </span>
                 </div>
               </div>
             </div>
 
             <div className="p-6 rounded-2xl bg-neutral-950 text-white space-y-3 border border-neutral-800">
-              <div className="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+              <div className="flex items-center gap-2 text-[#f54545] text-xs font-bold uppercase tracking-wider">
                 <ShieldCheck className="w-4 h-4" />
-                <span>NDA & Privacy Assurance</span>
+                <span>Confidentiality &amp; NDA Protection</span>
               </div>
               <p className="text-xs text-neutral-400 leading-relaxed">
-                All client project briefs and architectural discussions are governed under strict mutual non-disclosure agreements before review.
+                All client hardware schematics, sample PCBs, RF spectrum requirements, and custom product designs are governed under strict mutual Non-Disclosure Agreements.
               </p>
             </div>
           </div>
@@ -106,19 +109,19 @@ export default function ContactUsPage() {
                   Inquiry Received!
                 </h3>
                 <p className="text-neutral-600 text-sm max-w-md mx-auto leading-relaxed">
-                  Thank you, <strong>{form.name}</strong>. A Senior Solutions Architect has received your brief and will contact you at <strong>{form.email}</strong> shortly.
+                  Thank you, <strong>{form.name}</strong>. An engineering project manager from Haalar Services will review your technical brief and reach out at <strong>{form.email}</strong> promptly.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
                   className="mt-6 px-6 py-2.5 rounded-full bg-neutral-900 text-white text-xs font-bold hover:bg-neutral-800 transition-colors"
                 >
-                  Submit Another Request
+                  Submit Another Inquiry
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <h3 className="text-xl font-bold text-neutral-900 mb-2">
-                  Request an Architecture Review
+                  Request Technical Consultation / Quote
                 </h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -131,20 +134,20 @@ export default function ContactUsPage() {
                       required
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      placeholder="David Miller"
+                      placeholder="Engr. Tariq Mehmood"
                       className="w-full text-sm p-3 rounded-xl border border-neutral-200 focus:outline-none focus:border-[#f54545]"
                     />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-neutral-700 mb-1.5">
-                      Work Email *
+                      Email Address *
                     </label>
                     <input
                       type="email"
                       required
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      placeholder="david@enterprise.com"
+                      placeholder="tariq@organization.com"
                       className="w-full text-sm p-3 rounded-xl border border-neutral-200 focus:outline-none focus:border-[#f54545]"
                     />
                   </div>
@@ -153,61 +156,58 @@ export default function ContactUsPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold text-neutral-700 mb-1.5">
-                      Company / Organization
+                      Contact / Phone Number
                     </label>
                     <input
-                      type="text"
-                      value={form.company}
-                      onChange={(e) => setForm({ ...form, company: e.target.value })}
-                      placeholder="Apex Diagnostics"
+                      type="tel"
+                      value={form.phone}
+                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                      placeholder="0300-1234567"
                       className="w-full text-sm p-3 rounded-xl border border-neutral-200 focus:outline-none focus:border-[#f54545]"
                     />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-neutral-700 mb-1.5">
-                      Primary Service Interest
+                      Primary Service Area
                     </label>
                     <select
                       value={form.service}
                       onChange={(e) => setForm({ ...form, service: e.target.value })}
                       className="w-full text-sm p-3 rounded-xl border border-neutral-200 focus:outline-none focus:border-[#f54545]"
                     >
-                      <option>Agentic AI & Multi-Agent Systems</option>
-                      <option>Custom Software Development</option>
-                      <option>Mobile App Development</option>
-                      <option>Intelligent Automation</option>
-                      <option>AI Security & Compliance Review</option>
-                      <option>Cloud & AI Infrastructure</option>
-                      <option>Staff Augmentation (72h Pods)</option>
+                      <option>Original Design Manufacturing (ODM)</option>
+                      <option>Original Equipment Manufacturing (OEM)</option>
+                      <option>Reverse Engineering of PCBs</option>
+                      <option>RF & Microwave Equipment Development</option>
+                      <option>Embedded Firmware & RTOS</option>
+                      <option>Component Decoding & Schematics</option>
+                      <option>Legacy Equipment Diagnostic & Modernization</option>
                     </select>
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-xs font-semibold text-neutral-700 mb-1.5">
-                    Estimated Budget Range
+                    Organization / Department
                   </label>
-                  <select
-                    value={form.budget}
-                    onChange={(e) => setForm({ ...form, budget: e.target.value })}
+                  <input
+                    type="text"
+                    value={form.company}
+                    onChange={(e) => setForm({ ...form, company: e.target.value })}
+                    placeholder="Defense / Industrial Organization"
                     className="w-full text-sm p-3 rounded-xl border border-neutral-200 focus:outline-none focus:border-[#f54545]"
-                  >
-                    <option>&lt; $25,000 (Proof of Concept)</option>
-                    <option>$25,000 - $50,000 (MVP Build)</option>
-                    <option>$50,000 - $100,000 (Production System)</option>
-                    <option>$100,000+ (Enterprise Overhaul / Dedicated Pods)</option>
-                  </select>
+                  />
                 </div>
 
                 <div>
                   <label className="block text-xs font-semibold text-neutral-700 mb-1.5">
-                    Project Context & Objectives
+                    Technical Specifications / Project Details
                   </label>
                   <textarea
                     rows={4}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    placeholder="Describe your current tech stack, target users, and key deliverables..."
+                    placeholder="Describe your PCB layer count, frequency bands, operational environment, or target deliverables..."
                     className="w-full text-sm p-3 rounded-xl border border-neutral-200 focus:outline-none focus:border-[#f54545] resize-none"
                   />
                 </div>
@@ -217,7 +217,7 @@ export default function ContactUsPage() {
                   className="w-full py-4 rounded-xl bg-[#f54545] text-white text-sm font-bold hover:bg-[#e03535] transition-all flex items-center justify-center gap-2 btn-glow-breath cursor-pointer"
                 >
                   <Send className="w-4 h-4" />
-                  <span>Request Engineering Call</span>
+                  <span>Submit Engineering Inquiry</span>
                 </button>
               </form>
             )}

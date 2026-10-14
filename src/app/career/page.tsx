@@ -1,57 +1,57 @@
 import Link from "next/link";
-import { ArrowUpRight, Briefcase, Zap, Globe, Heart, Award, ArrowRight } from "lucide-react";
+import { ArrowUpRight, Cpu, Radio, Shield, Award, ArrowRight } from "lucide-react";
 import PageHeader from "@/components/common/PageHeader";
 
 const ROLES = [
   {
-    title: "Senior Agentic AI Engineer",
-    department: "AI Research & Systems",
-    location: "Remote (Global)",
+    title: "Senior RF & Microwave Systems Engineer",
+    department: "RF & Countermeasure Systems",
+    location: "Islamabad (Humak Facility)",
     type: "Full-Time",
-    stack: ["LangGraph", "Python 3.12", "FastAPI", "Vector DBs", "Docker"],
-    desc: "Architect and deploy autonomous multi-agent state machines, deterministic evaluation benchmarks, and external tool execution sandboxes for enterprise mid-market clients.",
+    stack: ["Keysight Analyzers", "GaN PAs", "Direct Digital Synthesis", "MATLAB", "Altium"],
+    desc: "Design, simulate, and calibrate high-power RF amplifier stages, Direct Digital Synthesis (DDS) sweepers, and tactical countermeasure antennas across VHF, UHF, and ISM bands.",
   },
   {
-    title: "Staff Full-Stack Engineer",
-    department: "Platform Engineering",
-    location: "Austin, TX or Remote",
+    title: "Senior PCB Reverse Engineering Specialist",
+    department: "Hardware Forensics & EDA",
+    location: "Islamabad (Humak Facility)",
     type: "Full-Time",
-    stack: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "PostgreSQL"],
-    desc: "Build mission-critical web applications, SaaS dashboards, and streaming real-time interfaces powered by React Server Components and cloud-native backends.",
+    stack: ["Altium Designer", "Substrate De-Layering", "Netlist Extraction", "Curve Tracing"],
+    desc: "Perform microscopic de-layering of multi-layer circuit boards, extract complete electrical netlists, decode proprietary silicon, and regenerate production-grade Altium schematics.",
   },
   {
-    title: "Senior MLOps & Infrastructure Engineer",
-    department: "Cloud & Reliability",
-    location: "Remote (US / EMEA)",
+    title: "Embedded Firmware & DSP Engineer",
+    department: "Firmware & Digital Control",
+    location: "Islamabad (Humak Facility)",
     type: "Full-Time",
-    stack: ["vLLM", "TensorRT-LLM", "Kubernetes", "AWS EKS", "Multi-GPU"],
-    desc: "Deploy, auto-scale, and optimize high-throughput self-hosted open-weight LLM clusters with zero telemetry leaks and sub-100ms time-to-first-token latency.",
+    stack: ["C / Modern C++", "FreeRTOS", "ARM Cortex-M", "FPGA", "DSP Filtering"],
+    desc: "Engineer hard real-time bare-metal and FreeRTOS firmware for countermeasure modulators, sensor telemetry interfaces, and DDS frequency control loops with microsecond determinism.",
   },
   {
-    title: "Healthcare AI Compliance & Security Specialist",
-    department: "Governance & Security",
-    location: "Remote (US)",
+    title: "IPC-A-610 Class 3 Assembly & Quality Inspector",
+    department: "OEM Manufacturing & Quality",
+    location: "Islamabad (Humak Facility)",
     type: "Full-Time",
-    stack: ["HIPAA BAA", "SOC 2 Type II", "GDPR", "Adversarial Red-Teaming"],
-    desc: "Audit model architectures, configure PII/PHI redaction proxies, and conduct penetration testing to ensure zero-data-retention compliance across medical deployments.",
+    stack: ["IPC-A-610 Class 3", "SMD Assembly", "BGA Micro-Rework", "Conformal Coating"],
+    desc: "Lead high-reliability SMD assembly operations, inspect micro-solder joints to aerospace/military standards, and execute environmental thermal/vibration stress qualifications.",
   },
 ];
 
 const PERKS = [
-  { title: "Remote-First Worldwide", desc: "Work from wherever you are most productive. We coordinate asynchronously with synchronous core hours." },
-  { title: "$5,000 Annual Learning Budget", desc: "Unlimited books, GPU compute credits for personal research projects, and conference attendance." },
-  { title: "Top-Tier Compensation & Equity", desc: "Competitive global compensation packages benchmarked against US tech tiers." },
-  { title: "Zero Bureaucracy", desc: "Engineers talk directly with technical decision-makers. No endless steering committees or busywork." },
+  { title: "Advanced EDA & RF Testbench", desc: "Access high-end Keysight/Rohde & Schwarz spectrum analyzers, automated pick-and-place lines, and PCB de-layering labs." },
+  { title: "Indigenous Sovereign R&D", desc: "Build strategic electronic systems and countermeasures with full engineering autonomy and direct national impact." },
+  { title: "IPC-A-610 Class 3 Certification", desc: "Formal sponsorship and continuous professional training in military and aerospace soldering and quality inspection." },
+  { title: "Islamabad Engineering Facility", desc: "Modern hardware laboratory and production benches located at Plot No. 261, Humak Industrial Estate, Kahuta Road." },
 ];
 
 export default function CareerPage() {
   return (
     <div className="bg-white">
       <PageHeader
-        badge="Join The Pod"
-        title="Build the Future of Agentic"
-        highlightText="AI Systems."
-        description="We are a team of senior engineers and researchers who care deeply about shipping real code to production. Explore our open roles."
+        badge="Join Haalar Engineering"
+        title="Engineer the Next Generation of Defense &"
+        highlightText="Electronic Systems."
+        description="We are a team of hardware architects, RF engineers, and reverse-engineering specialists who design and manufacture critical electronic systems. Explore our open roles."
         breadcrumbs={[{ label: "Careers" }]}
       />
 
@@ -60,10 +60,10 @@ export default function CareerPage() {
         <div className="mb-20">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-[#f54545] font-mono text-xs uppercase tracking-widest font-bold">
-              Engineering Culture
+              Engineering Environment
             </span>
             <h2 className="text-3xl font-extrabold text-neutral-900 mt-2">
-              Why Engineers Thrive at Kodexo
+              Why Engineers Choose Haalar Services
             </h2>
           </div>
 
@@ -86,11 +86,11 @@ export default function CareerPage() {
                 Open Opportunities
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 mt-1">
-                Featured Engineering Roles
+                Featured Hardware & Engineering Roles
               </h2>
             </div>
             <span className="text-xs font-bold text-neutral-500 bg-neutral-100 px-3 py-1.5 rounded-full">
-              4 Roles Available
+              4 Roles Available · Islamabad Facility
             </span>
           </div>
 

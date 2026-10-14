@@ -16,10 +16,10 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2 group">
           <div className="flex items-center">
             <span className="font-heading tracking-tight text-2xl md:text-3xl font-extrabold text-neutral-950">
-              KODEXO
+              HAALAR
             </span>
             <span className="font-sans text-2xl md:text-3xl font-bold text-[#f54545] ml-1">
-              LABS
+              SERVICES
             </span>
             <span className="h-2 w-2 rounded-full bg-[#f54545] ml-1 animate-pulse" />
           </div>

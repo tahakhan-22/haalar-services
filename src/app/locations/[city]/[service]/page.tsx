@@ -3,23 +3,22 @@ import { MapPin, ArrowRight, CheckCircle2, ShieldCheck, ArrowUpRight } from "luc
 import PageHeader from "@/components/common/PageHeader";
 
 const CITY_NAMES: Record<string, string> = {
-  "austin-tx": "Austin, Texas",
-  "new-york": "New York, NY",
-  "san-francisco-ca": "San Francisco, CA",
-  "chicago-il": "Chicago, IL",
+  "islamabad-pk": "Islamabad, Pakistan",
+  "karachi-pk": "Karachi, Pakistan",
+  "lahore-pk": "Lahore, Pakistan",
+  "rawalpindi-pk": "Rawalpindi, Pakistan",
+  "dubai-uae": "Dubai, UAE",
   "london-uk": "London, United Kingdom",
-  "los-angeles-ca": "Los Angeles, CA",
-  "miami-fl": "Miami, FL",
 };
 
 export function generateStaticParams() {
   return [
-    { city: "austin-tx", service: "custom-software-development" },
-    { city: "new-york", service: "mobile-app-development" },
-    { city: "new-york", service: "custom-software-development" },
-    { city: "san-francisco-ca", service: "mobile-app-development" },
-    { city: "chicago-il", service: "custom-software-development" },
-    { city: "london-uk", service: "custom-software-development" },
+    { city: "islamabad-pk", service: "odm-manufacturing" },
+    { city: "islamabad-pk", service: "pcb-reverse-engineering" },
+    { city: "karachi-pk", service: "oem-production" },
+    { city: "lahore-pk", service: "rf-microwave-systems" },
+    { city: "rawalpindi-pk", service: "odm-manufacturing" },
+    { city: "dubai-uae", service: "rf-microwave-systems" },
   ];
 }
 
@@ -35,10 +34,10 @@ export default async function LocationServicePage({
   return (
     <div className="bg-white min-h-screen">
       <PageHeader
-        badge={`Local Hub · ${cityName}`}
+        badge={`Regional Hub · ${cityName}`}
         title={`${serviceName} in`}
         highlightText={cityName}
-        description={`Enterprise-grade software and AI systems engineered by Kodexo Labs for mid-market and growth-stage companies in ${cityName}.`}
+        description={`Defense and industrial grade hardware engineering, PCB reverse engineering, and RF systems delivered by Haalar Services for organizations in ${cityName}.`}
         breadcrumbs={[{ label: "Locations" }, { label: cityName }, { label: serviceName }]}
       />
 
@@ -48,30 +47,30 @@ export default async function LocationServicePage({
           <div className="lg:col-span-8 space-y-8">
             <div>
               <span className="text-[#f54545] font-mono text-xs uppercase tracking-widest font-bold">
-                Regional Engineering Pod
+                Regional Engineering Delivery
               </span>
               <h2 className="text-3xl font-extrabold text-neutral-900 mt-2">
-                Why Companies in {cityName} Partner with Kodexo Labs
+                Why Organizations in {cityName} Partner with Haalar Services
               </h2>
               <p className="text-neutral-600 mt-4 text-base leading-relaxed">
-                Whether you need to architect an autonomous multi-agent system, build an offline-first mobile application, or modernize monolithic databases, our engineers in {cityName} provide synchronous timezone collaboration and enterprise compliance.
+                Whether you need turnkey Original Design Manufacturing (ODM), precision multi-layer PCB reverse engineering, or tactical RF countermeasure hardware, our engineering team provides sovereign capabilities, military-standard durability, and complete intellectual property transfer.
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-6 rounded-2xl bg-neutral-50 border border-neutral-200">
                 <CheckCircle2 className="w-5 h-5 text-emerald-500 mb-2" />
-                <h3 className="font-bold text-neutral-900 text-base">Direct Senior Access</h3>
+                <h3 className="font-bold text-neutral-900 text-base">Direct Lead Engineers</h3>
                 <p className="text-xs text-neutral-600 mt-1">
-                  Work directly with senior solutions architects aligned with {cityName} business hours.
+                  Collaborate directly with hardware, RF, and firmware specialists from project inception.
                 </p>
               </div>
 
               <div className="p-6 rounded-2xl bg-neutral-50 border border-neutral-200">
                 <ShieldCheck className="w-5 h-5 text-emerald-500 mb-2" />
-                <h3 className="font-bold text-neutral-900 text-base">HIPAA & SOC 2 Audited</h3>
+                <h3 className="font-bold text-neutral-900 text-base">IPC-A-610 Class 3 Standards</h3>
                 <p className="text-xs text-neutral-600 mt-1">
-                  Proven compliance track record serving regional healthcare, legal, and financial leaders.
+                  All electronic assemblies built and tested to high-reliability military and aerospace specifications.
                 </p>
               </div>
             </div>
@@ -79,20 +78,20 @@ export default async function LocationServicePage({
             <div className="p-8 rounded-3xl bg-neutral-950 text-white space-y-4 border border-neutral-800">
               <div className="flex items-center gap-2 text-[#f54545] text-xs font-bold uppercase tracking-wider">
                 <MapPin className="w-4 h-4" />
-                <span>Local Presence: {cityName}</span>
+                <span>Regional Client Support: {cityName}</span>
               </div>
               <h3 className="text-xl font-bold text-white">
                 Ready to scope your {serviceName.toLowerCase()} project?
               </h3>
               <p className="text-xs text-neutral-400 max-w-xl leading-relaxed">
-                We deliver an interactive working prototype within 14 days to validate latency, UX, and accuracy before full production rollout.
+                Contact our engineering facility in Islamabad. We provide technical requirement reviews, non-destructive PCB assessments, and rapid bench prototyping.
               </p>
               <div className="pt-2">
                 <Link
                   href="/book-a-meeting"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#f54545] text-white text-xs font-bold hover:bg-[#e03535] transition-all btn-glow-breath"
                 >
-                  <span>Book Scoping Call with {cityName} Lead</span>
+                  <span>Book Consultation with Haalar Engineers</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -103,34 +102,44 @@ export default async function LocationServicePage({
           <div className="lg:col-span-4 space-y-6">
             <div className="bg-neutral-50 p-6 rounded-3xl border border-neutral-200">
               <span className="text-xs font-mono font-bold uppercase text-neutral-400 block mb-3">
-                Related Services in {cityName}
+                Related Disciplines
               </span>
               <ul className="space-y-2.5 text-xs font-semibold">
                 <li>
-                  <Link href="/services/agentic-ai-development" className="text-neutral-700 hover:text-[#f54545] flex items-center justify-between">
-                    <span>Agentic AI Development</span>
+                  <Link href="/services/odm-manufacturing" className="text-neutral-700 hover:text-[#f54545] flex items-center justify-between">
+                    <span>Original Design Manufacturing</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/custom-software" className="text-neutral-700 hover:text-[#f54545] flex items-center justify-between">
-                    <span>Custom Software Development</span>
+                  <Link href="/services/oem-production" className="text-neutral-700 hover:text-[#f54545] flex items-center justify-between">
+                    <span>Original Equipment Manufacturing</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/mobile-app" className="text-neutral-700 hover:text-[#f54545] flex items-center justify-between">
-                    <span>Mobile App Development</span>
+                  <Link href="/services/pcb-reverse-engineering" className="text-neutral-700 hover:text-[#f54545] flex items-center justify-between">
+                    <span>Reverse Engineering of PCBs</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/ai-security-compliance" className="text-neutral-700 hover:text-[#f54545] flex items-center justify-between">
-                    <span>AI Security & Governance</span>
+                  <Link href="/services/rf-microwave-systems" className="text-neutral-700 hover:text-[#f54545] flex items-center justify-between">
+                    <span>RF & Microwave Engineering</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
                 </li>
               </ul>
+            </div>
+
+            <div className="bg-neutral-900 p-6 rounded-3xl text-white border border-neutral-800 space-y-2">
+              <span className="text-xs font-mono uppercase text-[#f54545] font-bold block">Headquarters Facility</span>
+              <p className="text-xs text-neutral-300 leading-relaxed">
+                Plot No. 261, Humak Industrial Estate, Kahuta Road, Islamabad, Pakistan.
+              </p>
+              <div className="text-xs text-neutral-400 pt-2">
+                info@haalarservices.com · 0333-0947546
+              </div>
             </div>
           </div>
         </div>

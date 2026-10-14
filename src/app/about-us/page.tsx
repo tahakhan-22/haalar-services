@@ -1,43 +1,52 @@
 import Link from "next/link";
-import { ShieldCheck, Star, Users, Award, MapPin, ArrowRight } from "lucide-react";
+import { ShieldCheck, Star, Award, MapPin, ArrowRight, Cpu, Radio, Wrench } from "lucide-react";
 import PageHeader from "@/components/common/PageHeader";
 
 const PRINCIPLES = [
   {
-    title: "AI-Native, Not Prompt Wrappers",
-    desc: "We don't build toys. We build autonomous agentic workflows, deterministic evaluation suites, and scalable microservices that stand up to enterprise compliance standards.",
+    title: "Disrupt · Defend · Dominate",
+    desc: "We develop indigenous, high-reliability electronic systems designed to outperform foreign dependency while delivering unmatched operational durability.",
   },
   {
-    title: "Proof in Production in 14 Days",
-    desc: "Long spec documents don't validate products — running code does. We deliver an interactive, production-grade proof of concept in two weeks to validate latency and accuracy.",
+    title: "Precision Reverse Engineering",
+    desc: "When original OEM blueprints are lost, our de-layering and optical analysis benches reconstruct complete schematics, netlists, and component decoding.",
   },
   {
-    title: "Compliance & Security by Default",
-    desc: "From healthcare HIPAA BAA protocols to SOC 2 Type II audit logs and zero-data-retention endpoints, security is engineered from the first commit.",
+    title: "IPC-A-610 Military Compliance",
+    desc: "From component placement to thermal mechanical enclosures, our manufacturing lines adhere strictly to military-grade IPC standards.",
   },
   {
-    title: "You Own 100% of Intellectual Property",
-    desc: "Zero licensing lock-in. Full access to repositories, infrastructure terraform scripts, model weights, and clean documentation upon every milestone.",
+    title: "Concept-to-Deployment ODM",
+    desc: "All our clients need to bring is an operational requirement. We manage electronic design, multi-layer layout, firmware, and pilot fabrication.",
   },
 ];
 
-const OFFICES = [
-  { city: "Austin, Texas (HQ)", address: "Downtown Technology Hub", focus: "Executive Leadership & Solutions Architecture" },
-  { city: "New York, NY", address: "Manhattan Engineering Pod", focus: "Enterprise LegalTech & FinTech Delivery" },
-  { city: "San Francisco, CA", address: "Bay Area Labs", focus: "Foundation Models & Agentic AI Research" },
-  { city: "Chicago, IL", address: "Loop Innovation Center", focus: "Logistics & Supply Chain Automation" },
-  { city: "London, UK", address: "Shoreditch Tech Hub", focus: "EMEA Operations & GDPR Governance" },
-  { city: "Karachi, Pakistan", address: "Clifton Technology Park", focus: "Full-Stack Engineering & 24/7 Operations" },
+const FACILITIES = [
+  {
+    title: "Islamabad R&D & Manufacturing HQ",
+    address: "Plot No. 261, Humak Industrial Estate, Kahuta Road, Islamabad",
+    focus: "PCB Reverse Engineering, SMT Assembly & RF Microwave Testing",
+  },
+  {
+    title: "Precision Mechanical & CNC Lab",
+    address: "Humak Industrial Complex, Islamabad",
+    focus: "Mil-Grade Heat-Dissipating Enclosures & Directional Antenna Masts",
+  },
+  {
+    title: "RF & High-Frequency Testing Range",
+    address: "Islamabad Technical Facility",
+    focus: "GHz Spectrum Analysis, DDS Signal Sweepers & Countermeasure Evals",
+  },
 ];
 
 export default function AboutUsPage() {
   return (
     <div className="bg-white">
       <PageHeader
-        badge="Company Overview"
-        title="We are Kodexo Labs — The AI-Native"
-        highlightText="Development Partner."
-        description="Founded in 2021, Kodexo Labs is a specialized software engineering firm building web, mobile, and agentic AI systems for mid-market and enterprise organizations."
+        badge="About Haalar Services"
+        title="Disrupt · Defend · Dominate — Next-Gen"
+        highlightText="Hardware & Electronics."
+        description="We are specialized in providing reliable and trusted next-generation hardware and software solutions using latest innovation technologies."
         breadcrumbs={[{ label: "About Us" }]}
       />
 
@@ -46,49 +55,49 @@ export default function AboutUsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 space-y-6">
             <span className="text-[#f54545] font-mono text-xs uppercase tracking-widest font-bold">
-              Our Origin Story
+              Company Mission & Vision
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 tracking-tight">
-              Bridging the Gap Between Cutting-Edge AI Research & Production Engineering
+              Indigenous Innovation for Defense, Aerospace &amp; Industrial Systems
             </h2>
             <p className="text-neutral-600 text-base leading-relaxed">
-              In 2021, Kodexo Labs was founded on a simple observation: mid-market enterprises were being left behind. Large consultancies charged millions for slow theoretical decks, while traditional dev shops lacked the machine learning depth to build reliable production AI.
+              <strong>Haalar Services</strong> is a premier engineering and manufacturing firm headquartered in the Humak Industrial Estate, Islamabad. Our mission is to provide indigenous and cost-effective hardware, electronic modules, and firmware solutions to the defense, aerospace, logistics, and critical security markets.
             </p>
             <p className="text-neutral-600 text-base leading-relaxed">
-              We assembled a team of senior software architects, AI researchers, and full-stack builders who treat engineering as a craft. Today, we have shipped 51 production AI systems across 25+ industries, recognized as a <strong>Clutch Elite AI Firm</strong> with a 4.9/5 client satisfaction rating.
+              Our multidisciplinary engineering team combines electrical engineers, mechanical designers, and embedded software architects. We bridge the gap between initial ideation and turnkey production, executing advanced <strong>Original Design Manufacturing (ODM)</strong>, <strong>Original Equipment Manufacturing (OEM)</strong>, and multi-layer <strong>PCB reverse engineering</strong> under strict IPC standards.
             </p>
 
             <div className="pt-4 flex flex-wrap gap-6 border-t border-neutral-100">
               <div>
-                <span className="text-3xl font-extrabold text-neutral-900">51</span>
-                <p className="text-xs text-neutral-500 font-semibold mt-0.5">Shipped to Production</p>
+                <span className="text-3xl font-extrabold text-neutral-900">IPC-A-610</span>
+                <p className="text-xs text-neutral-500 font-semibold mt-0.5">Manufacturing Standard</p>
               </div>
               <div>
-                <span className="text-3xl font-extrabold text-[#f54545]">4.9★</span>
-                <p className="text-xs text-neutral-500 font-semibold mt-0.5">Top-Rated on Clutch</p>
+                <span className="text-3xl font-extrabold text-[#f54545]">100%</span>
+                <p className="text-xs text-neutral-500 font-semibold mt-0.5">Indigenous Capability</p>
               </div>
               <div>
-                <span className="text-3xl font-extrabold text-neutral-900">6</span>
-                <p className="text-xs text-neutral-500 font-semibold mt-0.5">Global Office Hubs</p>
+                <span className="text-3xl font-extrabold text-neutral-900">40+</span>
+                <p className="text-xs text-neutral-500 font-semibold mt-0.5">Electronic Systems Shipped</p>
               </div>
               <div>
-                <span className="text-3xl font-extrabold text-neutral-900">2021</span>
-                <p className="text-xs text-neutral-500 font-semibold mt-0.5">Founded in Austin, TX</p>
+                <span className="text-3xl font-extrabold text-neutral-900">Plot 261</span>
+                <p className="text-xs text-neutral-500 font-semibold mt-0.5">Humak Industrial Estate</p>
               </div>
             </div>
           </div>
 
           <div className="lg:col-span-5 bg-neutral-950 text-white p-8 sm:p-10 rounded-3xl border border-neutral-800 shadow-xl space-y-6">
             <div className="flex items-center gap-3">
-              <Star className="w-6 h-6 text-amber-400 fill-amber-400" />
-              <h3 className="text-lg font-bold text-white">Clutch Elite AI Firm 2025</h3>
+              <ShieldCheck className="w-6 h-6 text-[#f54545]" />
+              <h3 className="text-lg font-bold text-white">Military & Industrial Quality Objective</h3>
             </div>
             <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">
-              &quot;Kodexo Labs delivered our clinical AI engine in record time. Their architectural thoroughness around HIPAA compliance and latency optimization was exceptional.&quot;
+              &quot;Our company quality objective is to deliver products and services of uncompromised reliability through continuous quality improvement based on our mission to provide indigenous, field-proven solutions to strategic sectors.&quot;
             </p>
             <div className="border-t border-neutral-800 pt-4 flex items-center justify-between text-xs text-neutral-400">
-              <span>Verified Client Review</span>
-              <span className="text-white font-bold">14 Reviews (100% 5-Star)</span>
+              <span>Standard Compliance</span>
+              <span className="text-white font-bold">IPC Class 3 & Mil-Spec Mechanicals</span>
             </div>
           </div>
         </div>
@@ -99,7 +108,7 @@ export default function AboutUsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[#f54545] font-mono text-xs uppercase tracking-widest font-bold">
-              Engineering DNA
+              Engineering Pillars
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 mt-2">
               Our Core Principles
@@ -118,29 +127,29 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* Global Offices */}
+      {/* Facilities & Address */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#f54545] font-mono text-xs uppercase tracking-widest font-bold">
-            Worldwide Footprint
+            Engineering Facilities
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 mt-2">
-            Global Engineering Presence
+            R&D, Testing & Manufacturing Centers
           </h2>
           <p className="text-neutral-600 text-sm sm:text-base mt-3">
-            Providing around-the-clock development and synchronous timezone collaboration across North America and Europe.
+            Operating from the Humak Industrial Estate in Islamabad with dedicated laboratories for reverse engineering, RF testing, and assembly.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {OFFICES.map((off, idx) => (
-            <div key={idx} className="p-6 rounded-2xl border border-neutral-200 hover:border-[#f54545]/40 transition-colors bg-white">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {FACILITIES.map((fac, idx) => (
+            <div key={idx} className="p-8 rounded-3xl border border-neutral-200 hover:border-[#f54545]/40 transition-colors bg-white">
               <div className="flex items-center gap-2 mb-2 text-[#f54545]">
                 <MapPin className="w-4 h-4" />
-                <h3 className="font-bold text-neutral-900 text-base">{off.city}</h3>
+                <h3 className="font-bold text-neutral-900 text-base">{fac.title}</h3>
               </div>
-              <p className="text-xs font-semibold text-neutral-500">{off.address}</p>
-              <p className="text-xs text-neutral-600 mt-2 pt-2 border-t border-neutral-100">{off.focus}</p>
+              <p className="text-xs font-semibold text-neutral-500">{fac.address}</p>
+              <p className="text-xs text-neutral-600 mt-3 pt-3 border-t border-neutral-100">{fac.focus}</p>
             </div>
           ))}
         </div>

@@ -2,79 +2,85 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, TrendingUp, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, Zap } from "lucide-react";
 import PageHeader from "@/components/common/PageHeader";
 
 const PORTFOLIO_ITEMS = [
   {
-    title: "Teacher AI",
-    category: "EdTech",
-    metric: "$5M+",
-    metricLabel: "First-Year Revenue",
-    client: "Teacher AI Inc.",
+    slug: "alpha-fire-pak-1",
+    title: "Alpha Fire Handheld Jammer PAK-1",
+    category: "Defense & Counter-UAS",
+    metric: "90m+",
+    metricLabel: "Effective Jamming Radius",
+    client: "Defense & Strategic Units",
     summary:
-      "Engineered an autonomous multimodal tutoring engine with personalized speech synthesis, real-time assessment scoring, and custom fine-tuned math models.",
-    tags: ["Next.js 15", "Python", "FastAPI", "OpenAI Fine-Tuning", "CloudFront"],
-    bgClass: "from-amber-500/10 to-red-500/10",
+      "Compact, battery-operated multi-frequency handheld defense countermeasure with directional antenna array, two spot frequencies, and 2-hour continuous runtime.",
+    tags: ["RF Countermeasures", "Handheld", "Two Spot Frequencies", "Directional Array"],
+    bgClass: "from-red-500/10 to-neutral-900/40",
   },
   {
-    title: "SmartMedHx & Medico-Legal AI",
-    category: "Healthcare",
-    metric: "42",
-    metricLabel: "Active Providers & Clinics",
-    client: "SmartMedHx Network",
+    slug: "stos-dds-jammer",
+    title: "STOS Direct Digital Synthesis (DDS) Jammer",
+    category: "RF & Electronic Systems",
+    metric: "70m",
+    metricLabel: "Radius Coverage",
+    client: "Strategic Installation Security",
     summary:
-      "HIPAA-compliant autonomous clinical chart extraction and legal cross-examination timeline generation from 1,000+ page medical records.",
-    tags: ["HIPAA Compliant", "Multi-Agent System", "SOC 2 Type II", "LangGraph"],
-    bgClass: "from-teal-500/10 to-cyan-500/10",
+      "Advanced DDS multi-channel frequency sweeping countermeasure module with 12V DC input, sweep -25MHz, and precision dual-antenna RF transmission.",
+    tags: ["Direct Digital Synthesis", "Sweep -25MHz", "Dual Antenna", "12V Battery"],
+    bgClass: "from-blue-500/10 to-neutral-900/40",
   },
   {
-    title: "Diesel Laptops Diagnostic AI",
-    category: "Automotive",
-    metric: "68%",
-    metricLabel: "Faster Diagnostic Resolution",
-    client: "Diesel Laptops (Inc. 5000)",
+    slug: "alpha-fire-vehicle-mount",
+    title: "Alpha Fire Vehicle Mount Station",
+    category: "Mobile Tactical",
+    metric: "200m+",
+    metricLabel: "Protection Perimeter",
+    client: "VIP Escort & Tactical Convoy",
     summary:
-      "Enterprise diagnostic search engine parsing millions of heavy-duty truck error codes, schematics, and mechanical repair work orders.",
-    tags: ["Hybrid RAG", "Computer Vision", "Self-Hosted LLMs", "AWS Bedrock"],
-    bgClass: "from-blue-500/10 to-indigo-500/10",
+      "High-power tactical vehicle-mounted electronic countermeasure station engineered for convoy perimeter defense with wideband multi-frequency suppression.",
+    tags: ["Vehicle Mount", "Tactical Mobile", "High-Power PA", "Convoy Defense"],
+    bgClass: "from-amber-500/10 to-neutral-900/40",
   },
   {
-    title: "Extensiv Warehouse Automation",
-    category: "Logistics",
-    metric: "3.2x",
-    metricLabel: "Throughput Acceleration",
-    client: "Extensiv 3PL Suite",
+    slug: "green-arrow-ism",
+    title: "Green Arrow (ISM Band) Module",
+    category: "RF & Electronic Systems",
+    metric: "2.4 GHz",
+    metricLabel: "ISM Frequency Band",
+    client: "Perimeter Frequency Mitigation",
     summary:
-      "Multi-tenant inventory reconciliation and automated 3PL order routing across distributed fulfillment facilities with zero manual intervention.",
-    tags: ["Microservices", "Event-Driven", "Tailwind CSS", "PostgreSQL"],
-    bgClass: "from-purple-500/10 to-pink-500/10",
+      "Specialized ISM band jamming module (2400-2520 MHz) with configurable bandwidth, 80m disruption radius, active/reactive modes, and high-efficiency heat sink.",
+    tags: ["2400-2520 MHz", "ISM Band", "Active/Reactive", "VCO"],
+    bgClass: "from-emerald-500/10 to-neutral-900/40",
   },
   {
-    title: "Zendrop Global Fulfillment AI",
-    category: "Logistics",
-    metric: "99.8%",
-    metricLabel: "Fulfillment Accuracy",
-    client: "Zendrop E-Commerce",
+    slug: "green-arrow-100-101",
+    title: "Green Arrow 100 / 101 Jammer Modules",
+    category: "RF & Electronic Systems",
+    metric: "50W+",
+    metricLabel: "RF Output Power",
+    client: "Tactical Defense Formations",
     summary:
-      "Automated dropshipping supply chain routing, inventory sync, and intelligent price elasticity estimation engine.",
-    tags: ["FastAPI", "React", "Redis", "Celery", "PostgreSQL"],
-    bgClass: "from-emerald-500/10 to-teal-500/10",
+      "Modular high-power RF disruption units engineered for wideband VHF/UHF suppression, equipped with automatic thermal shutdown and VSWR mismatch protection.",
+    tags: ["VHF/UHF", "High Power PA", "VSWR Protection", "Modular Rack"],
+    bgClass: "from-purple-500/10 to-neutral-900/40",
   },
   {
-    title: "Sell The Trend SaaS Modernization",
-    category: "E-Commerce",
-    metric: "4.8★",
-    metricLabel: "App Store Rating",
-    client: "Sell The Trend",
+    slug: "jammer-testing-device",
+    title: "Jammer Testing & Validation Device",
+    category: "Diagnostic Hardware",
+    metric: "100%",
+    metricLabel: "Bench Calibration Accuracy",
+    client: "Field Maintenance Depots",
     summary:
-      "End-to-end frontend and backend rebuild of the industry's leading viral e-commerce product discovery suite.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "GraphQL"],
-    bgClass: "from-red-500/10 to-orange-500/10",
+      "Portable diagnostic and calibration test set enabling field engineers to verify RF power output, frequency accuracy, and harmonic integrity across jammer modules.",
+    tags: ["Bench Diagnostics", "RF Power Metering", "Field Calibration", "Handheld"],
+    bgClass: "from-rose-500/10 to-neutral-900/40",
   },
 ];
 
-const CATEGORIES = ["All", "Healthcare", "EdTech", "Automotive", "Logistics", "E-Commerce"];
+const CATEGORIES = ["All", "Defense & Counter-UAS", "RF & Electronic Systems", "Mobile Tactical", "Diagnostic Hardware"];
 
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -87,11 +93,11 @@ export default function PortfolioPage() {
   return (
     <div className="bg-white">
       <PageHeader
-        badge="Case Studies"
-        title="Production Systems & Measurable"
-        highlightText="Outcomes."
-        description="Explore 25+ real-world products engineered and shipped by Kodexo Labs across regulated industries and growth-stage platforms."
-        breadcrumbs={[{ label: "Portfolio" }]}
+        badge="Hardware & Systems"
+        title="Tactical Products & Deployed"
+        highlightText="Systems."
+        description="Explore advanced electronic warfare countermeasures, Direct Digital Synthesis (DDS) modules, and precision diagnostic hardware indigenously engineered by Haalar Services."
+        breadcrumbs={[{ label: "Products & Portfolio" }]}
       />
 
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,9 +120,9 @@ export default function PortfolioPage() {
 
         {/* Portfolio Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filtered.map((item, idx) => (
+          {filtered.map((item) => (
             <div
-              key={idx}
+              key={item.slug}
               className={`rounded-3xl p-8 border border-neutral-200 bg-gradient-to-br ${item.bgClass} hover-card-elevate flex flex-col justify-between`}
             >
               <div>
@@ -125,8 +131,8 @@ export default function PortfolioPage() {
                     {item.category}
                   </span>
                   <div className="flex items-center gap-1 text-[11px] font-bold text-neutral-800 bg-white px-2.5 py-0.5 rounded-full border border-neutral-200">
-                    <TrendingUp className="w-3 h-3 text-emerald-600" />
-                    <span>Verified</span>
+                    <ShieldCheck className="w-3 h-3 text-emerald-600" />
+                    <span>Field Verified</span>
                   </div>
                 </div>
 
@@ -143,7 +149,7 @@ export default function PortfolioPage() {
                   {item.title}
                 </h3>
                 <span className="text-xs text-neutral-500 font-medium block mt-0.5">
-                  Client: {item.client}
+                  Deployment: {item.client}
                 </span>
 
                 <p className="text-neutral-600 text-xs sm:text-sm mt-3 leading-relaxed">
@@ -164,10 +170,10 @@ export default function PortfolioPage() {
 
               <div className="mt-6 pt-4 border-t border-neutral-200/60">
                 <Link
-                  href="/contact-us"
+                  href={`/portfolio/${item.slug}`}
                   className="inline-flex items-center gap-1 text-xs font-bold text-neutral-900 hover:text-[#f54545] transition-colors"
                 >
-                  <span>Request Technical Architecture Brief</span>
+                  <span>View Technical Specifications</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

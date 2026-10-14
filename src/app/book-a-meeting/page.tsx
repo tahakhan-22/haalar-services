@@ -14,22 +14,22 @@ const DATES = [
 ];
 
 const TIME_SLOTS = [
-  "09:00 AM",
-  "10:30 AM",
-  "01:00 PM",
-  "02:30 PM",
-  "04:00 PM",
+  "10:00 AM",
+  "11:30 AM",
+  "02:00 PM",
+  "03:30 PM",
+  "05:00 PM",
 ];
 
 export default function BookMeetingPage() {
   const router = useRouter();
   const [selectedDate, setSelectedDate] = useState("Oct 20");
-  const [selectedTime, setSelectedTime] = useState("10:30 AM");
+  const [selectedTime, setSelectedTime] = useState("11:30 AM");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     company: "",
-    topic: "Agentic AI Scoping",
+    topic: "Turnkey ODM & Hardware Prototyping",
   });
 
   const handleBooking = (e: React.FormEvent) => {
@@ -41,10 +41,10 @@ export default function BookMeetingPage() {
   return (
     <div className="bg-white min-h-screen">
       <PageHeader
-        badge="Direct Calendar"
-        title="Book a 30-Minute Architecture"
-        highlightText="Scoping Call."
-        description="Select a time that suits your team. You will speak directly with a Senior AI Solutions Architect with zero sales intermediaries."
+        badge="Direct Consultation"
+        title="Book an Engineering Scoping"
+        highlightText="Session."
+        description="Select a time that suits your team. You will speak directly with a Senior Hardware, RF, or PCB Engineering Lead from Haalar Services."
         breadcrumbs={[{ label: "Book a Meeting" }]}
       />
 
@@ -54,32 +54,32 @@ export default function BookMeetingPage() {
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-neutral-950 text-white p-8 rounded-3xl border border-neutral-800 shadow-xl space-y-6">
               <div className="flex items-center gap-4">
-                <div className="size-14 rounded-2xl bg-[#f54545] text-white flex items-center justify-center font-bold text-xl">
-                  KL
+                <div className="size-14 rounded-2xl bg-[#f54545] text-white flex items-center justify-center font-bold text-xl tracking-wider">
+                  HS
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">Technical Scoping Session</h3>
-                  <span className="text-xs text-neutral-400">30 Mins · Google Meet Video</span>
+                  <h3 className="text-lg font-bold text-white">Hardware Technical Session</h3>
+                  <span className="text-xs text-neutral-400">30 Mins · Video / Teleconference</span>
                 </div>
               </div>
 
               <div className="space-y-3 pt-4 border-t border-neutral-800 text-xs sm:text-sm text-neutral-300">
                 <div className="flex items-center gap-3">
                   <Video className="w-4 h-4 text-[#f54545] shrink-0" />
-                  <span>Interactive web conferencing via Google Meet</span>
+                  <span>Technical conferencing with Islamabad R&D Engineering Leads</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Clock className="w-4 h-4 text-[#f54545] shrink-0" />
-                  <span>30 minutes focused on your architectural constraints</span>
+                  <span>30 minutes focused on your hardware, RF, or PCB constraints</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Protected under mutual Non-Disclosure Agreement</span>
+                  <span>Protected under mutual Non-Disclosure Agreement (NDA)</span>
                 </div>
               </div>
 
               <div className="p-4 rounded-2xl bg-neutral-900 border border-neutral-800 text-xs text-neutral-400 leading-relaxed">
-                💡 <strong>What we will cover:</strong> Review of your existing data pipelines, model selection criteria (latency vs accuracy), infrastructure hosting constraints (HIPAA/VPC), and a preliminary 14-day prototype roadmap.
+                💡 <strong>What we will cover:</strong> Review of your operational requirement, PCB reverse-engineering feasibility, RF frequency/power parameters, IPC-A-610 Class 3 manufacturing standards, and preliminary prototype timelines.
               </div>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function BookMeetingPage() {
             <form onSubmit={handleBooking} className="space-y-6">
               <div>
                 <label className="block text-xs uppercase font-mono tracking-wider font-bold text-neutral-500 mb-3">
-                  1. Select a Date (Central Time - US)
+                  1. Select a Date (PKT / UTC+5)
                 </label>
                 <div className="grid grid-cols-5 gap-2 sm:gap-3">
                   {DATES.map((d) => (
@@ -134,7 +134,7 @@ export default function BookMeetingPage() {
 
               <div className="pt-4 border-t border-neutral-100 space-y-4">
                 <label className="block text-xs uppercase font-mono tracking-wider font-bold text-neutral-500">
-                  3. Your Contact Information
+                  3. Your Contact & Organization Details
                 </label>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -152,7 +152,7 @@ export default function BookMeetingPage() {
                     <input
                       type="email"
                       required
-                      placeholder="Work Email"
+                      placeholder="Official / Work Email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full text-xs sm:text-sm p-3 rounded-xl border border-neutral-200 focus:outline-none focus:border-[#f54545]"
@@ -163,7 +163,7 @@ export default function BookMeetingPage() {
                 <div>
                   <input
                     type="text"
-                    placeholder="Company / Product Name"
+                    placeholder="Organization / Department Name"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                     className="w-full text-xs sm:text-sm p-3 rounded-xl border border-neutral-200 focus:outline-none focus:border-[#f54545]"
@@ -175,7 +175,7 @@ export default function BookMeetingPage() {
                 type="submit"
                 className="w-full py-4 rounded-xl bg-[#f54545] text-white text-sm font-bold hover:bg-[#e03535] transition-all flex items-center justify-center gap-2 btn-glow-breath cursor-pointer mt-4"
               >
-                <span>Confirm Architecture Call ({selectedDate} at {selectedTime})</span>
+                <span>Confirm Engineering Session ({selectedDate} at {selectedTime})</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </form>
