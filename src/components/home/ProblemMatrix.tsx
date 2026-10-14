@@ -80,7 +80,7 @@ export default function ProblemMatrix() {
             {/* Right Deliverables Checklist */}
             <div className="lg:col-span-5 bg-neutral-900/90 rounded-2xl p-6 sm:p-8 border border-neutral-800">
               <span className="text-xs uppercase tracking-wider font-mono text-neutral-400 font-bold block mb-4">
-                What Kodexo Ships
+                What Haalar Delivers
               </span>
               <ul className="space-y-4">
                 {current.deliverables.map((del, i) => (

@@ -2,85 +2,119 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, ShieldCheck, Zap } from "lucide-react";
+import { ArrowUpRight, ShieldCheck } from "lucide-react";
 import PageHeader from "@/components/common/PageHeader";
 
 const PORTFOLIO_ITEMS = [
   {
+    slug: "drone-jammer-handheld",
+    title: "Drone Jammer (Handheld Tactical Rifle)",
+    category: "Drone Jammers",
+    metric: "1,500m",
+    metricLabel: "Directional Jamming Range",
+    client: "Forward Tactical Units",
+    summary:
+      "Complete tactical counter-UAS rifle with 6 spot frequencies, optical scope, 2x hot-swappable batteries, rapid charger, and 2-hour continuous battery life.",
+    tags: ["1500m Range", "6 Frequencies", "2x Batteries + Scope", "Directional Rifle"],
+    bgClass: "from-red-500/10 to-neutral-900/40",
+  },
+  {
+    slug: "drone-jammer-static",
+    title: "Drone Jammer (Static Base Station)",
+    category: "Drone Jammers",
+    metric: "3 km",
+    metricLabel: "Perimeter Jamming Range",
+    client: "Critical Strategic Facilities",
+    summary:
+      "Heavy-duty perimeter countermeasure base station with 4-5 frequency bands, AC main power input, and 30 Watts high-gain RF output power per band.",
+    tags: ["3 km Range", "4-5 Frequency Bands", "30W RF Output / Band", "AC Powered"],
+    bgClass: "from-orange-500/10 to-neutral-900/40",
+  },
+  {
     slug: "alpha-fire-pak-1",
     title: "Alpha Fire Handheld Jammer PAK-1",
-    category: "Defense & Counter-UAS",
-    metric: "90m+",
-    metricLabel: "Effective Jamming Radius",
+    category: "Countermeasures & DDS",
+    metric: "90m",
+    metricLabel: "Jamming Radius",
     client: "Defense & Strategic Units",
     summary:
-      "Compact, battery-operated multi-frequency handheld defense countermeasure with directional antenna array, two spot frequencies, and 2-hour continuous runtime.",
-    tags: ["RF Countermeasures", "Handheld", "Two Spot Frequencies", "Directional Array"],
+      "Compact, battery-operated multi-frequency handheld defense countermeasure with two spot frequencies, directional antenna array, and 2-hour runtime.",
+    tags: ["Two Spot Frequencies", "90m Radius", "1x Antenna", "2h Battery Life"],
     bgClass: "from-red-500/10 to-neutral-900/40",
   },
   {
     slug: "stos-dds-jammer",
     title: "STOS Direct Digital Synthesis (DDS) Jammer",
-    category: "RF & Electronic Systems",
+    category: "Countermeasures & DDS",
     metric: "70m",
     metricLabel: "Radius Coverage",
     client: "Strategic Installation Security",
     summary:
-      "Advanced DDS multi-channel frequency sweeping countermeasure module with 12V DC input, sweep -25MHz, and precision dual-antenna RF transmission.",
-    tags: ["Direct Digital Synthesis", "Sweep -25MHz", "Dual Antenna", "12V Battery"],
+      "Advanced DDS multi-channel frequency sweeping countermeasure module with -25MHz sweep window, 2 spot frequencies, 12V battery, and dual antennas.",
+    tags: ["SWEEP -25MHz DDS", "2 Spot Frequencies", "Dual Antenna", "12V Battery"],
     bgClass: "from-blue-500/10 to-neutral-900/40",
   },
   {
     slug: "alpha-fire-vehicle-mount",
     title: "Alpha Fire Vehicle Mount Station",
-    category: "Mobile Tactical",
+    category: "Vehicle Mount Tactical",
     metric: "200m+",
-    metricLabel: "Protection Perimeter",
+    metricLabel: "Convoy Protection Perimeter",
     client: "VIP Escort & Tactical Convoy",
     summary:
-      "High-power tactical vehicle-mounted electronic countermeasure station engineered for convoy perimeter defense with wideband multi-frequency suppression.",
-    tags: ["Vehicle Mount", "Tactical Mobile", "High-Power PA", "Convoy Defense"],
+      "High-power tactical vehicle-mounted system for VIP convoy defense, featuring two spot frequencies and 12V vehicle alternator DC feed.",
+    tags: ["200m+ Protection", "2 Spot Frequencies", "12V Vehicle Feed", "Convoy Defense"],
     bgClass: "from-amber-500/10 to-neutral-900/40",
   },
   {
     slug: "green-arrow-ism",
     title: "Green Arrow (ISM Band) Module",
-    category: "RF & Electronic Systems",
+    category: "Countermeasures & DDS",
     metric: "2.4 GHz",
-    metricLabel: "ISM Frequency Band",
+    metricLabel: "2400-2520 MHz ISM Band",
     client: "Perimeter Frequency Mitigation",
     summary:
-      "Specialized ISM band jamming module (2400-2520 MHz) with configurable bandwidth, 80m disruption radius, active/reactive modes, and high-efficiency heat sink.",
-    tags: ["2400-2520 MHz", "ISM Band", "Active/Reactive", "VCO"],
+      "Specialized ISM band jamming module (2400-2520 MHz) with configurable bandwidth, 80m disruption radius, 12V DC input, and alloy heat sink.",
+    tags: ["2400-2520 MHz", "80m Jamming Radius", "12V Battery", "Customizable Band"],
     bgClass: "from-emerald-500/10 to-neutral-900/40",
   },
   {
     slug: "green-arrow-100-101",
     title: "Green Arrow 100 / 101 Jammer Modules",
-    category: "RF & Electronic Systems",
-    metric: "50W+",
-    metricLabel: "RF Output Power",
-    client: "Tactical Defense Formations",
+    category: "Countermeasures & DDS",
+    metric: "20-500 MHz",
+    metricLabel: "3 Discrete Bands + GSM/LTE",
     summary:
-      "Modular high-power RF disruption units engineered for wideband VHF/UHF suppression, equipped with automatic thermal shutdown and VSWR mismatch protection.",
-    tags: ["VHF/UHF", "High Power PA", "VSWR Protection", "Modular Rack"],
+      "Modular triple-band RF suppression system (20-100MHz, 100-200MHz, 200-500MHz) with GSM (2G/3G/4G/LTE) and ISM (2400-2550MHz) active/reactive coverage.",
+    tags: ["20-500 MHz", "3 Discrete Bands", "GSM & LTE", "ISM Band", "Active & Reactive"],
     bgClass: "from-purple-500/10 to-neutral-900/40",
+  },
+  {
+    slug: "digital-directional-finder",
+    title: "Digital Directional Finder (DF)",
+    category: "Direction Finding & Testing",
+    metric: "5 km",
+    metricLabel: "DF Radius Coverage",
+    client: "Signal Intelligence & Tracking",
+    summary:
+      "Tactical direction finding system for VHF & UHF frequencies with omni-directional antenna array and AC power for hostile RF localization.",
+    tags: ["5 km DF Radius", "Omni Antennas", "AC Power", "VHF & UHF"],
+    bgClass: "from-cyan-500/10 to-neutral-900/40",
   },
   {
     slug: "jammer-testing-device",
     title: "Jammer Testing & Validation Device",
-    category: "Diagnostic Hardware",
-    metric: "100%",
-    metricLabel: "Bench Calibration Accuracy",
-    client: "Field Maintenance Depots",
+    category: "Direction Finding & Testing",
+    metric: "20-500 MHz",
+    metricLabel: "Programmable Diagnostic Set",
     summary:
-      "Portable diagnostic and calibration test set enabling field engineers to verify RF power output, frequency accuracy, and harmonic integrity across jammer modules.",
-    tags: ["Bench Diagnostics", "RF Power Metering", "Field Calibration", "Handheld"],
+      "Precision test set with 1x transmitter and 1x receiver covering 20-500 MHz and 2400-2520 MHz with 25m test separation and 2-hour battery.",
+    tags: ["1x TX + 1x RX", "20-500 MHz", "ISM 2400-2520 MHz", "2h Battery"],
     bgClass: "from-rose-500/10 to-neutral-900/40",
   },
 ];
 
-const CATEGORIES = ["All", "Defense & Counter-UAS", "RF & Electronic Systems", "Mobile Tactical", "Diagnostic Hardware"];
+const CATEGORIES = ["All", "Drone Jammers", "Countermeasures & DDS", "Vehicle Mount Tactical", "Direction Finding & Testing"];
 
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -93,10 +127,10 @@ export default function PortfolioPage() {
   return (
     <div className="bg-white">
       <PageHeader
-        badge="Hardware & Systems"
-        title="Tactical Products & Deployed"
+        badge="Tactical Products & Hardware"
+        title="Deployed Products & Electronic"
         highlightText="Systems."
-        description="Explore advanced electronic warfare countermeasures, Direct Digital Synthesis (DDS) modules, and precision diagnostic hardware indigenously engineered by Haalar Services."
+        description="Explore the complete operational lineup of countermeasure systems, drone jammers, Direct Digital Synthesis (DDS) units, and direction finding equipment indigenously engineered by Haalar Services."
         breadcrumbs={[{ label: "Products & Portfolio" }]}
       />
 

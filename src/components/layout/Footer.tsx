@@ -10,10 +10,10 @@ export default function Footer() {
         <div className="border-b border-neutral-800 pb-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div>
             <span className="text-[#f54545] font-mono text-xs uppercase tracking-wider font-semibold">
-              Ready to ship production AI?
+              Disrupt · Defend · Dominate
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mt-3 tracking-tight">
-              Let&apos;s build intelligent software that actually thinks.
+              Your Idea, Our Expertise — Hardware & RF Systems.
             </h2>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 lg:justify-end">
@@ -21,14 +21,14 @@ export default function Footer() {
               href="/contact-us"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#f54545] text-white font-bold text-base hover:bg-[#e03535] transition-all duration-200 btn-glow-breath"
             >
-              <span>Book Architecture Call</span>
+              <span>Consult with Engineering Team</span>
               <ArrowUpRight className="w-5 h-5" />
             </Link>
             <Link
               href="/portfolio"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-neutral-900 text-neutral-200 border border-neutral-800 font-semibold text-base hover:bg-neutral-800 transition-colors"
             >
-              Browse Case Studies
+              Browse Products & Systems
             </Link>
           </div>
         </div>

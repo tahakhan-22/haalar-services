@@ -82,7 +82,7 @@ export default function Navbar() {
                     href="/services"
                     className="text-xs font-bold text-[#f54545] hover:underline flex items-center gap-1"
                   >
-                    Explore all 10 Services <ArrowRight className="w-3 h-3" />
+                    Explore all 8 Disciplines <ArrowRight className="w-3 h-3" />
                   </Link>
                 </div>
               </div>
@@ -128,7 +128,7 @@ export default function Navbar() {
             href="/portfolio"
             className="text-[15px] font-medium text-neutral-700 hover:text-[#f54545] px-3 py-2 rounded-md transition-colors"
           >
-            Portfolio
+            Products & Portfolio
           </Link>
 
           <Link
@@ -201,7 +201,7 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen(false)}
             className="block text-base font-semibold text-neutral-800 hover:text-[#f54545]"
           >
-            Portfolio & Case Studies
+            Products & Portfolio
           </Link>
           <Link
             href="/blogs"
@@ -216,7 +216,7 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="w-full flex items-center justify-center gap-2 py-3 rounded-full bg-[#f54545] text-white font-bold text-sm shadow-md"
             >
-              Book an Intro Call
+              Consult with Engineers
             </Link>
           </div>
         </div>

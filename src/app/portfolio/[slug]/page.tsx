@@ -18,51 +18,97 @@ const CASE_STUDIES_DATA: Record<
     quote?: string;
   }
 > = {
-  "alpha-fire-pak-1": {
-    title: "Alpha Fire Handheld Jammer PAK-1",
-    client: "Tactical Defense Units",
-    industry: "Defense & Counter-UAS",
-    metric: "90m+",
-    metricLabel: "Effective Jamming Radius",
-    summary: "Compact, battery-operated multi-frequency handheld defense countermeasure with directional antenna array and 2-hour continuous battery life.",
+  "drone-jammer-handheld": {
+    title: "Drone Jammer (Handheld Tactical Rifle)",
+    client: "Forward Tactical Units",
+    industry: "Counter-UAS Drone Defense",
+    metric: "1,500m",
+    metricLabel: "Directional Jamming Range",
+    summary: "Complete tactical counter-UAS rifle with 6 spot frequencies, optical scope, 2x hot-swappable batteries, rapid charger, and 2-hour continuous battery life.",
     challenge:
-      "Operational field units required a lightweight, single-operator directional countermeasure capable of instantly disrupting unauthorized commercial and tactical drones without relying on cumbersome external generators or bulky backpacks.",
+      "Hostile commercial and modified tactical drones operating at standoff distances up to 1.5 km require immediate directional mitigation by infantry or security personnel without fixed infrastructure.",
     solution: [
-      "Engineered a high-efficiency dual spot frequency RF power amplifier stage delivering concentrated directional disruption.",
-      "Integrated a lightweight high-energy-density Li-Ion battery pack providing 2 hours of continuous active transmission.",
-      "Designed an ergonomic CNC aluminum chassis with integrated heatsink fins for rapid thermal convection in desert conditions.",
-      "Calibrated directional antenna array offering tight forward beamwidth and high front-to-back isolation.",
+      "Engineered a 6-frequency multi-band directional RF transmitter covering GNSS navigation (GPS/GLONASS/BeiDou/Galileo), 2.4 GHz, 5.8 GHz, and telemetry frequencies.",
+      "Mounted high-magnification optical scope calibrated to match directional antenna beamwidth for precision target acquisition.",
+      "Designed a complete ergonomic transit case featuring 2x high-capacity batteries and tactical vehicle/mains rapid charger.",
+      "Integrated instant trigger activation with zero pre-warm latency.",
     ],
     results: [
-      "Reliable neutralization of target control and GNSS telemetry at ranges exceeding 90 meters.",
-      "Total system weight kept under 3.8 kg for single-handed rapid deployment.",
-      "Zero operational thermal throttles during rigorous 50°C chamber environmental stress tests.",
+      "Reliable directional drone force-landing or return-to-home trigger up to 1,500 meters.",
+      "Continuous 2-hour active transmission per battery pack.",
+      "Ruggedized weather-resistant casing certified for demanding field operations.",
     ],
-    technologies: ["RF Power Amplifier", "Directional Array", "Li-Ion Management", "CNC Anodized Enclosure", "IPC-A-610 Class 3"],
-    quote: "The PAK-1 delivered instant neutralization and flawless tactical ergonomics during demanding field trials.",
+    technologies: ["6 Spot Frequencies", "High-Gain Directional Array", "Optical Scope", "Dual Li-Ion Packs", "Tactical Carry Case"],
+    quote: "The handheld tactical rifle neutralized rogue surveillance drones instantly during forward security drills.",
+  },
+  "drone-jammer-static": {
+    title: "Drone Jammer (Static Base Station)",
+    client: "Critical Strategic Facilities",
+    industry: "Perimeter Drone Defense",
+    metric: "3 km",
+    metricLabel: "Perimeter Jamming Range",
+    summary: "Heavy-duty perimeter countermeasure base station with 4-5 frequency bands, AC main power input, and 30 Watts high-gain RF output power per band.",
+    challenge:
+      "Critical facilities and military installations face persistent aerial surveillance and swarm threats requiring permanent 24/7 spherical exclusion zones at multi-kilometer standoff ranges.",
+    solution: [
+      "Constructed a stationary multi-band transmission array delivering 30 Watts of dedicated RF output power across each individual frequency band (4-5 bands).",
+      "Integrated continuous AC main power conditioning with automatic battery backup switchover.",
+      "Housed in an IP67 weatherproof, high-efficiency convection-cooled aluminum enclosure designed for perpetual desert operation.",
+      "Engineered omni-directional or sector-sweeping antenna configurations.",
+    ],
+    results: [
+      "Full aerial exclusion zone shielding sensitive facilities up to 3 kilometers away.",
+      "Continuous 24/7/365 uninterrupted operational capability with zero thermal throttling.",
+      "High RF spectral purity preventing harmonic bleed into friendly tactical communications.",
+    ],
+    technologies: ["30W RF / Band", "4-5 Frequency Bands", "AC Mains Integration", "IP67 Enclosure", "Keysight Spectrum Calibration"],
+    quote: "Haalar Services' static station established an impenetrable 3-kilometer aerial bubble over our operational perimeter.",
+  },
+  "alpha-fire-pak-1": {
+    title: "Alpha Fire Handheld Jammer PAK-1",
+    client: "Defense & Strategic Units",
+    industry: "Tactical Defense Countermeasures",
+    metric: "90m",
+    metricLabel: "Effective Jamming Radius",
+    summary: "Compact, battery-operated multi-frequency handheld defense countermeasure with two spot frequencies, directional antenna array, and 2-hour runtime.",
+    challenge:
+      "Single operators required an ultra-portable countermeasure unit to suppress localized unauthorized radio and drone communications within a 90m tactical radius.",
+    solution: [
+      "Engineered dual spot frequency RF power amplifier stages into a single compact housing.",
+      "Integrated high-energy-density Li-Ion battery pack delivering 2 hours of continuous active transmission.",
+      "Designed an ergonomic CNC aluminum chassis with integrated heatsink fins for thermal convection.",
+      "Calibrated high-efficiency single directional antenna for immediate target pointing.",
+    ],
+    results: [
+      "Effective suppression of target frequencies across a 90-meter radius.",
+      "Lightweight, balanced design allowing prolonged single-handed tactical operation.",
+      "100% benchtop validation conforming to IPC-A-610 Class 3 standards.",
+    ],
+    technologies: ["Two Spot Frequencies", "Directional Array", "Li-Ion Management", "CNC Enclosure", "IPC-A-610 Class 3"],
+    quote: "The PAK-1 delivered tactical ergonomics and decisive suppression during rigorous field trials.",
   },
   "stos-dds-jammer": {
     title: "STOS Direct Digital Synthesis (DDS) Jammer",
     client: "Strategic Installation Command",
-    industry: "RF & Electronic Systems",
+    industry: "RF & Electronic Countermeasures",
     metric: "70m",
-    metricLabel: "Effective Protection Radius",
-    summary: "Advanced DDS multi-channel frequency sweeping countermeasure module with 12V DC power input and precision dual-antenna transmission.",
+    metricLabel: "Radius Coverage",
+    summary: "Advanced DDS multi-channel frequency sweeping countermeasure module with -25MHz sweep window, 2 spot frequencies, 12V battery, and dual antennas.",
     challenge:
-      "Standard analog VCO jammers suffer from frequency drift under temperature extremes, leaving critical RF holes in perimeter defense. The client needed mathematically precise, rapid frequency hopping across wide operational bands.",
+      "Legacy analog sweepers wander off-target under extreme desert heat. The requirement called for mathematically exact, sub-microsecond frequency sweeping across defined bandwidths.",
     solution: [
-      "Architected a Direct Digital Synthesis (DDS) core driven by an FPGA controller with a programmable sweep window of -25 MHz.",
-      "Implemented a dual-antenna configuration to maximize spatial coverage and phase diversity.",
-      "Integrated wide-voltage 12V DC power conditioning with reverse polarity and overvoltage suppression.",
-      "Engineered multi-stage bandpass and harmonic suppression filters to prevent out-of-band spurious emissions.",
+      "Built a high-speed Direct Digital Synthesis (DDS) architecture with a programmable sweep window of -25 MHz.",
+      "Engineered dual spot frequency synthesizer paths driving independent dual antennas for spatial diversity.",
+      "Designed for 12V DC vehicle battery or portable DC field battery operation.",
+      "Integrated multi-stage harmonic suppression filters to maintain spectral cleanliness.",
     ],
     results: [
-      "Consistent 70-meter spherical protective bubble around sensitive communication and command assets.",
-      "Sub-microsecond frequency switching speed with zero observable frequency drift over 24-hour continuous operations.",
-      "Seamless integration with vehicle electrical feeds or standalone battery banks.",
+      "Consistent 70-meter defensive coverage with zero frequency drift across operating temperatures from -10°C to +55°C.",
+      "Sub-microsecond frequency switching with zero observable phase jitter.",
+      "Seamless integration with vehicle electrical systems or standalone battery banks.",
     ],
-    technologies: ["Direct Digital Synthesis (DDS)", "FPGA Controller", "Dual-Antenna Topology", "12V DC Conditioning", "Spectrum Tuning"],
-    quote: "Haalar Services' DDS architecture achieved precision frequency control that conventional VCO units simply cannot match.",
+    technologies: ["Direct Digital Synthesis (DDS)", "SWEEP -25MHz", "2 Spot Frequencies", "Dual Antennas", "12V Battery"],
+    quote: "The DDS synthesizer provided surgical frequency control that conventional VCO units cannot match.",
   },
   "alpha-fire-vehicle-mount": {
     title: "Alpha Fire Vehicle Mount Station",
@@ -70,99 +116,127 @@ const CASE_STUDIES_DATA: Record<
     industry: "Mobile Tactical Countermeasures",
     metric: "200m+",
     metricLabel: "Convoy Protection Perimeter",
-    summary: "High-power tactical vehicle-mounted system engineered for VIP convoy protection and perimeter defense with wideband multi-frequency suppression.",
+    summary: "High-power tactical vehicle-mounted system for VIP convoy defense, featuring two spot frequencies and 12V vehicle alternator DC feed.",
     challenge:
-      "Protecting mobile VIP convoys from remote-controlled improvised explosive devices (RCIEDs) and hostile drone swarms while drawing power reliably from standard military vehicle 24V/28V alternators.",
+      "Protecting mobile VIP motorcades from remote-controlled threats while drawing power directly from vehicle 12V alternators under severe off-road vibration.",
     solution: [
-      "Engineered ultra-high-power RF power amplifiers delivering continuous wideband suppression across multiple tactical frequency bands.",
-      "Fabricated heavy-duty roof-mounted omni-directional antenna masts tested against extreme road shock and vibration.",
-      "Integrated intelligent DC power conditioning with active load-dump protection and secondary backup battery buffer.",
-      "Installed a ruggedized in-cabin driver remote control unit with LED status telemetry and emergency band isolation.",
+      "Engineered high-power RF amplifier stages delivering a continuous 200m+ protective perimeter.",
+      "Fabricated heavy-duty roof-mounted antenna mast tested against mil-spec shock and vibration.",
+      "Integrated active load-dump protection safeguarding sensitive RF transistors against vehicle alternator transients.",
+      "Installed two spot frequency modules for targeted tactical band coverage.",
     ],
     results: [
-      "Proven 200m+ defensive perimeter shielding lead and escort convoy vehicles simultaneously.",
-      "Passed mil-spec environmental vibration, salt-fog, and thermal shock compliance tests.",
-      "Zero interference with convoy encrypted UHF communications via sharp notch filtering.",
+      "Proven 200m+ defensive bubble shielding lead and escort motorcade vehicles simultaneously.",
+      "Surpasses military environmental standards for road vibration and thermal convection.",
+      "Direct plug-and-play installation into standard tactical and civilian escort vehicles.",
     ],
-    technologies: ["Wideband GaN PAs", "Vehicle Alternator Integration", "Omni-Directional Mast", "In-Cabin Remote", "Mil-Spec Shock Mounts"],
-    quote: "The vehicle mount station gave our motorcades uncompromised protection across thousands of kilometers of high-risk territory.",
+    technologies: ["200m+ Perimeter", "2 Spot Frequencies", "12V Vehicle Integration", "Mil-Spec Shock Mount", "GaN Power Stage"],
+    quote: "The vehicle mount station provided uncompromised protection across thousands of kilometers of high-risk convoy operations.",
   },
   "green-arrow-ism": {
     title: "Green Arrow (ISM Band) Module",
     client: "Perimeter Frequency Mitigation",
-    industry: "RF & Electronic Systems",
+    industry: "RF Frequency Suppression",
     metric: "2.4 GHz",
-    metricLabel: "ISM Suppression Band",
-    summary: "Specialized ISM band jamming module (2400-2520 MHz) with configurable bandwidth, 80m disruption radius, and rugged aluminum heat sink.",
+    metricLabel: "2400-2520 MHz ISM Band",
+    summary: "Specialized ISM band jamming module (2400-2520 MHz) with configurable bandwidth, 80m disruption radius, 12V DC input, and alloy heat sink.",
     challenge:
-      "High density of commercial Wi-Fi, Bluetooth, and digital video transmitters operating in the crowded 2.4 GHz ISM band required targeted, highly focused suppression without bleeding into civilian cellular communications.",
+      "Dense civilian Wi-Fi and Bluetooth equipment in proximity to sensitive installations required surgical frequency isolation strictly bounded to 2400-2520 MHz.",
     solution: [
-      "Tuned VCO and high-speed modulation circuit strictly bounded between 2400 MHz and 2520 MHz.",
-      "Configurable active continuous sweep and reactive burst transmission modes.",
-      "Extruded aerospace-grade aluminum finned heatsink with integrated low-noise high-static-pressure cooling fans.",
-      "Standard SMA RF connectors for modular drop-in into existing tactical rack frames.",
+      "Engineered an RF power stage strictly calibrated for the 2400-2520 MHz ISM band (customizable upon requirement).",
+      "Built-in 12V DC power conditioning for standalone battery or rack-mount power supply.",
+      "Integrated extruded aluminum finned heatsink ensuring continuous maximum power output.",
+      "Single-antenna high-efficiency radiation topology delivering an 80m disruption radius.",
     ],
     results: [
-      "Immediate severance of 2.4 GHz digital video downlinks within an 80-meter operational radius.",
-      "Exceptional power efficiency exceeding 45% DC-to-RF conversion ratio.",
-      "Modular form factor allowing multi-unit aggregation for omni-directional arrays.",
+      "Instant severance of hostile 2.4 GHz digital links within an 80-meter operational radius.",
+      "Over 45% DC-to-RF power efficiency keeping thermal generation to a minimum.",
+      "Modular form factor allowing multi-unit aggregation for wide-area base defense.",
     ],
-    technologies: ["2.4 GHz VCO", "GaN Power Transistors", "Finned Alloy Heatsink", "SMA RF Interfaces", "Active/Reactive Modes"],
-    quote: "Haalar Services provided an impeccably tuned module that solved our 2.4 GHz isolation requirements within two weeks.",
+    technologies: ["2400-2520 MHz", "80m Jamming Radius", "12V Battery Input", "Single Antenna", "Alloy Heatsink"],
+    quote: "Haalar Services' ISM module provided clean, reliable frequency suppression with zero bleeding into adjacent bands.",
   },
   "green-arrow-100-101": {
     title: "Green Arrow 100 / 101 Jammer Modules",
-    client: "Tactical Electronic Formations",
-    industry: "RF Systems",
-    metric: "50W+",
-    metricLabel: "RF Output Power",
-    summary: "Modular high-power RF disruption units engineered for wideband VHF/UHF suppression, equipped with automatic thermal shutdown and VSWR mismatch protection.",
+    client: "Tactical Defense Formations",
+    industry: "Wideband RF Countermeasures",
+    metric: "20-500 MHz",
+    metricLabel: "Multi-Band Coverage",
+    summary: "Modular triple-band RF suppression system (20-100MHz, 100-200MHz, 200-500MHz) with GSM (2G/3G/4G/LTE) and ISM (2400-2550MHz) active/reactive coverage.",
     challenge:
-      "Harsh field environments frequently subject antenna cables to damage, causing dangerous reflected RF power (high VSWR) that incinerates expensive output transistors in traditional amplifiers.",
+      "Wide-spectrum remote threat devices operating across HF, VHF, UHF, cellular, and ISM bands required an integrated multi-band solution capable of both VCO continuous sweep and active/reactive jamming.",
     solution: [
-      "Integrated dual-directional couplers and an automated microsecond VSWR foldback circuit that protects the power stage under open or shorted antenna loads.",
-      "Built-in thermal sensors triggering proportional power attenuation before critical junction temperatures are reached.",
-      "Standardized 19-inch rack-mount sub-chassis architecture for simple swapping and field maintenance.",
+      "Architected a 3-band wideband RF suppression stage: Band 1 (20-100MHz), Band 2 (100-200MHz), and Band 3 (200-500MHz).",
+      "Integrated cellular GSM (2G, 3G, 4G & LTE) and ISM (2400-2550 MHz) countermeasure sub-modules.",
+      "Configured dual operational variants: Green Arrow 100 (VCO Sweep) and Green Arrow 101 (Active and Reactive).",
+      "Protected with automatic thermal foldback and VSWR mismatch circuitry.",
     ],
     results: [
-      "Uninterrupted 50W+ continuous RF output with zero transistor failures during open-antenna torture testing.",
-      "Over 40 modules deployed in high-temperature base stations with 100% operational availability.",
-      "Form-fit-function compatibility with legacy tactical enclosures.",
+      "Comprehensive multi-octave RF suppression across 20 MHz to 2550 MHz in a single modular sub-rack.",
+      "Tested and deployed in demanding operational installations with 100% reliability.",
+      "Flexible active sweep and signal-triggered reactive modes for power conservation.",
     ],
-    technologies: ["VSWR Protection Circuitry", "Thermal Foldback", "VHF/UHF GaN Stages", "Modular 19-inch Sub-Chassis"],
-    quote: "The built-in VSWR protection saved our equipment multiple times when antenna feeds suffered physical damage in the field.",
+    technologies: ["20-500 MHz (3 Bands)", "GSM & LTE", "ISM 2400-2550 MHz", "Active/Reactive Modes", "VSWR Protection"],
+    quote: "The Green Arrow 100/101 modules delivered unparalleled multi-band coverage for our electronic warfare stations.",
+  },
+  "digital-directional-finder": {
+    title: "Digital Directional Finder (DF)",
+    client: "Signal Intelligence & Tracking",
+    industry: "Signal Intelligence (SIGINT)",
+    metric: "5 km",
+    metricLabel: "Direction Finding Radius",
+    summary: "Tactical direction finding system for VHF & UHF frequencies with omni-directional antenna array and AC power for hostile RF localization.",
+    challenge:
+      "Locating unauthorized or hostile radio transmitters across dense urban or rugged mountain terrain requires high-sensitivity direction finding with wide operational radius.",
+    solution: [
+      "Constructed a multi-element omni-directional antenna array for precision phase and amplitude interferometry.",
+      "Calibrated high-speed digital receiver processing VHF and UHF signals across the spectrum.",
+      "Integrated AC mains power for continuous base station or command post operations.",
+      "Delivers real-time bearing angle and signal strength telemetry to field operators.",
+    ],
+    results: [
+      "Accurate emitter bearing detection across an operational radius up to 5 kilometers.",
+      "High angular resolution for VHF and UHF communications interception.",
+      "Robust immunity against multipath signal reflections in complex terrain.",
+    ],
+    technologies: ["5 km DF Radius", "Omni-Directional Array", "VHF & UHF Receiver", "AC Power Supply", "Bearing Calculation"],
+    quote: "The Digital Directional Finder pinpointed unauthorized RF emitters with remarkable bearing accuracy up to 5 kilometers away.",
   },
   "jammer-testing-device": {
     title: "Jammer Testing & Validation Device",
-    client: "Field Maintenance & Logistics Depots",
-    industry: "Diagnostic Hardware",
-    metric: "100%",
-    metricLabel: "Bench Calibration Accuracy",
-    summary: "Portable diagnostic and calibration test set enabling field engineers to verify RF power output, frequency accuracy, and harmonic integrity across jammer modules.",
+    client: "Field Maintenance & Testing Depots",
+    industry: "Diagnostic & Calibration Hardware",
+    metric: "20-500 MHz",
+    metricLabel: "Programmable Spectrum",
+    summary: "Precision test set with 1x transmitter and 1x receiver covering 20-500 MHz and 2400-2520 MHz with 25m test separation and 2-hour battery.",
     challenge:
-      "Field maintenance teams lacked laboratory-grade spectrum analyzers in forward tactical positions, making it impossible to determine if a deployed module's output power or frequency calibration had degraded over time.",
+      "Field maintenance teams in forward tactical positions lacked test sets to verify whether deployed countermeasure units were transmitting correct frequencies and expected power levels.",
     solution: [
-      "Developed a handheld, battery-powered diagnostic receiver with calibrated internal RF attenuators and wideband power detectors.",
-      "Integrated an intuitive OLED display showing exact center frequency, bandwidth spread, and measured power output in dBm and Watts.",
-      "Equipped with go/no-go automated pass/fail thresholds tailored to Haalar countermeasure product lines.",
+      "Engineered an integrated diagnostic set comprising 1x calibrated transmitter and 1x receiver unit.",
+      "Equipped with programmable frequency coverage spanning 20-500 MHz and the 2400-2520 MHz ISM band.",
+      "Designed for calibrated operational testing with a transmitter-to-receiver test separation of 25 meters.",
+      "Powered by internal rechargeable batteries providing 2 hours of continuous bench or field testing.",
     ],
     results: [
-      "Reduced routine module diagnostic inspection time from 45 minutes down to under 60 seconds per unit.",
-      "Empowered non-specialist tactical personnel to verify operational readiness before missions.",
-      "Calibrated against laboratory Keysight analyzers with +/- 0.5 dB measurement repeatability.",
+      "Enables rapid 60-second go/no-go verification of all deployed countermeasure modules.",
+      "Eliminates dependency on fragile laboratory bench analyzers in forward tactical depots.",
+      "Accurate power and frequency readouts ensuring mission readiness before deployment.",
     ],
-    technologies: ["Wideband Power Detection", "Internal High-Power Attenuator", "OLED Telemetry", "Embedded Calibration Tables"],
-    quote: "This diagnostic unit became mandatory kit for our technicians, eliminating all guesswork about module performance.",
+    technologies: ["1x TX + 1x RX", "20-500 MHz", "ISM 2400-2520 MHz", "25m Range", "2h Battery Life"],
+    quote: "This testing device eliminated all uncertainty from our pre-mission countermeasure readiness checks.",
   },
 };
 
 export function generateStaticParams() {
   return [
+    { slug: "drone-jammer-handheld" },
+    { slug: "drone-jammer-static" },
     { slug: "alpha-fire-pak-1" },
     { slug: "stos-dds-jammer" },
     { slug: "alpha-fire-vehicle-mount" },
     { slug: "green-arrow-ism" },
     { slug: "green-arrow-100-101" },
+    { slug: "digital-directional-finder" },
     { slug: "jammer-testing-device" },
   ];
 }
@@ -174,11 +248,11 @@ export default async function CaseStudyDetailPage({
 }) {
   const { slug } = await params;
   const study = CASE_STUDIES_DATA[slug] || {
-    title: `${slug.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")} System`,
+    title: `${slug.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")} Tactical System`,
     client: "Strategic Defense & Industry",
-    industry: "Hardware Engineering",
+    industry: "Hardware & RF Engineering",
     metric: "100%",
-    metricLabel: "Operational Performance",
+    metricLabel: "Mission Performance",
     summary: "Indigenous hardware and RF electronic countermeasure system engineered by Haalar Services.",
     challenge: "The operational requirement required specialized electronic architecture engineered to IPC standards.",
     solution: [
@@ -189,7 +263,7 @@ export default async function CaseStudyDetailPage({
     results: [
       "Complete mission-readiness in operational field testing.",
       "Indigenous design and 100% sovereign lifecycle support.",
-      "Zero dependency on obsolete foreign modules.",
+      "Zero dependency on foreign modules.",
     ],
     technologies: ["Altium Designer", "RF Engineering", "IPC-A-610 Class 3", "CNC Milling"],
     quote: "Haalar Services delivered tactical reliability and exceptional engineering execution.",
@@ -214,7 +288,7 @@ export default async function CaseStudyDetailPage({
                 01 · The Operational Challenge
               </span>
               <h2 className="text-3xl font-extrabold text-neutral-900 mt-2">
-                Requirements & Constraints
+                Operational Context & Requirements
               </h2>
               <p className="text-neutral-600 mt-4 text-base leading-relaxed">
                 {study.challenge}
@@ -227,7 +301,7 @@ export default async function CaseStudyDetailPage({
                 02 · The Engineering Solution
               </span>
               <h2 className="text-3xl font-extrabold text-neutral-900 mt-2">
-                Hardware & RF Architecture
+                Hardware Architecture & Specifications
               </h2>
               <div className="space-y-3 mt-4">
                 {study.solution.map((step, i) => (
@@ -245,7 +319,7 @@ export default async function CaseStudyDetailPage({
                 03 · Tactical Outcomes
               </span>
               <h2 className="text-3xl font-extrabold text-neutral-900 mt-2">
-                Field-Verified Results
+                Field-Verified Specifications
               </h2>
               <ul className="space-y-3 mt-4">
                 {study.results.map((res, i) => (
@@ -279,7 +353,7 @@ export default async function CaseStudyDetailPage({
           <div className="lg:col-span-4 space-y-6">
             <div className="bg-neutral-950 text-white rounded-3xl p-8 border border-neutral-800 shadow-xl text-center">
               <span className="text-xs font-mono uppercase text-[#f54545] font-bold block mb-1">
-                Primary Specification
+                Primary Metric
               </span>
               <div className="text-5xl font-extrabold text-white my-3 tracking-tight">
                 {study.metric}
@@ -292,7 +366,7 @@ export default async function CaseStudyDetailPage({
             {/* Technologies */}
             <div className="bg-neutral-50 rounded-3xl p-8 border border-neutral-200">
               <h4 className="text-xs uppercase font-mono tracking-wider font-bold text-neutral-500 mb-4">
-                Engineering Stack & Standards
+                Key Features & Standards
               </h4>
               <div className="flex flex-wrap gap-2">
                 {study.technologies.map((t, i) => (
@@ -309,7 +383,7 @@ export default async function CaseStudyDetailPage({
             <div className="p-8 rounded-3xl bg-neutral-900 text-white space-y-4">
               <h4 className="font-bold text-base text-white">Have a specific tactical requirement?</h4>
               <p className="text-xs text-neutral-400 leading-relaxed">
-                We can formulate custom RF specifications, conduct PCB reverse engineering, or manufacture specialized electronic modules to IPC-A-610 standards.
+                We formulate custom RF parameters, design multi-layer PCBs, and manufacture specialized electronic countermeasures to IPC-A-610 Class 3 standards.
               </p>
               <Link
                 href="/contact-us"

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MessageCircle, X, Send, Sparkles, CheckCircle2 } from "lucide-react";
+import { MessageCircle, X, Send, Radio, CheckCircle2 } from "lucide-react";
 
 export default function FloatingChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +28,7 @@ export default function FloatingChatWidget() {
         <button
           onClick={() => setIsOpen(true)}
           className="size-14 rounded-full bg-[#f54545] text-white flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer btn-glow-breath relative"
-          aria-label="Open AI Consultation Chat"
+          aria-label="Open Haalar Engineering Consultation"
         >
           <MessageCircle className="w-7 h-7" />
           <span className="absolute -top-1 -right-1 flex h-4 w-4">
@@ -44,14 +44,14 @@ export default function FloatingChatWidget() {
           {/* Header */}
           <div className="bg-[#0a0a0a] text-white p-5 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="size-10 rounded-full bg-[#f54545] flex items-center justify-center font-bold text-white">
-                <Sparkles className="w-5 h-5" />
+              <div className="size-10 rounded-full bg-[#f54545] flex items-center justify-center font-bold text-white text-xs tracking-wider">
+                HS
               </div>
               <div>
-                <h4 className="font-bold text-sm text-white">Kodexo AI Team</h4>
+                <h4 className="font-bold text-sm text-white">Haalar Engineering Team</h4>
                 <p className="text-[11px] text-emerald-400 flex items-center gap-1">
                   <span className="size-1.5 rounded-full bg-emerald-400" />
-                  Online · Avg response &lt; 15 mins
+                  Islamabad Lab R&D · Active
                 </p>
               </div>
             </div>
@@ -68,38 +68,38 @@ export default function FloatingChatWidget() {
             {submitted ? (
               <div className="py-8 text-center space-y-3">
                 <CheckCircle2 className="w-12 h-12 text-emerald-500 mx-auto" />
-                <h5 className="font-bold text-neutral-900 text-base">Request Received!</h5>
+                <h5 className="font-bold text-neutral-900 text-base">Inquiry Received</h5>
                 <p className="text-xs text-neutral-500 max-w-[260px] mx-auto">
-                  Our senior engineering lead will review your requirements and reach out promptly.
+                  Our hardware and RF engineering leads at Humak Industrial Estate will review your requirements and respond promptly.
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-3">
                 <p className="text-xs text-neutral-600 leading-relaxed bg-neutral-50 p-3 rounded-xl border border-neutral-100">
-                  👋 <strong>Looking to build or scale an AI system?</strong> Send us a quick note or request a free architecture review.
+                  👋 <strong>Looking for custom hardware, RF systems, or PCB reverse engineering?</strong> Send a direct message to our engineering team in Islamabad.
                 </p>
                 <div>
                   <label className="block text-[11px] font-semibold text-neutral-600 mb-1">
-                    Your Work Email
+                    Your Official Email
                   </label>
                   <input
                     type="email"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="name@company.com"
+                    placeholder="name@organization.com"
                     className="w-full text-xs p-2.5 rounded-xl border border-neutral-200 focus:outline-none focus:border-[#f54545]"
                   />
                 </div>
                 <div>
                   <label className="block text-[11px] font-semibold text-neutral-600 mb-1">
-                    Project Brief / Challenge
+                    Project Requirements / Specifications
                   </label>
                   <textarea
                     rows={3}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder="We want to automate clinical chart extraction or build an AI agent..."
+                    placeholder="e.g. Turnkey ODM development, multi-layer PCB reverse engineering, or tactical RF jamming modules..."
                     className="w-full text-xs p-2.5 rounded-xl border border-neutral-200 focus:outline-none focus:border-[#f54545] resize-none"
                   />
                 </div>
@@ -108,7 +108,7 @@ export default function FloatingChatWidget() {
                   className="w-full py-2.5 px-4 rounded-xl bg-[#f54545] text-white text-xs font-bold hover:bg-[#e03535] transition-colors flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Send className="w-3.5 h-3.5" />
-                  <span>Send Direct Message</span>
+                  <span>Send Direct Message to Haalar</span>
                 </button>
               </form>
             )}
