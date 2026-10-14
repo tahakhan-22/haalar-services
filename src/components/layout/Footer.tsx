@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, ShieldCheck, Mail, MapPin } from "lucide-react";
 import { NAV_SERVICES, NAV_INDUSTRIES } from "@/data/siteData";
 
@@ -37,14 +38,23 @@ export default function Footer() {
         <div className="py-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10">
           {/* Column 1: Brand Info */}
           <div className="col-span-2">
-            <div className="flex items-center">
-              <span className="font-heading tracking-tight text-3xl font-extrabold text-white">
-                HAALAR
-              </span>
-              <span className="font-sans text-3xl font-bold text-[#f54545] ml-1">
-                SERVICES
-              </span>
-              <span className="h-2.5 w-2.5 rounded-full bg-[#f54545] ml-1.5" />
+            <div className="flex items-center gap-3">
+              <Image
+                src="/img/haalar-logo.png"
+                alt="Haalar Services Official Emblem"
+                width={120}
+                height={48}
+                className="h-11 w-auto object-contain brightness-0 invert"
+              />
+              <div className="flex items-center">
+                <span className="font-heading tracking-tight text-3xl font-extrabold text-white">
+                  HAALAR
+                </span>
+                <span className="font-sans text-3xl font-bold text-[#f54545] ml-1">
+                  SERVICES
+                </span>
+                <span className="h-2.5 w-2.5 rounded-full bg-[#f54545] ml-1.5" />
+              </div>
             </div>
             <p className="text-sm text-neutral-400 mt-4 max-w-sm leading-relaxed">
               Disrupt · Defend · Dominate. Specialized in reliable and trusted next-generation hardware, PCB reverse engineering, and indigenous RF/microwave systems.

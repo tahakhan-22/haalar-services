@@ -1,13 +1,26 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Star, ShieldCheck, Sparkles, CheckCircle2 } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-28 bg-radial from-red-50/40 via-white to-white">
+    <section className="relative overflow-hidden pt-8 pb-20 md:pt-14 md:pb-28 bg-radial from-red-50/40 via-white to-white">
       {/* Background Decorative Glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-red-500/10 blur-[130px] rounded-full pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Official Haalar Services Emblem */}
+        <div className="flex justify-center mb-6">
+          <Image
+            src="/img/haalar-logo.png"
+            alt="Haalar Services Official Emblem - Disrupt Defend Dominate"
+            width={180}
+            height={68}
+            className="h-14 sm:h-16 w-auto object-contain drop-shadow-sm"
+            priority
+          />
+        </div>
+
         {/* Disrupt Defend Dominate Pill */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-neutral-200/80 shadow-xs mb-8 hover:border-neutral-300 transition-colors">
           <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-red-50 text-[#f54545] border border-red-200">

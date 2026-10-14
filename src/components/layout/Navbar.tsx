@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ChevronDown, Menu, X, Phone, ArrowRight, Sparkles } from "lucide-react";
 import { NAV_SERVICES, NAV_INDUSTRIES } from "@/data/siteData";
 
@@ -13,12 +14,20 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-neutral-100 transition-all duration-200">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-20">
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <Image
+            src="/img/haalar-logo.png"
+            alt="Haalar Services Official Logo"
+            width={120}
+            height={44}
+            className="h-10 sm:h-11 w-auto object-contain"
+            priority
+          />
           <div className="flex items-center">
-            <span className="font-heading tracking-tight text-2xl md:text-3xl font-extrabold text-neutral-950">
+            <span className="font-heading tracking-tight text-xl md:text-2xl font-extrabold text-neutral-950">
               HAALAR
             </span>
-            <span className="font-sans text-2xl md:text-3xl font-bold text-[#f54545] ml-1">
+            <span className="font-sans text-xl md:text-2xl font-bold text-[#f54545] ml-1">
               SERVICES
             </span>
             <span className="h-2 w-2 rounded-full bg-[#f54545] ml-1 animate-pulse" />
