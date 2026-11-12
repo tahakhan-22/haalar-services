@@ -7,6 +7,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingChatWidget from "@/components/layout/FloatingChatWidget";
 import JsonLd from "@/components/common/JsonLd";
+import VantaNetBackground from "@/components/common/VantaNetBackground";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -50,11 +51,12 @@ export default function RootLayout({
       className={`${manrope.variable} ${anton.variable} ${jetbrainsMono.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col font-sans bg-white text-neutral-900 selection:bg-[#f54545] selection:text-white">
+        <VantaNetBackground variant="light" fixed className="z-0" />
         <JsonLd />
         <SmoothScrollProvider>
           <AnnouncementBar />
           <Navbar />
-          <div className="flex-1">{children}</div>
+          <div className="relative z-10 flex-1">{children}</div>
           <Footer />
           <FloatingChatWidget />
         </SmoothScrollProvider>

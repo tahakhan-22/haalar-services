@@ -1,12 +1,16 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, ShieldCheck, Mail, MapPin } from "lucide-react";
 import { NAV_SERVICES, NAV_INDUSTRIES } from "@/data/siteData";
+import VantaNetBackground from "@/components/common/VantaNetBackground";
+import EagleCredit from "@/components/common/EagleCredit";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] text-white pt-20 pb-12 border-t border-neutral-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="relative z-10 overflow-hidden bg-[#0a0a0a] text-white pt-20 pb-12 border-t border-neutral-900">
+      <VantaNetBackground variant="dark" className="z-0" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Top CTA Row */}
         <div className="border-b border-neutral-800 pb-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div>
@@ -139,7 +143,12 @@ export default function Footer() {
 
         {/* Bottom Bar: Copyright & Policies */}
         <div className="pt-8 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-500 gap-4">
-          <p>© 2026 Haalar Services. All rights reserved.</p>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <p>© 2026 Haalar Services. All rights reserved.</p>
+            <Suspense fallback={null}>
+              <EagleCredit />
+            </Suspense>
+          </div>
           <div className="flex items-center gap-6">
             <Link href="/privacy-policy" className="hover:text-neutral-300">
               Privacy Policy

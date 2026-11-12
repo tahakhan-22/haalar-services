@@ -3,7 +3,7 @@ import { FOUNDATION_MODELS } from "@/data/siteData";
 
 export default function FoundationModelsSection() {
   return (
-    <section className="py-24 bg-white border-b border-neutral-200/60">
+    <section className="py-24 bg-transparent border-b border-neutral-200/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#f54545] font-mono text-xs uppercase tracking-widest font-bold">
@@ -22,7 +22,7 @@ export default function FoundationModelsSection() {
           {FOUNDATION_MODELS.map((tool, idx) => (
             <div
               key={idx}
-              className="bg-neutral-50/70 rounded-2xl p-6 border border-neutral-200/70 hover-card-elevate flex flex-col justify-between"
+              className="bg-white/78 backdrop-blur-xs rounded-2xl p-6 border border-neutral-200/70 hover-card-elevate flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">

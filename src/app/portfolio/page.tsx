@@ -4,147 +4,30 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, ShieldCheck } from "lucide-react";
 import PageHeader from "@/components/common/PageHeader";
-
-const PORTFOLIO_ITEMS = [
-  {
-    slug: "drone-jammer-handheld",
-    title: "Drone Jammer (Handheld Tactical Rifle)",
-    category: "Defense & National Security",
-    metric: "1,500m",
-    metricLabel: "Directional Jamming Range",
-    client: "Rapid Deployment Infantry Units",
-    summary:
-      "Complete handheld counter-UAS directional rifle with 6 spot frequencies, precision optical scope, dual hot-swappable batteries, rapid charger, and 2-hour continuous battery life.",
-    tags: ["6 Spot Frequencies", "Directional Array", "Optical Scope", "Dual Li-Ion Packs", "IP65 Ruggedized"],
-    bgClass: "from-red-500/10 to-neutral-900/40",
-  },
-  {
-    slug: "drone-jammer-static",
-    title: "Drone Jammer Static Perimeter Base Station",
-    category: "Defense & National Security",
-    metric: "3 km",
-    metricLabel: "Perimeter Exclusion Range",
-    client: "Critical Strategic Facilities Command",
-    summary:
-      "Heavy-duty perimeter countermeasure base station with 4-5 frequency bands, AC main power input, and 30 Watts high-gain RF output power per band for permanent facility denial.",
-    tags: ["3 km Range", "4-5 Frequency Bands", "30W RF Output / Band", "AC Powered", "IP67 Weatherproof"],
-    bgClass: "from-orange-500/10 to-neutral-900/40",
-  },
-  {
-    slug: "alpha-fire-pak-1",
-    title: "Alpha Fire Handheld Jammer PAK-1",
-    category: "Defense & National Security",
-    metric: "90m",
-    metricLabel: "Jamming Radius",
-    client: "Defense & Strategic Units",
-    summary:
-      "Compact, battery-operated multi-frequency handheld defense countermeasure with two spot frequencies, directional antenna array, and 2-hour runtime.",
-    tags: ["Two Spot Frequencies", "90m Radius", "1x Antenna", "2h Battery Life"],
-    bgClass: "from-red-500/10 to-neutral-900/40",
-  },
-  {
-    slug: "stos-dds-jammer",
-    title: "STOS Direct Digital Synthesis (DDS) Jammer",
-    category: "RF & Electronic Systems",
-    metric: "70m",
-    metricLabel: "Spherical Protection Bubble",
-    client: "Border Defense & Communication Depots",
-    summary:
-      "Advanced Direct Digital Synthesis frequency sweeping countermeasure module with -25MHz sweep window, 2 spot frequencies, dual antennas, and 12V battery operation.",
-    tags: ["Direct Digital Synthesis", "Sweep -25MHz", "Dual Antenna Array", "12V Battery Power", "Zero Phase Drift"],
-    bgClass: "from-blue-500/10 to-neutral-900/40",
-  },
-  {
-    slug: "alpha-fire-vehicle-mount",
-    title: "Alpha Fire Vehicle Mount VIP Convoy Shield",
-    category: "Tactical Mobility",
-    metric: "200m+",
-    metricLabel: "Convoy Protection Perimeter",
-    client: "VIP Escort & Convoy Security Directorate",
-    summary:
-      "High-power vehicle-mounted tactical countermeasure station engineered for convoy perimeter defense with 12V vehicle alternator feed and mil-spec vibration dampening.",
-    tags: ["Vehicle Alternator 12V", "Wideband GaN PAs", "Mil-Spec Shock Mount", "Omni Antenna Mast", "Convoy Defense"],
-    bgClass: "from-amber-500/10 to-neutral-900/40",
-  },
-  {
-    slug: "green-arrow-ism",
-    title: "Green Arrow (ISM Band) Module",
-    category: "RF & Electronic Systems",
-    metric: "2.4 GHz",
-    metricLabel: "2400-2520 MHz ISM Band",
-    client: "Perimeter Frequency Mitigation",
-    summary:
-      "Specialized ISM band jamming module (2400-2520 MHz) with configurable bandwidth, 80m disruption radius, 12V DC input, and alloy heat sink.",
-    tags: ["2400-2520 MHz", "80m Jamming Radius", "12V Battery", "Customizable Band"],
-    bgClass: "from-emerald-500/10 to-neutral-900/40",
-  },
-  {
-    slug: "green-arrow-100-101",
-    title: "Green Arrow 100 / 101 Jammer Modules",
-    category: "RF & Electronic Systems",
-    metric: "20-500 MHz",
-    metricLabel: "3 Discrete Bands + GSM/LTE",
-    summary:
-      "Modular triple-band RF suppression system (20-100MHz, 100-200MHz, 200-500MHz) with GSM (2G/3G/4G/LTE) and ISM (2400-2550MHz) active/reactive coverage.",
-    tags: ["20-500 MHz", "3 Discrete Bands", "GSM & LTE", "ISM Band", "Active & Reactive"],
-    bgClass: "from-purple-500/10 to-neutral-900/40",
-  },
-  {
-    slug: "digital-directional-finder",
-    title: "Digital Directional Finder (DF)",
-    category: "Aerospace & Avionics",
-    metric: "5 km",
-    metricLabel: "DF Radius Coverage",
-    client: "Signal Intelligence & Tracking",
-    summary:
-      "Tactical direction finding system for VHF & UHF frequencies with omni-directional antenna array and AC power for hostile RF localization.",
-    tags: ["5 km DF Radius", "Omni Antennas", "AC Power", "VHF & UHF"],
-    bgClass: "from-cyan-500/10 to-neutral-900/40",
-  },
-  {
-    slug: "jammer-testing-device",
-    title: "Jammer Testing & Validation Device",
-    category: "Industrial OEM",
-    metric: "20-500 MHz",
-    metricLabel: "Programmable Diagnostic Set",
-    summary:
-      "Precision test set with 1x transmitter and 1x receiver covering 20-500 MHz and 2400-2520 MHz with 25m test separation and 2-hour battery.",
-    tags: ["1x TX + 1x RX", "20-500 MHz", "ISM 2400-2520 MHz", "2h Battery"],
-    bgClass: "from-rose-500/10 to-neutral-900/40",
-  },
-];
-
-const CATEGORIES = [
-  "All",
-  "Defense & National Security",
-  "RF & Electronic Systems",
-  "Aerospace & Avionics",
-  "Industrial OEM",
-  "Tactical Mobility",
-];
+import { HAALAR_PRODUCTS, PRODUCT_CATEGORIES } from "@/data/productsData";
 
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filtered =
     activeCategory === "All"
-      ? PORTFOLIO_ITEMS
-      : PORTFOLIO_ITEMS.filter((item) => item.category === activeCategory);
+      ? HAALAR_PRODUCTS
+      : HAALAR_PRODUCTS.filter((item) => item.category === activeCategory);
 
   return (
-    <div className="bg-white">
+    <div className="bg-transparent">
       <PageHeader
-        badge="Tactical Products & Hardware"
+        badge="Haalar Products & Hardware"
         title="Deployed Products & Electronic"
         highlightText="Systems."
-        description="Explore 40+ advanced electronic systems and mission-critical hardware engineered and deployed by Haalar Services across defense, aerospace, telecommunications, and industrial sectors."
+        description="Explore indigenous EW jammers, counter-UAS detectors & anti-drone guns, SDR digital direction finders, jammer testing devices, decoy systems, GPS anti-jamming, and swarm GCS hardware by Haalar Services."
         breadcrumbs={[{ label: "Products & Portfolio" }]}
       />
 
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Category Filter Pills */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-14">
-          {CATEGORIES.map((cat) => (
+          {PRODUCT_CATEGORIES.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}

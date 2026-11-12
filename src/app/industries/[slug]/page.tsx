@@ -167,7 +167,7 @@ export default async function IndustryDetailPage({
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-transparent">
       <PageHeader
         badge={profile.badge}
         title={profile.title}

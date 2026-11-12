@@ -4,20 +4,20 @@ import { CASE_STUDIES } from "@/data/siteData";
 
 export default function CaseStudiesSection() {
   return (
-    <section id="portfolio" className="py-24 bg-white">
+    <section id="portfolio" className="py-24 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <span className="text-[#f54545] font-mono text-xs uppercase tracking-widest font-bold">
-              Tactical Hardware & Products
+              Haalar Products
             </span>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-neutral-950 mt-3 tracking-tight">
               Field-Tested Defense & RF Systems in <br />
               <span className="text-[#f54545]">Operational Deployment.</span>
             </h2>
             <p className="text-neutral-600 mt-3 text-base max-w-xl">
-              Explore indigenous electronic warfare countermeasures, Direct Digital Synthesis (DDS) sweepers, and tactical drone mitigation hardware engineered by Haalar Services.
+              Explore DDS &amp; SDR jammers, counter-UAS detectors &amp; anti-drone hardware, SDR direction finders, jammer testing devices, decoy systems, and tactical avionics engineered by Haalar Services.
             </p>
           </div>
 

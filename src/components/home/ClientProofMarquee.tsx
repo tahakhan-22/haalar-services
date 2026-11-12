@@ -1,15 +1,18 @@
 import { CLIENT_LOGOS } from "@/data/siteData";
+import VantaNetBackground from "@/components/common/VantaNetBackground";
 
 export default function ClientProofMarquee() {
   return (
-    <section className="py-14 bg-neutral-950 text-white overflow-hidden border-y border-neutral-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
+    <section className="relative py-14 bg-neutral-950 text-white overflow-hidden border-y border-neutral-900">
+      <VantaNetBackground variant="dark" className="z-0" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center relative z-10">
         <h2 className="text-xs uppercase tracking-widest font-mono text-neutral-400 font-bold">
           Proof You&apos;re Working With the Right AI Software Development Company
         </h2>
       </div>
 
-      <div className="flex animate-marquee items-center gap-10">
+      <div className="flex animate-marquee items-center gap-10 relative z-10">
         {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((logo, idx) => (
           <div
             key={idx}

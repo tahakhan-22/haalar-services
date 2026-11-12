@@ -32,7 +32,7 @@ export default async function LocationServicePage({
   const serviceName = service.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-transparent min-h-screen">
       <PageHeader
         badge={`Regional Hub · ${cityName}`}
         title={`${serviceName} in`}

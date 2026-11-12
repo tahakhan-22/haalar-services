@@ -97,7 +97,7 @@ const INDUSTRIES_DATA = [
 
 export default function IndustriesPage() {
   return (
-    <div className="bg-white">
+    <div className="bg-transparent">
       <PageHeader
         badge="Strategic Sectors"
         title="Six Mission-Critical Verticals. One Engineering"

@@ -1,11 +1,13 @@
 import { ShieldCheck, Lock, Server, FileCheck, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { COMPLIANCE_ITEMS } from "@/data/siteData";
+import VantaNetBackground from "@/components/common/VantaNetBackground";
 
 export default function ComplianceSection() {
   return (
     <section className="py-24 bg-neutral-950 text-white relative overflow-hidden">
-      <div className="absolute -bottom-20 -left-20 w-[500px] h-[500px] bg-[#f54545]/10 blur-[140px] rounded-full pointer-events-none" />
+      <VantaNetBackground variant="dark" className="z-0" />
+      <div className="absolute -bottom-20 -left-20 w-[500px] h-[500px] bg-[#f54545]/10 blur-[140px] rounded-full pointer-events-none z-[1]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">

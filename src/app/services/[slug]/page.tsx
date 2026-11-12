@@ -339,7 +339,7 @@ export default async function ServiceDetailPage({
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-transparent">
       {/* Header */}
       <PageHeader
         badge={service.badge}

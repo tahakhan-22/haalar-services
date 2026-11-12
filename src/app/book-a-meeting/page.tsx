@@ -39,7 +39,7 @@ export default function BookMeetingPage() {
   };
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-transparent min-h-screen">
       <PageHeader
         badge="Direct Consultation"
         title="Book an Engineering Scoping"

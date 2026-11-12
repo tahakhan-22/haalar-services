@@ -46,7 +46,7 @@ const PERKS = [
 
 export default function CareerPage() {
   return (
-    <div className="bg-white">
+    <div className="bg-transparent">
       <PageHeader
         badge="Join Haalar Engineering"
         title="Engineer the Next Generation of Defense &"

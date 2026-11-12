@@ -67,7 +67,7 @@ const ARTICLES = [
 
 export default function BlogsPage() {
   return (
-    <div className="bg-white">
+    <div className="bg-transparent">
       <PageHeader
         badge="Engineering Publications"
         title="Technical Papers & Hardware Research"

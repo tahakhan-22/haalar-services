@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ChevronRight, Sparkles } from "lucide-react";
+import VantaNetBackground from "@/components/common/VantaNetBackground";
 
 interface PageHeaderProps {
   badge: string;
@@ -18,8 +19,11 @@ export default function PageHeader({
 }: PageHeaderProps) {
   return (
     <section className="relative overflow-hidden pt-12 pb-16 md:pt-16 md:pb-24 bg-neutral-950 text-white border-b border-neutral-900">
+      {/* Vanta 3D Net Dark Crimson Background */}
+      <VantaNetBackground variant="dark" className="z-0" />
+
       {/* Background Radial Glow */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[350px] bg-[#f54545]/15 blur-[130px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-[500px] h-[350px] bg-[#f54545]/15 blur-[130px] rounded-full pointer-events-none z-[1]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Breadcrumbs */}

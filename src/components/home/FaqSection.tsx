@@ -12,7 +12,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="py-24 bg-neutral-50/60 border-b border-neutral-200/60">
+    <section className="py-24 bg-neutral-50/35 border-b border-neutral-200/60">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-[#f54545] font-mono text-xs uppercase tracking-widest font-bold">
@@ -32,7 +32,7 @@ export default function FaqSection() {
             return (
               <div
                 key={idx}
-                className="bg-white rounded-2xl border border-neutral-200/80 overflow-hidden transition-all duration-200"
+                className="bg-white/88 backdrop-blur-xs rounded-2xl border border-neutral-200/80 overflow-hidden transition-all duration-200"
               >
                 <button
                   onClick={() => toggle(idx)}

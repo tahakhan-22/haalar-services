@@ -24,7 +24,7 @@ export default async function BlogPostPage({
     .join(" ");
 
   return (
-    <article className="bg-white min-h-screen py-16">
+    <article className="bg-transparent min-h-screen py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Link */}
         <Link

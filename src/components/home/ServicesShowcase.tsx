@@ -2,7 +2,15 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Cpu, Layers, Shield, Radio, Wrench, Check, Microchip } from "lucide-react";
+
+const SERVICE_CARD_BACKGROUNDS: Record<string, string> = {
+  "/services/odm-manufacturing": "/img/service-odm-bg.jpg",
+  "/services/oem-production": "/img/service-oem-bg.jpg",
+  "/services/research-development": "/img/service-rd-bg.jpg",
+  "/services/legacy-modernization": "/img/service-legacy-bg.jpg",
+};
 
 const MANUFACTURING_SERVICES = [
   {
@@ -72,7 +80,7 @@ export default function ServicesShowcase() {
   const services = activeTab === "mfg" ? MANUFACTURING_SERVICES : ELECTRONICS_SERVICES;
 
   return (
-    <section id="services" className="py-24 bg-neutral-50/60 border-t border-neutral-200/60">
+    <section id="services" className="py-24 bg-neutral-50/35 border-t border-neutral-200/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
@@ -113,34 +121,58 @@ export default function ServicesShowcase() {
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {services.map((item, idx) => {
+          {services.map((item) => {
             const Icon = item.icon;
+            const bgImage = SERVICE_CARD_BACKGROUNDS[item.href];
             return (
               <div
-                key={idx}
-                className="bg-white rounded-3xl p-8 sm:p-10 border border-neutral-200 hover-card-elevate flex flex-col justify-between group"
+                key={item.href}
+                className="relative overflow-hidden bg-white/88 backdrop-blur-xs rounded-3xl p-8 sm:p-10 border border-neutral-200 hover-card-elevate flex flex-col justify-between group"
               >
-                <div>
-                  <div className="size-12 rounded-2xl bg-red-50 text-[#f54545] flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                {bgImage && (
+                  <>
+                    <Image
+                      src={bgImage}
+                      alt=""
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover object-center pointer-events-none z-0 opacity-100 contrast-105"
+                      aria-hidden="true"
+                    />
+                    <div
+                      aria-hidden="true"
+                      className="absolute inset-0 bg-gradient-to-b from-white/55 via-white/40 to-white/72 pointer-events-none z-0"
+                    />
+                  </>
+                )}
+
+                <div className="relative z-10">
+                  <div
+                    className={`size-12 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform ${
+                      bgImage
+                        ? "bg-red-50/90 text-[#e02424] border border-red-100/80 backdrop-blur-xs"
+                        : "bg-red-50 text-[#f54545]"
+                    }`}
+                  >
                     <Icon className="w-6 h-6" />
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 group-hover:text-[#f54545] transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-bold text-neutral-950 group-hover:text-[#f54545] transition-colors">
                     {item.title}
                   </h3>
 
-                  <p className="text-neutral-600 text-sm mt-3 leading-relaxed">
+                  <p className={`text-sm mt-3 leading-relaxed ${bgImage ? "text-neutral-900 font-medium" : "text-neutral-600"}`}>
                     {item.desc}
                   </p>
 
-                  <div className="mt-6 pt-6 border-t border-neutral-100">
-                    <span className="text-xs font-mono uppercase tracking-wider text-neutral-400 font-bold block mb-3">
+                  <div className={`mt-6 pt-6 border-t ${bgImage ? "border-neutral-900/15" : "border-neutral-100"}`}>
+                    <span className={`text-xs font-mono uppercase tracking-wider font-bold block mb-3 ${bgImage ? "text-neutral-700" : "text-neutral-400"}`}>
                       Technical Capabilities
                     </span>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                       {item.features.map((f, i) => (
-                        <li key={i} className="flex items-center gap-2 text-xs font-semibold text-neutral-700">
-                          <Check className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                        <li key={i} className={`flex items-center gap-2 text-xs font-semibold ${bgImage ? "text-neutral-950" : "text-neutral-700"}`}>
+                          <Check className={`w-3.5 h-3.5 shrink-0 ${bgImage ? "text-emerald-600" : "text-emerald-500"}`} />
                           <span>{f}</span>
                         </li>
                       ))}
@@ -148,10 +180,12 @@ export default function ServicesShowcase() {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-4">
+                <div className="mt-8 pt-4 relative z-10">
                   <Link
                     href={item.href}
-                    className="inline-flex items-center gap-1.5 text-sm font-bold text-[#f54545] hover:text-[#a50e19] transition-colors"
+                    className={`inline-flex items-center gap-1.5 text-sm font-bold transition-colors ${
+                      bgImage ? "text-[#c81e1e] hover:text-[#991b1b]" : "text-[#f54545] hover:text-[#a50e19]"
+                    }`}
                   >
                     <span>View Technical Specifications</span>
                     <ArrowUpRight className="w-4 h-4" />

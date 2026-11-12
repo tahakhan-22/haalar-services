@@ -3,7 +3,7 @@ import { CheckCircle2, ArrowUpRight } from "lucide-react";
 
 export default function ThankYouPage() {
   return (
-    <div className="bg-white min-h-[80vh] flex items-center justify-center py-20">
+    <div className="bg-transparent min-h-[80vh] flex items-center justify-center py-20">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
         <div className="size-20 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto shadow-sm border border-emerald-200">
           <CheckCircle2 className="w-10 h-10" />

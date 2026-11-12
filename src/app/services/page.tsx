@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight, Cpu, Layers, Radio, Shield, Wrench, Search, Zap, Check, Settings, Terminal } from "lucide-react";
 import PageHeader from "@/components/common/PageHeader";
+import VantaNetBackground from "@/components/common/VantaNetBackground";
 
 const ALL_SERVICES = [
   {
@@ -119,7 +120,7 @@ const ALL_SERVICES = [
 
 export default function ServicesPage() {
   return (
-    <div className="bg-white">
+    <div className="bg-transparent">
       {/* Page Header */}
       <PageHeader
         badge="Engineering Disciplines"
@@ -193,8 +194,9 @@ export default function ServicesPage() {
       </section>
 
       {/* Engagement Models Banner */}
-      <section className="py-20 bg-neutral-950 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden py-20 bg-neutral-950 text-white">
+        <VantaNetBackground variant="dark" className="z-0" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-[#f54545] font-mono text-xs uppercase tracking-widest font-bold">
               Engineering Framework

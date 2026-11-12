@@ -2,7 +2,7 @@ import PageHeader from "@/components/common/PageHeader";
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-transparent min-h-screen">
       <PageHeader
         badge="Governance & Trust"
         title="Privacy & Non-Disclosure"

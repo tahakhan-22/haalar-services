@@ -23,7 +23,7 @@ export default function ContactUsPage() {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-transparent">
       <PageHeader
         badge="Direct Engineering Contact"
         title="Consult with the Haalar Services"

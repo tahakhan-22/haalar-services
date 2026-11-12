@@ -41,7 +41,7 @@ const FACILITIES = [
 
 export default function AboutUsPage() {
   return (
-    <div className="bg-white">
+    <div className="bg-transparent">
       <PageHeader
         badge="About Haalar Services"
         title="Disrupt · Defend · Dominate — Next-Gen"
@@ -104,7 +104,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* Core Principles */}
-      <section className="py-20 bg-neutral-50 border-y border-neutral-200/60">
+      <section className="py-20 bg-neutral-50/40 border-y border-neutral-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[#f54545] font-mono text-xs uppercase tracking-widest font-bold">
@@ -117,7 +117,7 @@ export default function AboutUsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {PRINCIPLES.map((item, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl border border-neutral-200/80 shadow-2xs">
+              <div key={i} className="bg-white/88 backdrop-blur-xs p-8 rounded-2xl border border-neutral-200/80 shadow-2xs">
                 <span className="text-xs font-mono font-bold text-[#f54545] block mb-3">0{i + 1}</span>
                 <h3 className="font-bold text-neutral-900 text-lg mb-2">{item.title}</h3>
                 <p className="text-neutral-600 text-xs sm:text-sm leading-relaxed">{item.desc}</p>
