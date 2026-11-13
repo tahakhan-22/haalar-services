@@ -1,16 +1,11 @@
 export type ReconstructionStage =
   | "INITIAL_LOGO"          // 0.0s - 1.2s: Center logo over Vanta net background
-  | "DISINTEGRATING"        // 1.2s - 1.9s: Logo fractures into 1038 shards
-  | "SWARM_EXPANDING"       // 1.9s - 2.6s: Shards morph into sleek cursors
-  | "BUILD_BADGE"           // 2.6s - 3.0s: Cursor draws pill box, pill background fills
-  | "BUILD_BADGE_TEXT"      // 3.0s - 3.4s: Cursor draws inner text box, "Disrupt · Defend · Dominate" appears
-  | "BUILD_H1_IDEA"         // 3.4s - 3.9s: Cursor draws box for "Your Idea,"
-  | "BUILD_H1_EXPERTISE"    // 3.9s - 4.4s: Cursor draws box for "Our Expertise." + underline
-  | "BUILD_SUBTITLE_EAGLE"  // 4.4s - 4.9s: Cursor draws subtitle & pings 3D eagle
-  | "BUILD_CTA_CONTAINER"   // 4.9s - 5.4s: Cursor draws button box -> button fills with vibrant red!
-  | "BUILD_CTA_CONTENT"     // 5.4s - 6.0s: Cursor draws inner box -> Sparkles + text + secondary button appear!
-  | "CONVERGING"            // 6.0s - 6.9s: Cursors converge to center, assemble Haalar logo
-  | "FLIGHT_TO_NAV"         // 6.9s - 7.6s: Reassembled logo flies to top-left Navbar logo!
+  | "DISINTEGRATING"        // 1.2s - 1.8s: Logo fractures into 1038 shards
+  | "SWARM_EXPANDING"       // 1.8s - 2.5s: Shards morph into sleek cursors
+  | "BUILD_CONTAINERS"      // 2.5s - 3.8s: ALL cursors simultaneously draw outer boxes
+  | "BUILD_CONTENT"         // 3.8s - 5.0s: Button fills red! Inner boxes drawn simultaneously
+  | "CONVERGING"            // 5.0s - 5.9s: Cursors converge to center, assemble Haalar logo
+  | "FLIGHT_TO_NAV"         // 5.9s - 6.7s: Reassembled logo flies to top-left Navbar logo!
   | "COMPLETE";
 
 export interface ActiveParticle {

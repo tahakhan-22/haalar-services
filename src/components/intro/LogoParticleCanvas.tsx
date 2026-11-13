@@ -58,7 +58,7 @@ export default function LogoParticleCanvas({
   // Preload logo image
   useEffect(() => {
     const img = new Image();
-    img.src = "/img/haalar-logo-hd.png";
+    img.src = "/img/haalar-logo.png";
     logoImageRef.current = img;
   }, []);
 
@@ -346,6 +346,7 @@ export default function LogoParticleCanvas({
       const ctaBtnRect = getDomRect("hero-cta-btn", { x: w * 0.35, y: h * 0.54, w: 260, h: 54 });
       const ctaContentRect = getDomRect("hero-cta-content", { x: ctaBtnRect.x + 16, y: ctaBtnRect.y + 10, w: ctaBtnRect.w - 32, h: 34 });
       const ctaSecRect = getDomRect("hero-cta-secondary", { x: w * 0.52, y: h * 0.54, w: 230, h: 54 });
+      const guarRect = getDomRect("hero-guarantees", { x: w * 0.32, y: h * 0.64, w: w * 0.36, h: 28 });
       const eagleRect = getDomRect("hero-eagle-loader", { x: w * 0.65, y: h * 0.2, w: w * 0.35, h: h * 0.5 });
       const navLogoRect = getDomRect("navbar-brand-logo", { x: 48, y: 18, w: 120, h: 44 });
 
@@ -396,8 +397,8 @@ export default function LogoParticleCanvas({
         ctx.restore();
       }
 
-      // PHASE 2: DISINTEGRATION (1.2s - 1.9s)
-      else if (elapsed >= 1.2 && elapsed < 1.9) {
+      // PHASE 2: DISINTEGRATION (1.2s - 1.8s)
+      else if (elapsed >= 1.2 && elapsed < 1.8) {
         if (lastReportedPhase !== "DISINTEGRATING") {
           lastReportedPhase = "DISINTEGRATING";
           onPhaseChange?.("DISINTEGRATING");
@@ -441,14 +442,14 @@ export default function LogoParticleCanvas({
         }
       }
 
-      // PHASE 3: MORPH SHARDS INTO CURSORS (1.9s - 2.6s)
-      else if (elapsed >= 1.9 && elapsed < 2.6) {
+      // PHASE 3: MORPH SHARDS INTO CURSORS (1.8s - 2.5s)
+      else if (elapsed >= 1.8 && elapsed < 2.5) {
         if (lastReportedPhase !== "SWARM_EXPANDING") {
           lastReportedPhase = "SWARM_EXPANDING";
           onPhaseChange?.("SWARM_EXPANDING");
         }
 
-        const p3 = (elapsed - 1.9) / (2.6 - 1.9);
+        const p3 = (elapsed - 1.8) / (2.5 - 1.8);
 
         // Update ambient non-cursor shards
         for (let i = 0; i < particles.length; i++) {
@@ -480,9 +481,15 @@ export default function LogoParticleCanvas({
         }
       }
 
-      // PHASE 4: COMPONENT-BY-COMPONENT HERO RECONSTRUCTION (2.6s - 6.0s)
-      else if (elapsed >= 2.6 && elapsed < 6.0) {
+      // PHASE 4A: ALL CURSORS START SIMULTANEOUSLY - OUTER BOUNDING BOXES (2.5s - 3.8s)
+      else if (elapsed >= 2.5 && elapsed < 3.8) {
+        if (lastReportedPhase !== "BUILD_CONTAINERS") {
+          lastReportedPhase = "BUILD_CONTAINERS";
+          onPhaseChange?.("BUILD_CONTAINERS");
+        }
+
         activeBoxes.length = 0;
+        const prog = (elapsed - 2.5) / 1.3;
 
         // Ambient shards floating in background
         for (let i = 0; i < particles.length; i++) {
@@ -490,213 +497,97 @@ export default function LogoParticleCanvas({
           p.rotation += p.vRot * 0.3;
           p.x += Math.sin(now * 0.001 + i) * 0.35;
           p.y += Math.cos(now * 0.0012 + i) * 0.35;
-          p.alpha = 0.35;
+          p.alpha = 0.3;
           drawShard(p);
         }
 
-        // SUB-STAGE 4A: BUILD_BADGE (2.6s - 3.0s)
-        if (elapsed < 3.0) {
-          if (lastReportedPhase !== "BUILD_BADGE") {
-            lastReportedPhase = "BUILD_BADGE";
-            onPhaseChange?.("BUILD_BADGE");
-          }
-          const prog = (elapsed - 2.6) / 0.4;
+        // 1. Cursor 0 [SYS-ARCH]: Sweeps Badge Container
+        cursors[0].targetX = badgeRect.x + badgeRect.w * prog;
+        cursors[0].targetY = badgeRect.y;
+        cursors[0].statusText = "OUTER_PILL_CONTAINER";
+        activeBoxes.push({
+          x1: badgeRect.x,
+          y1: badgeRect.y,
+          x2: badgeRect.x + badgeRect.w,
+          y2: badgeRect.y + badgeRect.h,
+          label: "BADGE // CONTAINER_FRAME",
+          opacity: 0.85,
+          progress: prog,
+          pill: true,
+        });
 
-          cursors[0].targetX = badgeRect.x + badgeRect.w * prog;
-          cursors[0].targetY = badgeRect.y;
-          cursors[0].statusText = "OUTER_PILL_CONTAINER";
+        // 2. Cursor 1 [HERO-H1]: Sweeps Main Heading ("Your Idea,")
+        cursors[1].targetX = h1Line1Rect.x + h1Line1Rect.w * prog;
+        cursors[1].targetY = h1Line1Rect.y + h1Line1Rect.h / 2;
+        cursors[1].statusText = "H1_YOUR_IDEA";
+        activeBoxes.push({
+          x1: h1Line1Rect.x - 4,
+          y1: h1Line1Rect.y,
+          x2: h1Line1Rect.x + h1Line1Rect.w + 4,
+          y2: h1Line1Rect.y + h1Line1Rect.h,
+          label: "H1 // YOUR_IDEA",
+          opacity: 0.85,
+          progress: prog,
+        });
 
-          activeBoxes.push({
-            x1: badgeRect.x,
-            y1: badgeRect.y,
-            x2: badgeRect.x + badgeRect.w,
-            y2: badgeRect.y + badgeRect.h,
-            label: "BADGE // CONTAINER_FRAME",
-            opacity: 0.8,
-            progress: prog,
-            pill: true,
-          });
-        }
+        // 3. Cursor 2 [CTA-ENGINE]: Sweeps Primary CTA Button Container
+        cursors[2].targetX = ctaBtnRect.x + ctaBtnRect.w * prog;
+        cursors[2].targetY = ctaBtnRect.y;
+        cursors[2].statusText = "PRIMARY_CTA_BOX";
+        activeBoxes.push({
+          x1: ctaBtnRect.x,
+          y1: ctaBtnRect.y,
+          x2: ctaBtnRect.x + ctaBtnRect.w,
+          y2: ctaBtnRect.y + ctaBtnRect.h,
+          label: "PRIMARY_CTA // CONTAINER_FRAME",
+          opacity: 0.9,
+          progress: prog,
+          pill: true,
+        });
 
-        // SUB-STAGE 4B: BUILD_BADGE_TEXT (3.0s - 3.4s)
-        else if (elapsed < 3.4) {
-          if (lastReportedPhase !== "BUILD_BADGE_TEXT") {
-            lastReportedPhase = "BUILD_BADGE_TEXT";
-            onPhaseChange?.("BUILD_BADGE_TEXT");
-          }
-          const prog = (elapsed - 3.0) / 0.4;
+        // 4. Cursor 3 [TYPO-INJECT]: Pre-positions alongside Primary CTA
+        cursors[3].targetX = ctaBtnRect.x + ctaBtnRect.w * 0.2 + (ctaBtnRect.w * 0.6) * prog;
+        cursors[3].targetY = ctaBtnRect.y - 14;
+        cursors[3].statusText = "ARMING_TYPOGRAPHY";
 
-          cursors[1].targetX = badgeInnerRect.x + badgeInnerRect.w * prog;
-          cursors[1].targetY = badgeInnerRect.y + badgeInnerRect.h / 2;
-          cursors[1].statusText = "DISRUPT_DEFEND_DOMINATE";
+        // 5. Cursor 4 [OPTIC-3D]: Sweeps Subtitle Description
+        cursors[4].targetX = subRect.x + subRect.w * prog;
+        cursors[4].targetY = subRect.y + subRect.h / 2;
+        cursors[4].statusText = "DESCRIPTION_BLOCK";
+        activeBoxes.push({
+          x1: subRect.x - 4,
+          y1: subRect.y,
+          x2: subRect.x + subRect.w + 4,
+          y2: subRect.y + subRect.h,
+          label: "SYS // NEXT_GEN_HARDWARE",
+          opacity: 0.8,
+          progress: prog,
+        });
 
-          activeBoxes.push({
-            x1: badgeInnerRect.x,
-            y1: badgeInnerRect.y,
-            x2: badgeInnerRect.x + badgeInnerRect.w,
-            y2: badgeInnerRect.y + badgeInnerRect.h,
-            label: "TYPOGRAPHY // MIL_STANDARDS",
-            opacity: 0.8,
-            progress: prog,
-          });
-        }
+        // 6. Cursor 5 [MIL-STD]: Sweeps Secondary CTA Button
+        cursors[5].targetX = ctaSecRect.x + ctaSecRect.w * prog;
+        cursors[5].targetY = ctaSecRect.y + ctaSecRect.h / 2;
+        cursors[5].statusText = "SECONDARY_CTA";
+        activeBoxes.push({
+          x1: ctaSecRect.x,
+          y1: ctaSecRect.y,
+          x2: ctaSecRect.x + ctaSecRect.w,
+          y2: ctaSecRect.y + ctaSecRect.h,
+          label: "EXPLORE_HARDWARE_PRODUCTS",
+          opacity: 0.75,
+          progress: prog,
+          pill: true,
+        });
 
-        // SUB-STAGE 4C: BUILD_H1_IDEA (3.4s - 3.9s)
-        else if (elapsed < 3.9) {
-          if (lastReportedPhase !== "BUILD_H1_IDEA") {
-            lastReportedPhase = "BUILD_H1_IDEA";
-            onPhaseChange?.("BUILD_H1_IDEA");
-          }
-          const prog = (elapsed - 3.4) / 0.5;
-
-          cursors[1].targetX = h1Line1Rect.x + h1Line1Rect.w * prog;
-          cursors[1].targetY = h1Line1Rect.y + h1Line1Rect.h / 2;
-          cursors[1].statusText = "H1_YOUR_IDEA";
-
-          activeBoxes.push({
-            x1: h1Line1Rect.x - 4,
-            y1: h1Line1Rect.y,
-            x2: h1Line1Rect.x + h1Line1Rect.w + 4,
-            y2: h1Line1Rect.y + h1Line1Rect.h,
-            label: "H1 // YOUR_IDEA",
-            opacity: 0.85,
-            progress: prog,
-          });
-        }
-
-        // SUB-STAGE 4D: BUILD_H1_EXPERTISE (3.9s - 4.4s)
-        else if (elapsed < 4.4) {
-          if (lastReportedPhase !== "BUILD_H1_EXPERTISE") {
-            lastReportedPhase = "BUILD_H1_EXPERTISE";
-            onPhaseChange?.("BUILD_H1_EXPERTISE");
-          }
-          const prog = (elapsed - 3.9) / 0.5;
-
-          cursors[1].targetX = h1Line2Rect.x + h1Line2Rect.w * prog;
-          cursors[1].targetY = h1Line2Rect.y + h1Line2Rect.h / 2;
-          cursors[1].statusText = "H1_OUR_EXPERTISE";
-
-          activeBoxes.push({
-            x1: h1Line2Rect.x - 4,
-            y1: h1Line2Rect.y,
-            x2: h1Line2Rect.x + h1Line2Rect.w + 4,
-            y2: h1Line2Rect.y + h1Line2Rect.h,
-            label: "H1 // OUR_EXPERTISE [RED_ACCENT]",
-            opacity: 0.85,
-            progress: prog,
-          });
-        }
-
-        // SUB-STAGE 4E: BUILD_SUBTITLE_EAGLE (4.4s - 4.9s)
-        else if (elapsed < 4.9) {
-          if (lastReportedPhase !== "BUILD_SUBTITLE_EAGLE") {
-            lastReportedPhase = "BUILD_SUBTITLE_EAGLE";
-            onPhaseChange?.("BUILD_SUBTITLE_EAGLE");
-          }
-          const prog = (elapsed - 4.4) / 0.5;
-
-          cursors[0].targetX = subRect.x + subRect.w * prog;
-          cursors[0].targetY = subRect.y + subRect.h / 2;
-          cursors[0].statusText = "DESCRIPTION_BLOCK";
-
-          cursors[4].targetX = eagleRect.x + eagleRect.w * 0.5;
-          cursors[4].targetY = eagleRect.y + eagleRect.h * 0.4;
-          cursors[4].statusText = "INIT_3D_EAGLE";
-
-          activeBoxes.push({
-            x1: subRect.x - 4,
-            y1: subRect.y,
-            x2: subRect.x + subRect.w + 4,
-            y2: subRect.y + subRect.h,
-            label: "SYS // NEXT_GEN_HARDWARE",
-            opacity: 0.8,
-            progress: prog,
-          });
-
-          // 3D Eagle Radar reticle
-          ctx.save();
-          ctx.beginPath();
-          ctx.arc(cursors[4].targetX, cursors[4].targetY, 40 * prog, 0, Math.PI * 2);
-          ctx.strokeStyle = "rgba(245, 69, 69, 0.6)";
-          ctx.lineWidth = 1.5;
-          ctx.stroke();
-          ctx.restore();
-        }
-
-        // SUB-STAGE 4F: BUILD_CTA_CONTAINER (4.9s - 5.4s) -> EXACT USER REQUIREMENT: BUTTON BOX APPEARS & FILLS WITH COLOR
-        else if (elapsed < 5.4) {
-          if (lastReportedPhase !== "BUILD_CTA_CONTAINER") {
-            lastReportedPhase = "BUILD_CTA_CONTAINER";
-            onPhaseChange?.("BUILD_CTA_CONTAINER");
-          }
-          const prog = (elapsed - 4.9) / 0.5;
-
-          cursors[2].targetX = ctaBtnRect.x + ctaBtnRect.w * prog;
-          cursors[2].targetY = ctaBtnRect.y;
-          cursors[2].statusText = "CTA_PILL_CONTAINER";
-
-          activeBoxes.push({
-            x1: ctaBtnRect.x,
-            y1: ctaBtnRect.y,
-            x2: ctaBtnRect.x + ctaBtnRect.w,
-            y2: ctaBtnRect.y + ctaBtnRect.h,
-            label: "PRIMARY_CTA // RED_COLOR_FILL",
-            opacity: 0.9,
-            progress: prog,
-            pill: true,
-          });
-
-          if (prog > 0.85 && Math.random() < 0.2) {
-            ripples.push({
-              x: ctaBtnRect.x + ctaBtnRect.w / 2,
-              y: ctaBtnRect.y + ctaBtnRect.h / 2,
-              r: 4,
-              maxR: 50,
-              opacity: 0.9,
-              color: "#f54545",
-            });
-          }
-        }
-
-        // SUB-STAGE 4G: BUILD_CTA_CONTENT (5.4s - 6.0s) -> EXACT USER REQUIREMENT: INNER BOX CREATES TEXT & ICON INSIDE BUTTON!
-        else {
-          if (lastReportedPhase !== "BUILD_CTA_CONTENT") {
-            lastReportedPhase = "BUILD_CTA_CONTENT";
-            onPhaseChange?.("BUILD_CTA_CONTENT");
-          }
-          const prog = (elapsed - 5.4) / 0.6;
-
-          // Cursor 3 draws inner box around text and sparkles
-          cursors[3].targetX = ctaContentRect.x + ctaContentRect.w * prog;
-          cursors[3].targetY = ctaContentRect.y + ctaContentRect.h / 2;
-          cursors[3].statusText = "INJECT_TYPOGRAPHY";
-
-          // Cursor 5 draws secondary button
-          cursors[5].targetX = ctaSecRect.x + ctaSecRect.w * prog;
-          cursors[5].targetY = ctaSecRect.y + ctaSecRect.h / 2;
-          cursors[5].statusText = "SECONDARY_CTA";
-
-          // Inner box for button typography
-          activeBoxes.push({
-            x1: ctaContentRect.x - 4,
-            y1: ctaContentRect.y - 2,
-            x2: ctaContentRect.x + ctaContentRect.w + 4,
-            y2: ctaContentRect.y + ctaContentRect.h + 2,
-            label: "BUTTON_TEXT // CONSULT_ENGINEERING",
+        // Trigger click shockwave on Primary CTA button as container completes
+        if (prog > 0.88 && Math.random() < 0.25) {
+          ripples.push({
+            x: ctaBtnRect.x + ctaBtnRect.w / 2,
+            y: ctaBtnRect.y + ctaBtnRect.h / 2,
+            r: 4,
+            maxR: 55,
             opacity: 0.95,
-            progress: prog,
-          });
-
-          // Secondary button box
-          activeBoxes.push({
-            x1: ctaSecRect.x,
-            y1: ctaSecRect.y,
-            x2: ctaSecRect.x + ctaSecRect.w,
-            y2: ctaSecRect.y + ctaSecRect.h,
-            label: "EXPLORE_HARDWARE_PRODUCTS",
-            opacity: 0.75,
-            progress: prog,
-            pill: true,
+            color: "#f54545",
           });
         }
 
@@ -735,14 +626,151 @@ export default function LogoParticleCanvas({
         }
       }
 
-      // PHASE 5: CURSOR CONVERGENCE & SHARD REASSEMBLY (6.0s - 6.9s)
-      else if (elapsed >= 6.0 && elapsed < 6.9) {
+      // PHASE 4B: ALL CURSORS INJECT CONTENT SIMULTANEOUSLY (3.8s - 5.0s)
+      // BUTTON FILLS WITH VIBRANT RED VIA CSS, INNER BOX CREATES TEXT & SPARKLES
+      else if (elapsed >= 3.8 && elapsed < 5.0) {
+        if (lastReportedPhase !== "BUILD_CONTENT") {
+          lastReportedPhase = "BUILD_CONTENT";
+          onPhaseChange?.("BUILD_CONTENT");
+        }
+
+        activeBoxes.length = 0;
+        const prog = (elapsed - 3.8) / 1.2;
+
+        // Ambient shards floating in background
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.rotation += p.vRot * 0.3;
+          p.x += Math.sin(now * 0.001 + i) * 0.35;
+          p.y += Math.cos(now * 0.0012 + i) * 0.35;
+          p.alpha = 0.3;
+          drawShard(p);
+        }
+
+        // 1. Cursor 3 [TYPO-INJECT]: Sweeps Inner Box INSIDE the red Primary CTA Button
+        cursors[3].targetX = ctaContentRect.x + ctaContentRect.w * prog;
+        cursors[3].targetY = ctaContentRect.y + ctaContentRect.h / 2;
+        cursors[3].statusText = "INJECT_TYPOGRAPHY_SPARKLES";
+        activeBoxes.push({
+          x1: ctaContentRect.x - 4,
+          y1: ctaContentRect.y - 2,
+          x2: ctaContentRect.x + ctaContentRect.w + 4,
+          y2: ctaContentRect.y + ctaContentRect.h + 2,
+          label: "INNER_CTA // CONSULT_ENGINEERING",
+          opacity: 0.95,
+          progress: prog,
+        });
+
+        // 2. Cursor 0 [SYS-ARCH]: Sweeps Inner Badge Typography
+        cursors[0].targetX = badgeInnerRect.x + badgeInnerRect.w * prog;
+        cursors[0].targetY = badgeInnerRect.y + badgeInnerRect.h / 2;
+        cursors[0].statusText = "DISRUPT_DEFEND_DOMINATE";
+        activeBoxes.push({
+          x1: badgeInnerRect.x,
+          y1: badgeInnerRect.y,
+          x2: badgeInnerRect.x + badgeInnerRect.w,
+          y2: badgeInnerRect.y + badgeInnerRect.h,
+          label: "TYPOGRAPHY // MIL_STANDARDS",
+          opacity: 0.85,
+          progress: prog,
+        });
+
+        // 3. Cursor 1 [HERO-H1]: Sweeps "Our Expertise." with Glowing Red Accent
+        cursors[1].targetX = h1Line2Rect.x + h1Line2Rect.w * prog;
+        cursors[1].targetY = h1Line2Rect.y + h1Line2Rect.h / 2;
+        cursors[1].statusText = "H1_OUR_EXPERTISE";
+        activeBoxes.push({
+          x1: h1Line2Rect.x - 4,
+          y1: h1Line2Rect.y,
+          x2: h1Line2Rect.x + h1Line2Rect.w + 4,
+          y2: h1Line2Rect.y + h1Line2Rect.h,
+          label: "H1 // OUR_EXPERTISE [RED_ACCENT]",
+          opacity: 0.9,
+          progress: prog,
+        });
+
+        // 4. Cursor 4 [OPTIC-3D]: Projects Radar Reticles over 3D Eagle loader
+        cursors[4].targetX = eagleRect.x + eagleRect.w * 0.5;
+        cursors[4].targetY = eagleRect.y + eagleRect.h * 0.4;
+        cursors[4].statusText = "3D_EAGLE_ONLINE";
+
+        // Concentric scanning radar circles
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(cursors[4].targetX, cursors[4].targetY, 48 * Math.min(1, prog * 1.2), 0, Math.PI * 2);
+        ctx.strokeStyle = "rgba(245, 69, 69, 0.65)";
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(cursors[4].targetX, cursors[4].targetY, 24 * Math.min(1, prog * 1.5), 0, Math.PI * 2);
+        ctx.strokeStyle = "rgba(245, 69, 69, 0.4)";
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        ctx.restore();
+
+        // 5. Cursor 5 [MIL-STD]: Sweeps Guarantees Ribbon
+        cursors[5].targetX = guarRect.x + guarRect.w * prog;
+        cursors[5].targetY = guarRect.y + guarRect.h / 2;
+        cursors[5].statusText = "MIL_GUARANTEES";
+        activeBoxes.push({
+          x1: guarRect.x - 4,
+          y1: guarRect.y,
+          x2: guarRect.x + guarRect.w + 4,
+          y2: guarRect.y + guarRect.h,
+          label: "STANDARDS // MIL_SPEC",
+          opacity: 0.8,
+          progress: prog,
+        });
+
+        // 6. Cursor 2 [CTA-ENGINE]: Verifies Completed Red Primary Button
+        cursors[2].targetX = ctaBtnRect.x + ctaBtnRect.w - 18;
+        cursors[2].targetY = ctaBtnRect.y + ctaBtnRect.h / 2;
+        cursors[2].statusText = "LOCK_VERIFIED";
+
+        // Render laser bounding boxes
+        for (let i = 0; i < activeBoxes.length; i++) {
+          drawBoundingBox(activeBoxes[i]);
+        }
+
+        // Smoothly update cursors towards their targets
+        for (let i = 0; i < cursors.length; i++) {
+          const cur = cursors[i];
+          cur.x += (cur.targetX - cur.x) * 0.16;
+          cur.y += (cur.targetY - cur.y) * 0.16;
+          cur.scale = 1;
+          cur.opacity = 1;
+          drawCursor(cur);
+        }
+
+        // Update click ripples
+        for (let i = ripples.length - 1; i >= 0; i--) {
+          const r = ripples[i];
+          r.r += (r.maxR - r.r) * 0.18;
+          r.opacity -= 0.04;
+          if (r.opacity <= 0.02) {
+            ripples.splice(i, 1);
+            continue;
+          }
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(r.x, r.y, r.r, 0, Math.PI * 2);
+          ctx.strokeStyle = r.color;
+          ctx.lineWidth = 1.4;
+          ctx.globalAlpha = r.opacity;
+          ctx.stroke();
+          ctx.restore();
+        }
+      }
+
+      // PHASE 5: CURSOR CONVERGENCE & SHARD REASSEMBLY (5.0s - 5.9s)
+      else if (elapsed >= 5.0 && elapsed < 5.9) {
         if (lastReportedPhase !== "CONVERGING") {
           lastReportedPhase = "CONVERGING";
           onPhaseChange?.("CONVERGING");
         }
 
-        const p5 = (elapsed - 6.0) / (6.9 - 6.0);
+        const p5 = (elapsed - 5.0) / (5.9 - 5.0);
         const ease = p5 < 0.5 ? 4 * p5 * p5 * p5 : 1 - Math.pow(-2 * p5 + 2, 3) / 2;
 
         // Cursors collapse and accelerate back to center
@@ -783,14 +811,14 @@ export default function LogoParticleCanvas({
         }
       }
 
-      // PHASE 6: ASSEMBLED LOGO FLIES TO TOP-LEFT CORNER (6.9s - 7.6s) -> EXACT USER REQUIREMENT: LOGO GOES TO TOP LEFT CORNER!
-      else if (elapsed >= 6.9 && elapsed < 7.6) {
+      // PHASE 6: ASSEMBLED LOGO FLIES TO TOP-LEFT CORNER (5.9s - 6.7s) -> EXACT USER REQUIREMENT: LOGO GOES TO TOP LEFT CORNER!
+      else if (elapsed >= 5.9 && elapsed < 6.7) {
         if (lastReportedPhase !== "FLIGHT_TO_NAV") {
           lastReportedPhase = "FLIGHT_TO_NAV";
           onPhaseChange?.("FLIGHT_TO_NAV");
         }
 
-        const p6 = (elapsed - 6.9) / (7.6 - 6.9);
+        const p6 = (elapsed - 5.9) / (6.7 - 5.9);
         // Elegant cubic bezier ease out
         const ease = 1 - Math.pow(1 - p6, 3);
 
@@ -839,8 +867,8 @@ export default function LogoParticleCanvas({
         ctx.restore();
       }
 
-      // COMPLETE (>= 7.6s)
-      else if (elapsed >= 7.6) {
+      // COMPLETE (>= 6.7s)
+      else if (elapsed >= 6.7) {
         onComplete();
         return;
       }

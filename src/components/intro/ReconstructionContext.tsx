@@ -138,28 +138,18 @@ export function ReconstructionProvider({
       const elapsed = (now - startTimeRef.current) / 1000;
 
       let nextStage: ReconstructionStage = "INITIAL_LOGO";
-      if (elapsed >= 7.6) {
+      if (elapsed >= 6.7) {
         skipIntro();
         return;
-      } else if (elapsed >= 6.9) {
+      } else if (elapsed >= 5.9) {
         nextStage = "FLIGHT_TO_NAV";
-      } else if (elapsed >= 6.0) {
+      } else if (elapsed >= 5.0) {
         nextStage = "CONVERGING";
-      } else if (elapsed >= 5.4) {
-        nextStage = "BUILD_CTA_CONTENT";
-      } else if (elapsed >= 4.9) {
-        nextStage = "BUILD_CTA_CONTAINER";
-      } else if (elapsed >= 4.4) {
-        nextStage = "BUILD_SUBTITLE_EAGLE";
-      } else if (elapsed >= 3.9) {
-        nextStage = "BUILD_H1_EXPERTISE";
-      } else if (elapsed >= 3.4) {
-        nextStage = "BUILD_H1_IDEA";
-      } else if (elapsed >= 3.0) {
-        nextStage = "BUILD_BADGE_TEXT";
-      } else if (elapsed >= 2.6) {
-        nextStage = "BUILD_BADGE";
-      } else if (elapsed >= 1.9) {
+      } else if (elapsed >= 3.8) {
+        nextStage = "BUILD_CONTENT";
+      } else if (elapsed >= 2.5) {
+        nextStage = "BUILD_CONTAINERS";
+      } else if (elapsed >= 1.8) {
         nextStage = "SWARM_EXPANDING";
       } else if (elapsed >= 1.2) {
         nextStage = "DISINTEGRATING";

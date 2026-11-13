@@ -137,14 +137,9 @@ html.haalar-intro-active #hero-cta-btn {
   transition: background-color 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.45s ease;
 }
 
-/* Stage: BUILD_BADGE */
-html.haalar-intro-active[data-intro-stage="BUILD_BADGE"] #hero-badge-pill,
-html.haalar-intro-active[data-intro-stage="BUILD_BADGE_TEXT"] #hero-badge-pill,
-html.haalar-intro-active[data-intro-stage="BUILD_H1_IDEA"] #hero-badge-pill,
-html.haalar-intro-active[data-intro-stage="BUILD_H1_EXPERTISE"] #hero-badge-pill,
-html.haalar-intro-active[data-intro-stage="BUILD_SUBTITLE_EAGLE"] #hero-badge-pill,
-html.haalar-intro-active[data-intro-stage="BUILD_CTA_CONTAINER"] #hero-badge-pill,
-html.haalar-intro-active[data-intro-stage="BUILD_CTA_CONTENT"] #hero-badge-pill,
+/* Stage: BUILD_CONTAINERS (All cursors simultaneously draw outer containers) */
+html.haalar-intro-active[data-intro-stage="BUILD_CONTAINERS"] #hero-badge-pill,
+html.haalar-intro-active[data-intro-stage="BUILD_CONTENT"] #hero-badge-pill,
 html.haalar-intro-active[data-intro-stage="CONVERGING"] #hero-badge-pill,
 html.haalar-intro-active[data-intro-stage="FLIGHT_TO_NAV"] #hero-badge-pill,
 html.haalar-intro-active[data-intro-stage="COMPLETE"] #hero-badge-pill {
@@ -153,61 +148,32 @@ html.haalar-intro-active[data-intro-stage="COMPLETE"] #hero-badge-pill {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
 }
 
-/* Stage: BUILD_BADGE_TEXT */
-html.haalar-intro-active[data-intro-stage="BUILD_BADGE_TEXT"] #hero-badge-inner,
-html.haalar-intro-active[data-intro-stage="BUILD_H1_IDEA"] #hero-badge-inner,
-html.haalar-intro-active[data-intro-stage="BUILD_H1_EXPERTISE"] #hero-badge-inner,
-html.haalar-intro-active[data-intro-stage="BUILD_SUBTITLE_EAGLE"] #hero-badge-inner,
-html.haalar-intro-active[data-intro-stage="BUILD_CTA_CONTAINER"] #hero-badge-inner,
-html.haalar-intro-active[data-intro-stage="BUILD_CTA_CONTENT"] #hero-badge-inner,
-html.haalar-intro-active[data-intro-stage="CONVERGING"] #hero-badge-inner,
-html.haalar-intro-active[data-intro-stage="FLIGHT_TO_NAV"] #hero-badge-inner,
-html.haalar-intro-active[data-intro-stage="COMPLETE"] #hero-badge-inner {
-  opacity: 1;
-}
-
-/* Stage: BUILD_H1_IDEA */
-html.haalar-intro-active[data-intro-stage="BUILD_H1_IDEA"] #hero-h1-line1,
-html.haalar-intro-active[data-intro-stage="BUILD_H1_EXPERTISE"] #hero-h1-line1,
-html.haalar-intro-active[data-intro-stage="BUILD_SUBTITLE_EAGLE"] #hero-h1-line1,
-html.haalar-intro-active[data-intro-stage="BUILD_CTA_CONTAINER"] #hero-h1-line1,
-html.haalar-intro-active[data-intro-stage="BUILD_CTA_CONTENT"] #hero-h1-line1,
+html.haalar-intro-active[data-intro-stage="BUILD_CONTAINERS"] #hero-h1-line1,
+html.haalar-intro-active[data-intro-stage="BUILD_CONTENT"] #hero-h1-line1,
 html.haalar-intro-active[data-intro-stage="CONVERGING"] #hero-h1-line1,
 html.haalar-intro-active[data-intro-stage="FLIGHT_TO_NAV"] #hero-h1-line1,
 html.haalar-intro-active[data-intro-stage="COMPLETE"] #hero-h1-line1 {
   opacity: 1;
 }
 
-/* Stage: BUILD_H1_EXPERTISE */
-html.haalar-intro-active[data-intro-stage="BUILD_H1_EXPERTISE"] #hero-h1-line2,
-html.haalar-intro-active[data-intro-stage="BUILD_SUBTITLE_EAGLE"] #hero-h1-line2,
-html.haalar-intro-active[data-intro-stage="BUILD_CTA_CONTAINER"] #hero-h1-line2,
-html.haalar-intro-active[data-intro-stage="BUILD_CTA_CONTENT"] #hero-h1-line2,
-html.haalar-intro-active[data-intro-stage="CONVERGING"] #hero-h1-line2,
-html.haalar-intro-active[data-intro-stage="FLIGHT_TO_NAV"] #hero-h1-line2,
-html.haalar-intro-active[data-intro-stage="COMPLETE"] #hero-h1-line2 {
-  opacity: 1;
-}
-
-/* Stage: BUILD_SUBTITLE_EAGLE */
-html.haalar-intro-active[data-intro-stage="BUILD_SUBTITLE_EAGLE"] #hero-subtitle,
-html.haalar-intro-active[data-intro-stage="BUILD_SUBTITLE_EAGLE"] #hero-eagle-loader,
-html.haalar-intro-active[data-intro-stage="BUILD_CTA_CONTAINER"] #hero-subtitle,
-html.haalar-intro-active[data-intro-stage="BUILD_CTA_CONTAINER"] #hero-eagle-loader,
-html.haalar-intro-active[data-intro-stage="BUILD_CTA_CONTENT"] #hero-subtitle,
-html.haalar-intro-active[data-intro-stage="BUILD_CTA_CONTENT"] #hero-eagle-loader,
+html.haalar-intro-active[data-intro-stage="BUILD_CONTAINERS"] #hero-subtitle,
+html.haalar-intro-active[data-intro-stage="BUILD_CONTENT"] #hero-subtitle,
 html.haalar-intro-active[data-intro-stage="CONVERGING"] #hero-subtitle,
-html.haalar-intro-active[data-intro-stage="CONVERGING"] #hero-eagle-loader,
 html.haalar-intro-active[data-intro-stage="FLIGHT_TO_NAV"] #hero-subtitle,
-html.haalar-intro-active[data-intro-stage="FLIGHT_TO_NAV"] #hero-eagle-loader,
-html.haalar-intro-active[data-intro-stage="COMPLETE"] #hero-subtitle,
-html.haalar-intro-active[data-intro-stage="COMPLETE"] #hero-eagle-loader {
+html.haalar-intro-active[data-intro-stage="COMPLETE"] #hero-subtitle {
   opacity: 1;
 }
 
-/* Stage: BUILD_CTA_CONTAINER (fills with vibrant red color!) */
-html.haalar-intro-active[data-intro-stage="BUILD_CTA_CONTAINER"] #hero-cta-btn,
-html.haalar-intro-active[data-intro-stage="BUILD_CTA_CONTENT"] #hero-cta-btn,
+html.haalar-intro-active[data-intro-stage="BUILD_CONTAINERS"] #hero-cta-secondary,
+html.haalar-intro-active[data-intro-stage="BUILD_CONTENT"] #hero-cta-secondary,
+html.haalar-intro-active[data-intro-stage="CONVERGING"] #hero-cta-secondary,
+html.haalar-intro-active[data-intro-stage="FLIGHT_TO_NAV"] #hero-cta-secondary,
+html.haalar-intro-active[data-intro-stage="COMPLETE"] #hero-cta-secondary {
+  opacity: 1;
+}
+
+/* Stage: BUILD_CONTENT (Button fills with vibrant red, inner typography/sparkles and 3D eagle activate!) */
+html.haalar-intro-active[data-intro-stage="BUILD_CONTENT"] #hero-cta-btn,
 html.haalar-intro-active[data-intro-stage="CONVERGING"] #hero-cta-btn,
 html.haalar-intro-active[data-intro-stage="FLIGHT_TO_NAV"] #hero-cta-btn,
 html.haalar-intro-active[data-intro-stage="COMPLETE"] #hero-cta-btn {
@@ -216,18 +182,37 @@ html.haalar-intro-active[data-intro-stage="COMPLETE"] #hero-cta-btn {
   box-shadow: 0 10px 25px -5px rgba(245, 69, 69, 0.4) !important;
 }
 
-/* Stage: BUILD_CTA_CONTENT (text + sparkles inside button, plus secondary cta and guarantees ribbon!) */
-html.haalar-intro-active[data-intro-stage="BUILD_CTA_CONTENT"] #hero-cta-content,
-html.haalar-intro-active[data-intro-stage="BUILD_CTA_CONTENT"] #hero-cta-secondary,
-html.haalar-intro-active[data-intro-stage="BUILD_CTA_CONTENT"] #hero-guarantees,
+html.haalar-intro-active[data-intro-stage="BUILD_CONTENT"] #hero-badge-inner,
+html.haalar-intro-active[data-intro-stage="CONVERGING"] #hero-badge-inner,
+html.haalar-intro-active[data-intro-stage="FLIGHT_TO_NAV"] #hero-badge-inner,
+html.haalar-intro-active[data-intro-stage="COMPLETE"] #hero-badge-inner {
+  opacity: 1;
+}
+
+html.haalar-intro-active[data-intro-stage="BUILD_CONTENT"] #hero-h1-line2,
+html.haalar-intro-active[data-intro-stage="CONVERGING"] #hero-h1-line2,
+html.haalar-intro-active[data-intro-stage="FLIGHT_TO_NAV"] #hero-h1-line2,
+html.haalar-intro-active[data-intro-stage="COMPLETE"] #hero-h1-line2 {
+  opacity: 1;
+}
+
+html.haalar-intro-active[data-intro-stage="BUILD_CONTENT"] #hero-cta-content,
 html.haalar-intro-active[data-intro-stage="CONVERGING"] #hero-cta-content,
-html.haalar-intro-active[data-intro-stage="CONVERGING"] #hero-cta-secondary,
-html.haalar-intro-active[data-intro-stage="CONVERGING"] #hero-guarantees,
 html.haalar-intro-active[data-intro-stage="FLIGHT_TO_NAV"] #hero-cta-content,
-html.haalar-intro-active[data-intro-stage="FLIGHT_TO_NAV"] #hero-cta-secondary,
+html.haalar-intro-active[data-intro-stage="COMPLETE"] #hero-cta-content {
+  opacity: 1;
+}
+
+html.haalar-intro-active[data-intro-stage="BUILD_CONTENT"] #hero-eagle-loader,
+html.haalar-intro-active[data-intro-stage="CONVERGING"] #hero-eagle-loader,
+html.haalar-intro-active[data-intro-stage="FLIGHT_TO_NAV"] #hero-eagle-loader,
+html.haalar-intro-active[data-intro-stage="COMPLETE"] #hero-eagle-loader {
+  opacity: 1;
+}
+
+html.haalar-intro-active[data-intro-stage="BUILD_CONTENT"] #hero-guarantees,
+html.haalar-intro-active[data-intro-stage="CONVERGING"] #hero-guarantees,
 html.haalar-intro-active[data-intro-stage="FLIGHT_TO_NAV"] #hero-guarantees,
-html.haalar-intro-active[data-intro-stage="COMPLETE"] #hero-cta-content,
-html.haalar-intro-active[data-intro-stage="COMPLETE"] #hero-cta-secondary,
 html.haalar-intro-active[data-intro-stage="COMPLETE"] #hero-guarantees {
   opacity: 1;
 }

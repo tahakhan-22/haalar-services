@@ -20,27 +20,27 @@ export default function Home() {
       <ReplayIntroButton />
 
       {/* Hero Unit (Sub-components individually reconstructed by cursors) */}
-      <ReconstructedSection revealAt="BUILD_BADGE">
+      <ReconstructedSection revealAt="BUILD_CONTAINERS">
         <HeroSection />
       </ReconstructedSection>
 
       {/* Client Logos & Proof Marquee */}
-      <ReconstructedSection revealAt="BUILD_CTA_CONTENT">
+      <ReconstructedSection revealAt="BUILD_CONTENT">
         <ClientProofMarquee />
       </ReconstructedSection>
 
       {/* Problem Matrix Interactive Switcher */}
-      <ReconstructedSection revealAt="BUILD_CTA_CONTENT">
+      <ReconstructedSection revealAt="BUILD_CONTENT">
         <ProblemMatrix />
       </ReconstructedSection>
 
       {/* Services Showcase (Focus-Slice Accordion) */}
-      <ReconstructedSection revealAt="BUILD_CTA_CONTENT">
+      <ReconstructedSection revealAt="BUILD_CONTENT">
         <ServicesShowcase />
       </ReconstructedSection>
 
       {/* Production Case Studies (Hardware Products) */}
-      <ReconstructedSection revealAt="BUILD_CTA_CONTENT">
+      <ReconstructedSection revealAt="BUILD_CONTENT">
         <CaseStudiesSection />
       </ReconstructedSection>
 
