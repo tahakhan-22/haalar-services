@@ -7,36 +7,62 @@ import ComplianceSection from "@/components/home/ComplianceSection";
 import FoundationModelsSection from "@/components/home/FoundationModelsSection";
 import FaqSection from "@/components/home/FaqSection";
 import ContactCtaSection from "@/components/home/ContactCtaSection";
+import { ReconstructionProvider } from "@/components/intro/ReconstructionContext";
+import HaalarIntroOverlay from "@/components/intro/HaalarIntroOverlay";
+import ReconstructedSection from "@/components/intro/ReconstructedSection";
+import ReplayIntroButton from "@/components/intro/ReplayIntroButton";
 
 export default function Home() {
   return (
-    <>
+    <ReconstructionProvider>
+      {/* Cinematic Logo-to-Swarm Website Reconstruction Experience */}
+      <HaalarIntroOverlay />
+      <ReplayIntroButton />
+
       {/* Hero Unit */}
-      <HeroSection />
+      <ReconstructedSection revealAt="BUILD_HERO">
+        <HeroSection />
+      </ReconstructedSection>
 
       {/* Client Logos & Proof Marquee */}
-      <ClientProofMarquee />
+      <ReconstructedSection revealAt="BUILD_SERVICES">
+        <ClientProofMarquee />
+      </ReconstructedSection>
 
       {/* Problem Matrix Interactive Switcher */}
-      <ProblemMatrix />
+      <ReconstructedSection revealAt="BUILD_SERVICES">
+        <ProblemMatrix />
+      </ReconstructedSection>
 
-      {/* Services Showcase (Software vs AI) */}
-      <ServicesShowcase />
+      {/* Services Showcase (Focus-Slice Accordion) */}
+      <ReconstructedSection revealAt="BUILD_SERVICES">
+        <ServicesShowcase />
+      </ReconstructedSection>
 
-      {/* Production Case Studies */}
-      <CaseStudiesSection />
+      {/* Production Case Studies (Hardware Products) */}
+      <ReconstructedSection revealAt="BUILD_PRODUCTS">
+        <CaseStudiesSection />
+      </ReconstructedSection>
 
       {/* Compliance & Security Guarantees */}
-      <ComplianceSection />
+      <ReconstructedSection revealAt="BUILD_ALL">
+        <ComplianceSection />
+      </ReconstructedSection>
 
       {/* Foundation Models & Tech Stack */}
-      <FoundationModelsSection />
+      <ReconstructedSection revealAt="BUILD_ALL">
+        <FoundationModelsSection />
+      </ReconstructedSection>
 
       {/* Frequently Asked Questions */}
-      <FaqSection />
+      <ReconstructedSection revealAt="BUILD_ALL">
+        <FaqSection />
+      </ReconstructedSection>
 
       {/* Lead Capture / Architecture Review Form */}
-      <ContactCtaSection />
-    </>
+      <ReconstructedSection revealAt="BUILD_ALL">
+        <ContactCtaSection />
+      </ReconstructedSection>
+    </ReconstructionProvider>
   );
 }

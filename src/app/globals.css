@@ -98,3 +98,25 @@ body {
     transition: none;
   }
 }
+
+/* Haalar Logo-to-Swarm Website Reconstruction Experience */
+html.haalar-intro-active header {
+  opacity: 0.08;
+  transform: translateY(-8px);
+  filter: blur(1.5px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.haalar-intro-active[data-intro-stage="BUILD_NAV"] header,
+html.haalar-intro-active[data-intro-stage="BUILD_HERO"] header,
+html.haalar-intro-active[data-intro-stage="BUILD_SERVICES"] header,
+html.haalar-intro-active[data-intro-stage="BUILD_PRODUCTS"] header,
+html.haalar-intro-active[data-intro-stage="BUILD_ALL"] header,
+html.haalar-intro-active[data-intro-stage="CONVERGING"] header,
+html.haalar-intro-active[data-intro-stage="LOGO_REASSEMBLED"] header,
+html.haalar-intro-active[data-intro-stage="COMPLETE"] header {
+  opacity: 1;
+  transform: translateY(0);
+  filter: none;
+}
+
