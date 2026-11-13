@@ -1,69 +1,31 @@
 export type ReconstructionStage =
-  | "INITIAL_LOGO"      // 0.0s - 1.25s: Original logo centered, stationary
-  | "DISINTEGRATING"    // 1.25s - 2.1s: Logo breaks into geometric shards
-  | "SWARM_EXPANDING"   // 2.1s - 2.9s: 12 shards morph into cursors
-  | "BUILD_NAV"         // 2.9s - 3.7s: Cursors build Navbar & Announcement
-  | "BUILD_HERO"        // 3.6s - 4.5s: Cursors build Hero & 3D Eagle
-  | "BUILD_SERVICES"    // 4.4s - 5.3s: Cursors build Capabilities & Services
-  | "BUILD_PRODUCTS"    // 5.1s - 5.9s: Cursors build Hardware Products & Specs
-  | "BUILD_ALL"         // 5.7s - 6.2s: Cursors finish Compliance & Footer
-  | "CONVERGING"        // 6.2s - 7.3s: Cursors & shards converge back to center
-  | "LOGO_REASSEMBLED"  // 7.3s - 8.1s: Assembled logo holds, then transitions
-  | "COMPLETE";         // Intro unmounted, site fully live
-
-export interface CursorState {
-  id: number;
-  label: string;
-  role: string;
-  x: number;
-  y: number;
-  targetX: number;
-  targetY: number;
-  angle: number;
-  scale: number;
-  opacity: number;
-  isClicking: boolean;
-  statusText?: string;
-  // Bounding box being drawn
-  drawBox?: {
-    x1: number;
-    y1: number;
-    x2: number;
-    y2: number;
-    label: string;
-    progress: number;
-  } | null;
-}
-
-export interface ClickRipple {
-  id: number;
-  x: number;
-  y: number;
-  radius: number;
-  maxRadius: number;
-  opacity: number;
-  color: string;
-}
+  | "INITIAL_LOGO"          // 0.0s - 1.2s: Center logo over Vanta net background
+  | "DISINTEGRATING"        // 1.2s - 1.9s: Logo fractures into 1038 shards
+  | "SWARM_EXPANDING"       // 1.9s - 2.6s: Shards morph into sleek cursors
+  | "BUILD_BADGE"           // 2.6s - 3.0s: Cursor draws pill box, pill background fills
+  | "BUILD_BADGE_TEXT"      // 3.0s - 3.4s: Cursor draws inner text box, "Disrupt · Defend · Dominate" appears
+  | "BUILD_H1_IDEA"         // 3.4s - 3.9s: Cursor draws box for "Your Idea,"
+  | "BUILD_H1_EXPERTISE"    // 3.9s - 4.4s: Cursor draws box for "Our Expertise." + underline
+  | "BUILD_SUBTITLE_EAGLE"  // 4.4s - 4.9s: Cursor draws subtitle & pings 3D eagle
+  | "BUILD_CTA_CONTAINER"   // 4.9s - 5.4s: Cursor draws button box -> button fills with vibrant red!
+  | "BUILD_CTA_CONTENT"     // 5.4s - 6.0s: Cursor draws inner box -> Sparkles + text + secondary button appear!
+  | "CONVERGING"            // 6.0s - 6.9s: Cursors converge to center, assemble Haalar logo
+  | "FLIGHT_TO_NAV"         // 6.9s - 7.6s: Reassembled logo flies to top-left Navbar logo!
+  | "COMPLETE";
 
 export interface ActiveParticle {
-  // Current position
   x: number;
   y: number;
-  // Original resting position in centered logo
   origX: number;
   origY: number;
-  // Velocity
   vx: number;
   vy: number;
-  // Shard physics
   size: number;
   rotation: number;
   vRot: number;
   aspect: number;
   shapeType: 0 | 1 | 2; // 0: triangle, 1: quad, 2: shard
-  // Morph & opacity
   alpha: number;
   color: string;
-  // Designation
-  cursorIndex: number; // >= 0 if this particle links to a cursor
+  cursorIndex: number;
 }

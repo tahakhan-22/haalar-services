@@ -19,48 +19,48 @@ export default function Home() {
       <HaalarIntroOverlay />
       <ReplayIntroButton />
 
-      {/* Hero Unit */}
-      <ReconstructedSection revealAt="BUILD_HERO">
+      {/* Hero Unit (Sub-components individually reconstructed by cursors) */}
+      <ReconstructedSection revealAt="BUILD_BADGE">
         <HeroSection />
       </ReconstructedSection>
 
       {/* Client Logos & Proof Marquee */}
-      <ReconstructedSection revealAt="BUILD_SERVICES">
+      <ReconstructedSection revealAt="BUILD_CTA_CONTENT">
         <ClientProofMarquee />
       </ReconstructedSection>
 
       {/* Problem Matrix Interactive Switcher */}
-      <ReconstructedSection revealAt="BUILD_SERVICES">
+      <ReconstructedSection revealAt="BUILD_CTA_CONTENT">
         <ProblemMatrix />
       </ReconstructedSection>
 
       {/* Services Showcase (Focus-Slice Accordion) */}
-      <ReconstructedSection revealAt="BUILD_SERVICES">
+      <ReconstructedSection revealAt="BUILD_CTA_CONTENT">
         <ServicesShowcase />
       </ReconstructedSection>
 
       {/* Production Case Studies (Hardware Products) */}
-      <ReconstructedSection revealAt="BUILD_PRODUCTS">
+      <ReconstructedSection revealAt="BUILD_CTA_CONTENT">
         <CaseStudiesSection />
       </ReconstructedSection>
 
       {/* Compliance & Security Guarantees */}
-      <ReconstructedSection revealAt="BUILD_ALL">
+      <ReconstructedSection revealAt="CONVERGING">
         <ComplianceSection />
       </ReconstructedSection>
 
       {/* Foundation Models & Tech Stack */}
-      <ReconstructedSection revealAt="BUILD_ALL">
+      <ReconstructedSection revealAt="CONVERGING">
         <FoundationModelsSection />
       </ReconstructedSection>
 
       {/* Frequently Asked Questions */}
-      <ReconstructedSection revealAt="BUILD_ALL">
+      <ReconstructedSection revealAt="CONVERGING">
         <FaqSection />
       </ReconstructedSection>
 
       {/* Lead Capture / Architecture Review Form */}
-      <ReconstructedSection revealAt="BUILD_ALL">
+      <ReconstructedSection revealAt="CONVERGING">
         <ContactCtaSection />
       </ReconstructedSection>
     </ReconstructionProvider>

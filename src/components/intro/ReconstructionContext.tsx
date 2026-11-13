@@ -33,14 +33,15 @@ export function ReconstructionProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [stage, setStage] = useState<ReconstructionStage>("INITIAL_LOGO");
+  // Default to COMPLETE so SSR and returning visitors have 0 layout shifts
+  const [stage, setStage] = useState<ReconstructionStage>("COMPLETE");
   const [isIntroActive, setIsIntroActive] = useState<boolean>(false);
   const [isComplete, setIsComplete] = useState<boolean>(true);
 
   const startTimeRef = useRef<number>(0);
   const rafRef = useRef<number | null>(null);
 
-  // Sync stage to document element for global header/navbar coordination
+  // Sync stage to document element for global CSS coordination
   const updateHtmlStage = useCallback((newStage: ReconstructionStage, active: boolean) => {
     if (typeof document === "undefined") return;
     if (active && newStage !== "COMPLETE") {
@@ -137,26 +138,30 @@ export function ReconstructionProvider({
       const elapsed = (now - startTimeRef.current) / 1000;
 
       let nextStage: ReconstructionStage = "INITIAL_LOGO";
-      if (elapsed >= 8.1) {
+      if (elapsed >= 7.6) {
         skipIntro();
         return;
-      } else if (elapsed >= 7.3) {
-        nextStage = "LOGO_REASSEMBLED";
-      } else if (elapsed >= 6.2) {
+      } else if (elapsed >= 6.9) {
+        nextStage = "FLIGHT_TO_NAV";
+      } else if (elapsed >= 6.0) {
         nextStage = "CONVERGING";
-      } else if (elapsed >= 5.7) {
-        nextStage = "BUILD_ALL";
-      } else if (elapsed >= 5.1) {
-        nextStage = "BUILD_PRODUCTS";
+      } else if (elapsed >= 5.4) {
+        nextStage = "BUILD_CTA_CONTENT";
+      } else if (elapsed >= 4.9) {
+        nextStage = "BUILD_CTA_CONTAINER";
       } else if (elapsed >= 4.4) {
-        nextStage = "BUILD_SERVICES";
-      } else if (elapsed >= 3.6) {
-        nextStage = "BUILD_HERO";
-      } else if (elapsed >= 2.9) {
-        nextStage = "BUILD_NAV";
-      } else if (elapsed >= 2.1) {
+        nextStage = "BUILD_SUBTITLE_EAGLE";
+      } else if (elapsed >= 3.9) {
+        nextStage = "BUILD_H1_EXPERTISE";
+      } else if (elapsed >= 3.4) {
+        nextStage = "BUILD_H1_IDEA";
+      } else if (elapsed >= 3.0) {
+        nextStage = "BUILD_BADGE_TEXT";
+      } else if (elapsed >= 2.6) {
+        nextStage = "BUILD_BADGE";
+      } else if (elapsed >= 1.9) {
         nextStage = "SWARM_EXPANDING";
-      } else if (elapsed >= 1.25) {
+      } else if (elapsed >= 1.2) {
         nextStage = "DISINTEGRATING";
       }
 

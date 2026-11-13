@@ -15,14 +15,16 @@ const STAGE_ORDER: Record<ReconstructionStage, number> = {
   INITIAL_LOGO: 0,
   DISINTEGRATING: 1,
   SWARM_EXPANDING: 2,
-  BUILD_NAV: 3,
-  BUILD_HERO: 4,
-  BUILD_SERVICES: 5,
-  BUILD_PRODUCTS: 6,
-  BUILD_ALL: 7,
-  CONVERGING: 8,
-  LOGO_REASSEMBLED: 9,
-  COMPLETE: 10,
+  BUILD_BADGE: 3,
+  BUILD_BADGE_TEXT: 4,
+  BUILD_H1_IDEA: 5,
+  BUILD_H1_EXPERTISE: 6,
+  BUILD_SUBTITLE_EAGLE: 7,
+  BUILD_CTA_CONTAINER: 8,
+  BUILD_CTA_CONTENT: 9,
+  CONVERGING: 10,
+  FLIGHT_TO_NAV: 11,
+  COMPLETE: 12,
 };
 
 export default function ReconstructedSection({
@@ -41,24 +43,19 @@ export default function ReconstructedSection({
     );
   }
 
-  const currentOrder = STAGE_ORDER[stage] ?? 10;
+  const currentOrder = STAGE_ORDER[stage] ?? 12;
   const targetOrder = STAGE_ORDER[revealAt] ?? 0;
   const isRevealed = currentOrder >= targetOrder;
 
   return (
     <div
       id={id}
-      className={`relative transition-all duration-700 ease-out will-change-transform ${className}`}
+      className={`relative transition-all duration-500 ease-out will-change-transform ${className}`}
       style={{
-        opacity: isRevealed ? 1 : 0.08,
-        transform: isRevealed ? "scale(1) translateY(0)" : "scale(0.98) translateY(12px)",
-        filter: isRevealed ? "none" : "blur(1.5px) grayscale(0.7)",
+        opacity: isRevealed ? 1 : 0.12,
+        transform: isRevealed ? "scale(1) translateY(0)" : "scale(0.99) translateY(8px)",
       }}
     >
-      {/* Laser Scan line when freshly revealed */}
-      {isRevealed && currentOrder === targetOrder && (
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#f54545] to-transparent animate-pulse pointer-events-none z-10" />
-      )}
       {children}
     </div>
   );
