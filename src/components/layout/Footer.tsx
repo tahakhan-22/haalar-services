@@ -48,7 +48,8 @@ export default function Footer() {
                 alt="Haalar Services Official Emblem"
                 width={120}
                 height={48}
-                className="h-11 w-auto object-contain brightness-0 invert"
+                style={{ width: "auto" }}
+                className="h-11 object-contain brightness-0 invert"
               />
               <div className="flex items-center">
                 <span className="font-heading tracking-tight text-3xl font-extrabold text-white">
